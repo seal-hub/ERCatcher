@@ -4,7 +4,9 @@
 Android platform provisions a number of sophisticated concurrency mechanisms for the development of apps. The concurrency mechanisms, while powerful, are quite difficult to properly master by mobile developers. In fact, prior studies have shown concurrency issues, such as event-race defects, to be prevalent among real-world Android apps. We propose a flow-, context-, and thread-sensitive static analysis framework, called *ER Catcher*, for detection of event-race defects in Android apps. This repository contains the [appendix](https://github.com/ercatcher/ercatcher/blob/master/ERCatcher_Appendix.pdf) of ER Catcher paper (formal proofs), [the source code](https://github.com/ercatcher/ercatcher/tree/master/src/main/java/com/ercatcher) of ER Catcher, and the [datasets of APKs](https://github.com/ercatcher/ercatcher/tree/master/Datasets) that are used in its evaluation.
 
 ## Publication
+
 Navid Salehnamadi, Abdulaziz Alshayban, Iftekhar Ahmed, and Sam Malek, "ER Catcher: A Static Analysis Framework for Accurate and Scalable Event-Race Detection in Android" in 2020 35th IEEE/ACM International Conference on Automated Software Engineering (ASE), 2020
+
 ---
 
 ## Appendix (Formal Proofs)
