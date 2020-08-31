@@ -1,0 +1,172 @@
+Starting [33mWholeProcess[0m...
+Starting [33mFlowDroid Setup[0m...
+ICC config is set: false
+soot.jimple.spark.pag.PAG@22ae32ba
+Reachable Methods: 26, APK Methods: 30, PossibleLib : 15
+FlowDroid Setup took [34m2 seconds[0m
+Starting [33mMemory Analysis[0m...
+Memory Analysis took [34m0 seconds[0m
+Starting [33mCaSF Generation[0m...
+Starting [33mMethodBox Generation[0m...
+1000-2000-3000-4000-5000-6000-7000-8000-9000-10000-11000-12000-13000-14000-15000-16000-17000-18000-19000-20000-21000-22000-MethodBox Generation took [34m5 seconds[0m
+CaSF Generation took [34m5 seconds[0m
+Starting [33mInitalMethodRaceDetector[0m...
+MR: W-> <dev.navids.thread2.MainActivity$2: void run()>, R-> <dev.navids.thread2.MainActivity$1: void run()>, M-> <dev.navids.thread2.MainActivity: java.lang.Object memoryObject>
+MR: W-> <dev.navids.thread2.MainActivity$3: void run()>, R-> <dev.navids.thread2.MainActivity$2: void run()>, M-> <dev.navids.thread2.MainActivity: java.lang.Object secondMemoryObject>
+ER: 2, UAF: 2, IfGuard: 0, NullAtEnd: 2, nAdroid: 2, Read Fields: 3 Write Fields 2
+InitalMethodRaceDetector took [34m5 seconds[0m
+Starting [33mCaCG Generation[0m...
+Starting [33mCaSF[0m...
+Edges: 35
+CaSF took [34m0 seconds[0m
+Starting [33mCycle Elimination[0m...
+--------------- 22568
+Reachable Async IMB: 5
+SCC Size 31
+Cycles 1
+Asynch IMB in Cycles: 0
+Cycles with Asynch IMB: 0
+Real Heads: 6
+ Head: I-MB-<java.lang.Object: void finalize()>
+ Head: I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])>
+ Head: I-MB-<android.app.Service: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<java.lang.Thread: void start()>
+ Head: I-MB-<android.support.v4.app.NotificationCompatSideChannelService: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<java.lang.Thread: void run()>
+Before Update
+After Update
+Edges: 32
+--------------- 22569
+Reachable Async IMB: 5
+SCC Size 35
+Cycles 0
+Asynch IMB in Cycles: 0
+Cycles with Asynch IMB: 0
+Real Heads: 6
+ Head: I-MB-<java.lang.Object: void finalize()>
+ Head: I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])>
+ Head: I-MB-<android.app.Service: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<java.lang.Thread: void start()>
+ Head: I-MB-<android.support.v4.app.NotificationCompatSideChannelService: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<java.lang.Thread: void run()>
+Cycle Elimination took [34m0 seconds[0m
+New: 0, HasActiveBody: 0, FD: 26, Us: 27
+CaCG Generation took [34m0 seconds[0m
+Starting [33mReachability Filter[0m...
+Reachable MRs: 2 out of 2
+Reachability Filter took [34m0 seconds[0m
+Reachable MRs: 2 out of 2
+Starting [33mEvent Extraction[0m...
+Reachable Method With Races: 3 out of 27 (All method with races: 3)
+1-I-MB-<java.lang.Throwable: void <init>()> 0
+2-I-MB-<android.app.Activity: void onCreate(android.os.Bundle)> 0
+3-I-MB-<android.app.Activity: void setContentView(int)> 0
+4-I-MB-<dev.navids.thread2.MainActivity: void onCreate(android.os.Bundle)> 2
+5-I-MB-<java.lang.Object: void <init>()> 0
+6-I-MB-<java.lang.RuntimeException: void <init>(java.lang.String)> 0
+7-I-MB-<java.lang.Exception: void <init>()> 0
+8-I-MB-SCC22307 4
+9-I-MB-<java.lang.Object: java.lang.String toString()> 1
+10-I-MB-<java.lang.Thread: void join()> 1
+11-I-MB-<dev.navids.thread2.MainActivity$2: void run()> 2
+12-I-MB-<dev.navids.thread2.MainActivity$3: void <init>(dev.navids.thread2.MainActivity)> 1
+13-I-MB-<android.app.Activity: void onResume()> 0
+14-I-MB-<java.lang.Thread: void sleep(long)> 1
+15-I-MB-<dev.navids.thread2.MainActivity$3: void run()> 1
+16-I-MB-<dev.navids.thread2.MainActivity$1: void run()> 1
+17-I-MB-<dev.navids.thread2.MainActivity$1: void <init>(dev.navids.thread2.MainActivity)> 1
+18-I-MB-<dev.navids.thread2.MainActivity$2: void <init>(dev.navids.thread2.MainActivity)> 1
+19-I-MB-<java.lang.Thread: void <init>(java.lang.Runnable)> 0
+20-I-MB-<dev.navids.thread2.MainActivity: void onResume()> 8
+21-I-MB-<android.app.Activity: void <init>()> 0
+22-I-MB-<dev.navids.thread2.MainActivity: void <init>()> 2
+23-I-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> 0
+24-I-MB-<dummyMainClass: dev.navids.thread2.MainActivity dummyMainMethod_dev_navids_thread2_MainActivity(android.content.Intent)> 4
+25-I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])> 1
+Accessible Methods: 7, Reachable Methods: 25
+Unkown call from dummyMainClass to CE-I-MB-<dummyMainClass: dev.navids.thread2.MainActivity dummyMainMethod_dev_navids_thread2_MainActivity(android.content.Intent)> through CInvoke-trueI-MB-<dummyMainClass: dev.navids.thread2.MainActivity dummyMainMethod_dev_navids_thread2_MainActivity(android.content.Intent)> on unit staticinvoke <dummyMainClass: dev.navids.thread2.MainActivity dummyMainMethod_dev_navids_thread2_MainActivity(android.content.Intent)>(null)
+Unkown call from dummyMainClass to CE-I-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> through CInvoke-trueI-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> on unit staticinvoke <dummyMainClass: void NOP_ASYNC_METHOD()>()
+Unkown call from dummyMainClass to CE-I-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> through CInvoke-trueI-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> on unit staticinvoke <dummyMainClass: void NOP_ASYNC_METHOD()>()
+Cvents: 7 Threads: 6
+Event in Unkown Thread: CE-I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])>@UNKNOWN
+<3,1,0,1,1,1>
+Event Extraction took [34m0 seconds[0m
+----------------------------------
+1/1 Component: I-MB-<dummyMainClass: dev.navids.thread2.MainActivity dummyMainMethod_dev_navids_thread2_MainActivity(android.content.Intent)>
+Edges: 31
+Starting [33mReachability Filter[0m...
+Reachable MRs: 2 out of 2
+Reachability Filter took [34m0 seconds[0m
+Accessible Methods: 6, Reachable Methods: 24
+Cvents: 6 Threads: 6
+Event in Unkown Thread: CE-I-MB-<dummyMainClass: dev.navids.thread2.MainActivity dummyMainMethod_dev_navids_thread2_MainActivity(android.content.Intent)>@UNKNOWN
+<2,1,0,1,1,1>
+Starting [33mIfGuardNullAtEndFilter[0m...
+Using Super Fast Event Race Detection
+IGNAE ERs: 2 out of 2
+IfGuardNullAtEndFilter took [34m0 seconds[0m
+Starting [33mOn-Demand HB Analysis[0m...
+Starting [33mSHB Constructor[0m...
+Starting [33mSVCEvent Creation[0m...
+SVCEvent Creation took [34m0 seconds[0m
+Starting [33mSVC Init[0m...
+SVC Init took [34m0 seconds[0m
+SHB Constructor took [34m0 seconds[0m
+Using Fast SHB
+Ordered list has been built.
+SameThread Pass has been completed.
+Iter: 0 Sum: 28 Average: 1.555556
+Ordered list has been built.
+SameThread Pass has been completed.
+Ordered list has been built.
+HB is created
+On-Demand HB Analysis took [34m0 seconds[0m
+Starting [33mEventRaceDetector[0m...
+Precise MaxCMRs: 2 Fast MaxCMRS: 2
+Context of methods have been extracted, MaxCMRs: 2
+Using Precise Event Race Detection
+MR: W-> <dev.navids.thread2.MainActivity$2: void run()>, R-> <dev.navids.thread2.MainActivity$1: void run()>, M-> <dev.navids.thread2.MainActivity: java.lang.Object memoryObject>
+MR: W-> <dev.navids.thread2.MainActivity$3: void run()>, R-> <dev.navids.thread2.MainActivity$2: void run()>, M-> <dev.navids.thread2.MainActivity: java.lang.Object secondMemoryObject>
+Context ERs: 2
+ERs: 2 out of 2
+EventRaceDetector took [34m0 seconds[0m
+Starting [33mIfGuardNullAtEndFilter[0m...
+Using Super Fast Event Race Detection
+IGNAE ERs: 2 out of 2
+IfGuardNullAtEndFilter took [34m0 seconds[0m
+Ordered list has been built.
+SameThread Pass has been completed.
+Ordered list has been built.
+HB is created
+Starting [33mEventRaceDetector[0m...
+Precise MaxCMRs: 2 Fast MaxCMRS: 2
+Context of methods have been extracted, MaxCMRs: 2
+Using Precise Event Race Detection
+MR: W-> <dev.navids.thread2.MainActivity$2: void run()>, R-> <dev.navids.thread2.MainActivity$1: void run()>, M-> <dev.navids.thread2.MainActivity: java.lang.Object memoryObject>
+MR: W-> <dev.navids.thread2.MainActivity$3: void run()>, R-> <dev.navids.thread2.MainActivity$2: void run()>, M-> <dev.navids.thread2.MainActivity: java.lang.Object secondMemoryObject>
+Context ERs: 2
+ERs: 2 out of 2
+EventRaceDetector took [34m0 seconds[0m
+Starting [33mIfGuardNullAtEndFilter[0m...
+Using Super Fast Event Race Detection
+IGNAE ERs: 2 out of 2
+IfGuardNullAtEndFilter took [34m0 seconds[0m
+Ordered list has been built.
+SameThread Pass has been completed.
+Iter: 0 Sum: 32 Average: 1.777778
+Ordered list has been built.
+SameThread Pass has been completed.
+Ordered list has been built.
+HB is created
+Starting [33mEventRaceDetector[0m...
+Precise MaxCMRs: 2 Fast MaxCMRS: 2
+Context of methods have been extracted, MaxCMRs: 2
+Using Precise Event Race Detection
+MR: W-> <dev.navids.thread2.MainActivity$2: void run()>, R-> <dev.navids.thread2.MainActivity$1: void run()>, M-> <dev.navids.thread2.MainActivity: java.lang.Object memoryObject>
+MR: W-> <dev.navids.thread2.MainActivity$3: void run()>, R-> <dev.navids.thread2.MainActivity$2: void run()>, M-> <dev.navids.thread2.MainActivity: java.lang.Object secondMemoryObject>
+Context ERs: 2
+ERs: 2 out of 2
+EventRaceDetector took [34m0 seconds[0m
+Filtered ERs: 2, With paths: 2
+Prioritized ERs: 2
+WholeProcess took [34m14 seconds[0m

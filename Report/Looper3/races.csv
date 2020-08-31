@@ -1,0 +1,6 @@
+Id,Priority,Race Description,IfGuard,NullAtEnd,InitiatedByInvoke,Write Threads,Read Threads,WriteMethod,ReadMethod,Field
+1,15,"Write Event: <dev.navids.looper3.MainActivity$2: void run()>
+Write Stmt: 29: $r1.<dev.navids.looper3.MainActivity: java.lang.Object A> = null
+Read Event: <dev.navids.looper3.MainActivity$1: void run()>
+Read Stmt: 23: virtualinvoke $r2.<java.lang.Object: java.lang.String toString()>()
+Memory: <dev.navids.looper3.MainActivity: java.lang.Object A>",false,true,false,"UI ","UI ",<dev.navids.looper3.MainActivity$2: void run()>,<dev.navids.looper3.MainActivity$1: void run()>,<dev.navids.looper3.MainActivity: java.lang.Object A>

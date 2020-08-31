@@ -1,0 +1,6 @@
+Id,Priority,Race Description,IfGuard,NullAtEnd,InitiatedByInvoke,Write Threads,Read Threads,WriteMethod,ReadMethod,Field
+1,15,"Write Event: <com.concurrencybench.asynctask4.MainActivity$CoordinatesTaskWrite: java.lang.String doInBackground(java.lang.String[])>
+Write Stmt: 58: <com.concurrencybench.asynctask4.MainActivity: java.lang.String coordinates> = null
+Read Event: <com.concurrencybench.asynctask4.MainActivity$CoordinatesTaskRead: java.lang.String doInBackground(java.lang.String[])>
+Read Stmt: 43: $r3 = virtualinvoke $r2.<java.lang.String: java.lang.String[] split(java.lang.String)>("","")
+Memory: <com.concurrencybench.asynctask4.MainActivity: java.lang.String coordinates>",false,true,false,"ASYNC_PARALLEL ","ASYNC_PARALLEL ",<com.concurrencybench.asynctask4.MainActivity$CoordinatesTaskWrite: java.lang.String doInBackground(java.lang.String[])>,<com.concurrencybench.asynctask4.MainActivity$CoordinatesTaskRead: java.lang.String doInBackground(java.lang.String[])>,<com.concurrencybench.asynctask4.MainActivity: java.lang.String coordinates>

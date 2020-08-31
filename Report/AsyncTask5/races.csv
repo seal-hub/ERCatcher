@@ -1,0 +1,11 @@
+Id,Priority,Race Description,IfGuard,NullAtEnd,InitiatedByInvoke,Write Threads,Read Threads,WriteMethod,ReadMethod,Field
+1,15,"Write Event: <dev.navids.AsyncTask5.MainActivity$MyAsyncTask: void onPostExecute(java.lang.Object)>
+Write Stmt: 44: $r2.<dev.navids.AsyncTask5.MainActivity: java.lang.Object A> = $r1
+Read Event: <dev.navids.AsyncTask5.MainActivity$MyAsyncTask: void onPostExecute(java.lang.Object)>
+Read Stmt: 44: $r2.<dev.navids.AsyncTask5.MainActivity: java.lang.Object A> = $r1
+Memory: <dev.navids.AsyncTask5.MainActivity: java.lang.Object A>",false,false,false,"UI ","UI ",<dev.navids.AsyncTask5.MainActivity$MyAsyncTask: void onPostExecute(java.lang.Object)>,<dev.navids.AsyncTask5.MainActivity$MyAsyncTask: void onPostExecute(java.lang.Object)>,<dev.navids.AsyncTask5.MainActivity: java.lang.Object A>
+2,1,"Write Event: <dev.navids.AsyncTask5.MainActivity: void setIntent(android.content.Intent)>
+Write Stmt: : this.<dev.navids.AsyncTask5.MainActivity: android.content.Intent ipcIntent> = parameter0
+Read Event: <dev.navids.AsyncTask5.MainActivity: android.content.Intent getIntent()>
+Read Stmt: : return $r0
+Memory: <dev.navids.AsyncTask5.MainActivity: android.content.Intent ipcIntent>",false,false,false,,,<dev.navids.AsyncTask5.MainActivity: void setIntent(android.content.Intent)>,<dev.navids.AsyncTask5.MainActivity: android.content.Intent getIntent()>,<dev.navids.AsyncTask5.MainActivity: android.content.Intent ipcIntent>

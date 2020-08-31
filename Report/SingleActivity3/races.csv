@@ -1,0 +1,6 @@
+Id,Priority,Race Description,IfGuard,NullAtEnd,InitiatedByInvoke,Write Threads,Read Threads,WriteMethod,ReadMethod,Field
+1,15,"Write Event: <dev.navids.singleactivity3.MainActivity$2: void run()>
+Write Stmt: 28: $r1.<dev.navids.singleactivity3.MainActivity: java.lang.Object memoryObject> = null
+Read Event: <dev.navids.singleactivity3.MainActivity$1: void run()>
+Read Stmt: 22: virtualinvoke $r2.<java.lang.Object: java.lang.String toString()>()
+Memory: <dev.navids.singleactivity3.MainActivity: java.lang.Object memoryObject>",true,true,false,"New Alloc Thread AllocNode 3 new android.os.HandlerThread in method <dev.navids.singleactivity3.MainActivity: void onCreate(android.os.Bundle)> ","UI ",<dev.navids.singleactivity3.MainActivity$2: void run()>,<dev.navids.singleactivity3.MainActivity$1: void run()>,<dev.navids.singleactivity3.MainActivity: java.lang.Object memoryObject>

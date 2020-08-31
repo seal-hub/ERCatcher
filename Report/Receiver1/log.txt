@@ -1,0 +1,161 @@
+Starting [33mWholeProcess[0m...
+Starting [33mFlowDroid Setup[0m...
+ICC config is set: false
+soot.jimple.spark.pag.PAG@33ebe4f0
+Reachable Methods: 21, APK Methods: 27, PossibleLib : 14
+FlowDroid Setup took [34m2 seconds[0m
+Starting [33mMemory Analysis[0m...
+Memory Analysis took [34m0 seconds[0m
+Starting [33mCaSF Generation[0m...
+Starting [33mMethodBox Generation[0m...
+1000-2000-3000-4000-5000-6000-7000-8000-9000-10000-11000-12000-13000-14000-15000-16000-17000-18000-19000-20000-21000-MethodBox Generation took [34m1 seconds[0m
+CaSF Generation took [34m1 seconds[0m
+Starting [33mInitalMethodRaceDetector[0m...
+MR: W-> <dev.navids.receiver1.MainActivity$2: void run()>, R-> <dev.navids.receiver1.MainActivity$1: void onReceive(android.content.Context,android.content.Intent)>, M-> <dev.navids.receiver1.MainActivity: java.lang.Object memoryObject>
+ER: 1, UAF: 1, IfGuard: 0, NullAtEnd: 1, nAdroid: 1, Read Fields: 2 Write Fields 1
+InitalMethodRaceDetector took [34m1 seconds[0m
+Starting [33mCaCG Generation[0m...
+Starting [33mCaSF[0m...
+Edges: 25
+CaSF took [34m0 seconds[0m
+Starting [33mCycle Elimination[0m...
+--------------- 21765
+Reachable Async IMB: 4
+SCC Size 26
+Cycles 1
+Asynch IMB in Cycles: 0
+Cycles with Asynch IMB: 0
+Real Heads: 5
+ Head: I-MB-<android.os.Handler: boolean post(java.lang.Runnable)>
+ Head: I-MB-<java.lang.Object: void finalize()>
+ Head: I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])>
+ Head: I-MB-<android.app.Service: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<android.support.v4.app.NotificationCompatSideChannelService: void interimBindMethod(android.content.ServiceConnection)>
+Before Update
+After Update
+Edges: 22
+--------------- 21766
+Reachable Async IMB: 4
+SCC Size 30
+Cycles 0
+Asynch IMB in Cycles: 0
+Cycles with Asynch IMB: 0
+Real Heads: 5
+ Head: I-MB-<android.os.Handler: boolean post(java.lang.Runnable)>
+ Head: I-MB-<java.lang.Object: void finalize()>
+ Head: I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])>
+ Head: I-MB-<android.app.Service: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<android.support.v4.app.NotificationCompatSideChannelService: void interimBindMethod(android.content.ServiceConnection)>
+Cycle Elimination took [34m0 seconds[0m
+New: 0, HasActiveBody: 0, FD: 21, Us: 23
+CaCG Generation took [34m0 seconds[0m
+Starting [33mReachability Filter[0m...
+Reachable MRs: 1 out of 1
+Reachability Filter took [34m0 seconds[0m
+Reachable MRs: 1 out of 1
+Starting [33mEvent Extraction[0m...
+Reachable Method With Races: 2 out of 23 (All method with races: 2)
+1-I-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> 0
+2-I-MB-<java.lang.Throwable: void <init>()> 0
+3-I-MB-<java.lang.Object: void <init>()> 0
+4-I-MB-<java.lang.Exception: void <init>()> 0
+5-I-MB-<java.lang.RuntimeException: void <init>(java.lang.String)> 0
+6-I-MB-SCC20367 4
+7-I-MB-<dev.navids.receiver1.MainActivity$2: void <init>(dev.navids.receiver1.MainActivity)> 1
+8-I-MB-<android.app.Activity: void <init>()> 0
+9-I-MB-<android.content.BroadcastReceiver: void <init>()> 0
+10-I-MB-<dev.navids.receiver1.MainActivity$1: void <init>(dev.navids.receiver1.MainActivity)> 1
+11-I-MB-<dev.navids.receiver1.MainActivity: void <init>()> 3
+12-I-MB-<android.app.Activity: void setContentView(int)> 0
+13-I-MB-<dev.navids.receiver1.MainActivity$2: void run()> 0
+14-I-MB-<android.content.IntentFilter: void <clinit>()> 0
+15-I-MB-<android.content.IntentFilter: void <init>()> 0
+16-I-MB-<android.os.Handler: void <init>()> 0
+17-I-MB-<dev.navids.receiver1.MainActivity$1: void onReceive(android.content.Context,android.content.Intent)> 0
+18-I-MB-<android.app.Activity: void onCreate(android.os.Bundle)> 0
+19-I-MB-<dev.navids.receiver1.MainActivity: void onCreate(android.os.Bundle)> 8
+20-I-MB-<dummyMainClass: dev.navids.receiver1.MainActivity dummyMainMethod_dev_navids_receiver1_MainActivity(android.content.Intent)> 3
+21-I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])> 1
+Accessible Methods: 6, Reachable Methods: 21
+Unkown call from dummyMainClass to CE-I-MB-<dummyMainClass: dev.navids.receiver1.MainActivity dummyMainMethod_dev_navids_receiver1_MainActivity(android.content.Intent)> through CInvoke-trueI-MB-<dummyMainClass: dev.navids.receiver1.MainActivity dummyMainMethod_dev_navids_receiver1_MainActivity(android.content.Intent)> on unit staticinvoke <dummyMainClass: dev.navids.receiver1.MainActivity dummyMainMethod_dev_navids_receiver1_MainActivity(android.content.Intent)>(null)
+Unkown call from dummyMainClass to CE-I-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> through CInvoke-trueI-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> on unit staticinvoke <dummyMainClass: void NOP_ASYNC_METHOD()>()
+Cvents: 5 Threads: 3
+Event in Unkown Thread: CE-I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])>@UNKNOWN
+<4,1,0>
+Event Extraction took [34m0 seconds[0m
+----------------------------------
+1/1 Component: I-MB-<dummyMainClass: dev.navids.receiver1.MainActivity dummyMainMethod_dev_navids_receiver1_MainActivity(android.content.Intent)>
+Edges: 21
+Starting [33mReachability Filter[0m...
+Reachable MRs: 1 out of 1
+Reachability Filter took [34m0 seconds[0m
+Accessible Methods: 5, Reachable Methods: 20
+Cvents: 4 Threads: 3
+Event in Unkown Thread: CE-I-MB-<dummyMainClass: dev.navids.receiver1.MainActivity dummyMainMethod_dev_navids_receiver1_MainActivity(android.content.Intent)>@UNKNOWN
+<3,1,0>
+Starting [33mIfGuardNullAtEndFilter[0m...
+Using Super Fast Event Race Detection
+IGNAE ERs: 1 out of 1
+IfGuardNullAtEndFilter took [34m0 seconds[0m
+Starting [33mOn-Demand HB Analysis[0m...
+Starting [33mSHB Constructor[0m...
+Starting [33mSVCEvent Creation[0m...
+SVCEvent Creation took [34m0 seconds[0m
+Starting [33mSVC Init[0m...
+SVC Init took [34m0 seconds[0m
+SHB Constructor took [34m0 seconds[0m
+Using Fast SHB
+Ordered list has been built.
+SameThread Pass has been completed.
+Iter: 0 Sum: 17 Average: 1.416667
+Ordered list has been built.
+SameThread Pass has been completed.
+Ordered list has been built.
+HB is created
+On-Demand HB Analysis took [34m0 seconds[0m
+Starting [33mEventRaceDetector[0m...
+Precise MaxCMRs: 1 Fast MaxCMRS: 1
+Context of methods have been extracted, MaxCMRs: 1
+Using Precise Event Race Detection
+MR: W-> <dev.navids.receiver1.MainActivity$2: void run()>, R-> <dev.navids.receiver1.MainActivity$1: void onReceive(android.content.Context,android.content.Intent)>, M-> <dev.navids.receiver1.MainActivity: java.lang.Object memoryObject>
+Context ERs: 1
+ERs: 1 out of 1
+EventRaceDetector took [34m0 seconds[0m
+Starting [33mIfGuardNullAtEndFilter[0m...
+Using Super Fast Event Race Detection
+IGNAE ERs: 1 out of 1
+IfGuardNullAtEndFilter took [34m0 seconds[0m
+Ordered list has been built.
+SameThread Pass has been completed.
+Ordered list has been built.
+HB is created
+Starting [33mEventRaceDetector[0m...
+Precise MaxCMRs: 1 Fast MaxCMRS: 1
+Context of methods have been extracted, MaxCMRs: 1
+Using Precise Event Race Detection
+MR: W-> <dev.navids.receiver1.MainActivity$2: void run()>, R-> <dev.navids.receiver1.MainActivity$1: void onReceive(android.content.Context,android.content.Intent)>, M-> <dev.navids.receiver1.MainActivity: java.lang.Object memoryObject>
+Context ERs: 1
+ERs: 1 out of 1
+EventRaceDetector took [34m0 seconds[0m
+Starting [33mIfGuardNullAtEndFilter[0m...
+Using Super Fast Event Race Detection
+IGNAE ERs: 1 out of 1
+IfGuardNullAtEndFilter took [34m0 seconds[0m
+Ordered list has been built.
+SameThread Pass has been completed.
+Iter: 0 Sum: 23 Average: 1.916667
+Ordered list has been built.
+SameThread Pass has been completed.
+Ordered list has been built.
+HB is created
+Starting [33mEventRaceDetector[0m...
+Precise MaxCMRs: 1 Fast MaxCMRS: 1
+Context of methods have been extracted, MaxCMRs: 1
+Using Precise Event Race Detection
+MR: W-> <dev.navids.receiver1.MainActivity$2: void run()>, R-> <dev.navids.receiver1.MainActivity$1: void onReceive(android.content.Context,android.content.Intent)>, M-> <dev.navids.receiver1.MainActivity: java.lang.Object memoryObject>
+Context ERs: 1
+ERs: 1 out of 1
+EventRaceDetector took [34m0 seconds[0m
+Filtered ERs: 1, With paths: 1
+Prioritized ERs: 1
+WholeProcess took [34m6 seconds[0m

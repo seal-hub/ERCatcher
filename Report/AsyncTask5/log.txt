@@ -1,0 +1,1707 @@
+Starting [33mWholeProcess[0m...
+Starting [33mFlowDroid Setup[0m...
+ICC config is set: false
+soot.jimple.spark.pag.PAG@73e2f8eb
+Reachable Methods: 1533, APK Methods: 30, PossibleLib : 1523
+FlowDroid Setup took [34m18 seconds[0m
+Starting [33mMemory Analysis[0m...
+Memory Analysis took [34m0 seconds[0m
+Starting [33mCaSF Generation[0m...
+Starting [33mMethodBox Generation[0m...
+1000-2000-3000-4000-5000-6000-7000-8000-9000-10000-11000-12000-13000-14000-15000-16000-17000-18000-19000-20000-21000-22000-23000-24000-25000-26000-27000-28000-29000-30000-31000-32000-33000-34000-MethodBox Generation took [34m2 seconds[0m
+CaSF Generation took [34m3 seconds[0m
+Starting [33mGeneralInitalMethodRaceDetector[0m...
+MR: W-> <dev.navids.AsyncTask5.MainActivity: void setIntent(android.content.Intent)>, R-> <dev.navids.AsyncTask5.MainActivity: void setIntent(android.content.Intent)>, M-> <dev.navids.AsyncTask5.MainActivity: android.content.Intent ipcIntent>
+MR: W-> <dev.navids.AsyncTask5.MainActivity: void setIntent(android.content.Intent)>, R-> <dev.navids.AsyncTask5.MainActivity: android.content.Intent getIntent()>, M-> <dev.navids.AsyncTask5.MainActivity: android.content.Intent ipcIntent>
+MR: W-> <dev.navids.AsyncTask5.MainActivity: void setResult(int,android.content.Intent)>, R-> <dev.navids.AsyncTask5.MainActivity: void setResult(int,android.content.Intent)>, M-> <dev.navids.AsyncTask5.MainActivity: android.content.Intent ipcResultIntent>
+MR: W-> <dev.navids.AsyncTask5.MainActivity$MyAsyncTask: void onPostExecute(java.lang.Object)>, R-> <dev.navids.AsyncTask5.MainActivity$MyAsyncTask: void onPostExecute(java.lang.Object)>, M-> <dev.navids.AsyncTask5.MainActivity: java.lang.Object A>
+ER: 4, UAF: 0, IfGuard: 0, NullAtEnd: 0, nAdroid: 0, Write Fields 3
+GeneralInitalMethodRaceDetector took [34m0 seconds[0m
+Starting [33mCaCG Generation[0m...
+Starting [33mCaSF[0m...
+Edges: 3651
+CaSF took [34m1 seconds[0m
+Starting [33mCycle Elimination[0m...
+--------------- 34236
+Reachable Async IMB: 27
+SCC Size 1402
+Cycles 18
+Asynch IMB in Cycles: 0
+Cycles with Asynch IMB: 0
+Real Heads: 8
+ Head: I-MB-<android.app.Service: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<java.lang.Object: void finalize()>
+ Head: I-MB-<androidx.core.app.JobIntentService: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<java.lang.Enum: void finalize()>
+ Head: I-MB-<androidx.core.app.NotificationCompatSideChannelService: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<dummyMainClass: androidx.lifecycle.ReportFragment dummyMainMethod_androidx_lifecycle_ReportFragment(android.content.Intent,android.app.Activity)>
+ Head: I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])>
+ Head: I-MB-<android.accessibilityservice.AccessibilityService: void interimBindMethod(android.content.ServiceConnection)>
+Before Update
+After Update
+Edges: 3353
+--------------- 34254
+Reachable Async IMB: 27
+SCC Size 1565
+Cycles 0
+Asynch IMB in Cycles: 0
+Cycles with Asynch IMB: 0
+Real Heads: 8
+ Head: I-MB-<android.app.Service: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<java.lang.Object: void finalize()>
+ Head: I-MB-<androidx.core.app.JobIntentService: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<java.lang.Enum: void finalize()>
+ Head: I-MB-<androidx.core.app.NotificationCompatSideChannelService: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<dummyMainClass: androidx.lifecycle.ReportFragment dummyMainMethod_androidx_lifecycle_ReportFragment(android.content.Intent,android.app.Activity)>
+ Head: I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])>
+ Head: I-MB-<android.accessibilityservice.AccessibilityService: void interimBindMethod(android.content.ServiceConnection)>
+Cycle Elimination took [34m0 seconds[0m
+New Method: <dev.navids.AsyncTask5.MainActivity$MyAsyncTask: void onPostExecute(java.lang.Object)>
+New: 1, HasActiveBody: 1, FD: 1533, Us: 1536
+CaCG Generation took [34m2 seconds[0m
+Starting [33mReachability Filter[0m...
+Reachable MRs: 2 out of 4
+Reachability Filter took [34m0 seconds[0m
+Reachable MRs: 2 out of 4
+Starting [33mEvent Extraction[0m...
+Reachable Method With Races: 1 out of 1536 (All method with races: 3)
+1-I-MB-<java.lang.RuntimeException: void <init>(java.lang.String)> 0
+2-I-MB-<java.lang.Throwable: void <init>()> 0
+3-I-MB-<java.lang.Exception: void <init>()> 0
+4-I-MB-<java.lang.Object: void <init>()> 0
+5-I-MB-SCC34082 4
+6-I-MB-<androidx.collection.ContainerHelpers: void <clinit>()> 0
+7-I-MB-<androidx.collection.SimpleArrayMap: void <init>()> 2
+8-I-MB-<androidx.collection.ArrayMap: void <init>()> 1
+9-I-MB-<java.util.ConcurrentModificationException: void <init>()> 0
+10-I-MB-<androidx.collection.SimpleArrayMap: void freeArrays(int[],java.lang.Object[],int)> 0
+11-I-MB-<java.lang.String: int hashCode()> 1
+12-I-MB-<androidx.collection.ContainerHelpers: int binarySearch(int[],int,int)> 0
+13-I-MB-<androidx.collection.SimpleArrayMap: int binarySearchHashes(int[],int,int)> 3
+14-I-MB-<androidx.collection.SimpleArrayMap: int indexOfNull()> 1
+15-I-MB-<java.lang.Object: int hashCode()> 1
+16-I-MB-<java.lang.String: boolean equals(java.lang.Object)> 1
+17-I-MB-<java.lang.Object: boolean equals(java.lang.Object)> 1
+18-I-MB-<androidx.collection.SimpleArrayMap: int indexOf(java.lang.Object,int)> 3
+19-I-MB-<androidx.collection.SimpleArrayMap: void allocArrays(int)> 0
+20-I-MB-<java.lang.System: void <clinit>()> 0
+21-I-MB-<java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)> 0
+22-I-MB-<androidx.collection.SimpleArrayMap: java.lang.Object put(java.lang.Object,java.lang.Object)> 9
+23-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: void addDelegate(java.lang.String,androidx.appcompat.widget.AppCompatDrawableManager$InflateDelegate)> 2
+24-I-MB-<android.content.ContextWrapper: java.lang.String getPackageName()> 0
+25-I-MB-<androidx.collection.SparseArrayCompat: void <clinit>()> 1
+26-I-MB-<androidx.collection.SparseArrayCompat: java.lang.Object get(int,java.lang.Object)> 3
+27-I-MB-<java.lang.Enum: void <init>(java.lang.String,int)> 1
+28-I-MB-<androidx.lifecycle.Lifecycle$Event: void <init>(java.lang.String,int)> 1
+29-I-MB-<androidx.lifecycle.Lifecycle$Event: void <clinit>()> 1
+30-I-MB-<java.lang.StringBuilder: java.lang.String toString()> 0
+31-I-MB-<java.lang.StringBuilder: void <init>()> 0
+32-I-MB-<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)> 0
+33-I-MB-<androidx.lifecycle.Lifecycle$State: void <init>(java.lang.String,int)> 1
+34-I-MB-<androidx.lifecycle.Lifecycle$State: void <clinit>()> 1
+35-I-MB-<java.lang.Enum: int ordinal()> 1
+36-I-MB-<java.lang.Object: java.lang.Object clone()> 1
+37-I-MB-<androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event[] values()> 2
+38-I-MB-<androidx.lifecycle.Lifecycle$State: androidx.lifecycle.Lifecycle$State[] values()> 2
+39-I-MB-<androidx.lifecycle.LifecycleRegistry$1: void <clinit>()> 5
+40-I-MB-<java.lang.IllegalArgumentException: void <init>(java.lang.String)> 0
+41-I-MB-<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)> 0
+42-I-MB-<androidx.lifecycle.LifecycleRegistry: androidx.lifecycle.Lifecycle$State getStateAfter(androidx.lifecycle.Lifecycle$Event)> 8
+43-I-MB-<androidx.arch.core.internal.SafeIterableMap$ListIterator: boolean hasNext()> 0
+44-I-MB-<java.util.HashMap: boolean containsKey(java.lang.Object)> 0
+45-I-MB-<androidx.arch.core.internal.FastSafeIterableMap: boolean contains(java.lang.Object)> 1
+46-I-MB-<java.util.ArrayList: int size()> 0
+47-I-MB-<java.util.ArrayList: java.lang.Object remove(int)> 0
+48-I-MB-<androidx.lifecycle.LifecycleRegistry: void popParentState()> 2
+49-I-MB-<java.util.ArrayList: boolean add(java.lang.Object)> 0
+50-I-MB-<androidx.lifecycle.LifecycleRegistry: void pushParentState(androidx.lifecycle.Lifecycle$State)> 1
+51-I-MB-<androidx.arch.core.internal.SafeIterableMap$DescendingIterator: androidx.arch.core.internal.SafeIterableMap$Entry forward(androidx.arch.core.internal.SafeIterableMap$Entry)> 0
+52-I-MB-<androidx.arch.core.internal.SafeIterableMap$ListIterator: androidx.arch.core.internal.SafeIterableMap$Entry nextNode()> 1
+53-I-MB-<androidx.arch.core.internal.SafeIterableMap$ListIterator: java.util.Map$Entry next()> 1
+54-I-MB-<androidx.arch.core.internal.SafeIterableMap$ListIterator: java.lang.Object next()> 1
+55-I-MB-<java.lang.Enum: int compareTo(java.lang.Enum)> 1
+56-I-MB-<java.lang.IllegalArgumentException: void <init>()> 0
+57-I-MB-<androidx.lifecycle.LifecycleRegistry: androidx.lifecycle.Lifecycle$Event downEvent(androidx.lifecycle.Lifecycle$State)> 9
+58-I-MB-<java.lang.Boolean: void <clinit>()> 0
+59-I-MB-<java.lang.Boolean: java.lang.Boolean valueOf(boolean)> 1
+60-I-MB-<java.util.WeakHashMap: java.lang.Object put(java.lang.Object,java.lang.Object)> 0
+61-I-MB-<androidx.arch.core.internal.SafeIterableMap$ListIterator: void <init>(androidx.arch.core.internal.SafeIterableMap$Entry,androidx.arch.core.internal.SafeIterableMap$Entry)> 1
+62-I-MB-<androidx.arch.core.internal.SafeIterableMap$DescendingIterator: void <init>(androidx.arch.core.internal.SafeIterableMap$Entry,androidx.arch.core.internal.SafeIterableMap$Entry)> 1
+63-I-MB-<androidx.arch.core.internal.SafeIterableMap: java.util.Iterator descendingIterator()> 4
+64-I-MB-<androidx.lifecycle.LifecycleRegistry: void backwardPass(androidx.lifecycle.LifecycleOwner)> 9
+65-I-MB-<androidx.arch.core.internal.SafeIterableMap$IteratorWithAdditions: java.util.Map$Entry next()> 0
+66-I-MB-<androidx.arch.core.internal.SafeIterableMap$IteratorWithAdditions: java.lang.Object next()> 1
+67-I-MB-<androidx.arch.core.internal.SafeIterableMap$IteratorWithAdditions: void <init>(androidx.arch.core.internal.SafeIterableMap)> 1
+68-I-MB-<androidx.arch.core.internal.SafeIterableMap: androidx.arch.core.internal.SafeIterableMap$IteratorWithAdditions iteratorWithAdditions()> 4
+69-I-MB-<androidx.arch.core.internal.SafeIterableMap$IteratorWithAdditions: boolean hasNext()> 0
+70-I-MB-<androidx.lifecycle.LifecycleRegistry: androidx.lifecycle.Lifecycle$Event upEvent(androidx.lifecycle.Lifecycle$State)> 8
+71-I-MB-<androidx.lifecycle.LifecycleRegistry: void forwardPass(androidx.lifecycle.LifecycleOwner)> 7
+72-I-MB-<java.lang.ref.WeakReference: java.lang.Object get()> 0
+73-I-MB-<androidx.arch.core.internal.SafeIterableMap: java.util.Map$Entry eldest()> 0
+74-I-MB-<androidx.arch.core.internal.SafeIterableMap: int size()> 0
+75-I-MB-<androidx.arch.core.internal.SafeIterableMap: java.util.Map$Entry newest()> 0
+76-I-MB-<androidx.lifecycle.LifecycleRegistry: boolean isSynced()> 3
+77-I-MB-<android.util.Log: int w(java.lang.String,java.lang.String)> 0
+78-I-MB-<androidx.lifecycle.LifecycleRegistry: void sync()> 8
+79-I-MB-<androidx.lifecycle.LifecycleRegistry: void moveToState(androidx.lifecycle.Lifecycle$State)> 1
+80-I-MB-<androidx.lifecycle.LifecycleRegistry: void handleLifecycleEvent(androidx.lifecycle.Lifecycle$Event)> 2
+81-I-MB-<androidx.fragment.app.Fragment: void onPause()> 0
+82-I-MB-<android.util.AndroidRuntimeException: void <init>(java.lang.String)> 0
+83-I-MB-<androidx.fragment.app.SuperNotCalledException: void <init>(java.lang.String)> 1
+84-I-MB-<androidx.fragment.app.Fragment: void performPause()> 8
+85-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchResume()> 0
+86-I-MB-<androidx.collection.SparseArrayCompat: void gc()> 1
+87-I-MB-<androidx.collection.SparseArrayCompat: int size()> 1
+88-I-MB-<androidx.collection.SparseArrayCompat: java.lang.Object valueAt(int)> 1
+89-I-MB-<androidx.loader.app.LoaderManagerImpl$LoaderViewModel: void markForRedelivery()> 2
+90-I-MB-<androidx.loader.app.LoaderManagerImpl: void markForRedelivery()> 1
+91-I-MB-<androidx.fragment.app.Fragment: void onDestroyView()> 0
+92-I-MB-<androidx.loader.app.LoaderManagerImpl$LoaderViewModel$1: void <init>()> 1
+93-I-MB-<androidx.loader.app.LoaderManagerImpl$LoaderViewModel: void <clinit>()> 1
+94-I-MB-<androidx.loader.app.LoaderManager: void <init>()> 1
+95-I-MB-<androidx.lifecycle.ViewModelProvider: void <init>(androidx.lifecycle.ViewModelStore,androidx.lifecycle.ViewModelProvider$Factory)> 1
+96-I-MB-<java.lang.Class: java.lang.String getCanonicalName()> 1
+97-I-MB-<java.util.HashMap: java.lang.Object get(java.lang.Object)> 0
+98-I-MB-<androidx.lifecycle.ViewModelStore: androidx.lifecycle.ViewModel get(java.lang.String)> 1
+99-I-MB-<androidx.lifecycle.ViewModel: void <init>()> 1
+100-I-MB-<androidx.collection.ContainerHelpers: int idealByteArraySize(int)>  100-I-MB-<androidx.collection.ContainerHelpers: int idealByteArraySize(int)> 0
+101-I-MB-<androidx.collection.ContainerHelpers: int idealIntArraySize(int)> 2
+102-I-MB-<androidx.collection.SparseArrayCompat: void <init>(int)> 3
+103-I-MB-<androidx.collection.SparseArrayCompat: void <init>()> 1
+104-I-MB-<androidx.loader.app.LoaderManagerImpl$LoaderViewModel: void <init>()> 3
+105-I-MB-<androidx.loader.app.LoaderManagerImpl$LoaderViewModel$1: androidx.lifecycle.ViewModel create(java.lang.Class)> 2
+106-I-MB-<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)> 0
+107-I-MB-<androidx.lifecycle.ViewModel: void onCleared()> 0
+108-I-MB-<androidx.collection.SparseArrayCompat: void clear()> 0
+109-I-MB-<androidx.loader.app.LoaderManagerImpl$LoaderViewModel: void onCleared()> 4
+110-I-MB-<androidx.lifecycle.ViewModelStore: void put(java.lang.String,androidx.lifecycle.ViewModel)> 2
+111-I-MB-<java.lang.Class: boolean isInstance(java.lang.Object)> 1
+112-I-MB-<androidx.lifecycle.ViewModelProvider: androidx.lifecycle.ViewModel get(java.lang.String,java.lang.Class)> 4
+113-I-MB-<androidx.lifecycle.ViewModelProvider: androidx.lifecycle.ViewModel get(java.lang.Class)> 6
+114-I-MB-<androidx.loader.app.LoaderManagerImpl$LoaderViewModel: androidx.loader.app.LoaderManagerImpl$LoaderViewModel getInstance(androidx.lifecycle.ViewModelStore)> 3
+115-I-MB-<androidx.loader.app.LoaderManagerImpl: void <init>(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.ViewModelStore)> 3
+116-I-MB-<java.util.HashMap: void <init>()> 0
+117-I-MB-<androidx.lifecycle.ViewModelStore: void <init>()> 2
+118-I-MB-<androidx.fragment.app.FragmentHostCallback: android.content.Context getContext()> 0
+119-I-MB-<androidx.fragment.app.Fragment: android.content.Context getContext()> 1
+120-I-MB-<java.lang.IllegalStateException: void <init>(java.lang.String)> 0
+121-I-MB-<androidx.fragment.app.Fragment: androidx.lifecycle.ViewModelStore getViewModelStore()> 3
+122-I-MB-<android.app.Activity: java.lang.Object getLastNonConfigurationInstance()> 0
+123-I-MB-<android.app.Activity: android.app.Application getApplication()> 0
+124-I-MB-<androidx.fragment.app.FragmentActivity: androidx.lifecycle.ViewModelStore getViewModelStore()> 4
+125-I-MB-<androidx.loader.app.LoaderManagerImpl: void <clinit>()> 0
+126-I-MB-<androidx.loader.app.LoaderManager: androidx.loader.app.LoaderManager getInstance(androidx.lifecycle.LifecycleOwner)> 4
+127-I-MB-<androidx.fragment.app.Fragment: void performDestroyView()> 10
+128-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchDestroy()> 0
+129-I-MB-<androidx.fragment.app.Fragment: void onDetach()> 0
+130-I-MB-<androidx.fragment.app.Fragment: void performDetach()> 7
+131-I-MB-<java.util.ArrayList: void add(int,java.lang.Object)> 0
+132-I-MB-<java.util.ArrayList: void <init>()> 0
+133-I-MB-<androidx.fragment.app.FragmentManagerImpl$StartEnterTransitionListener: void <init>(androidx.fragment.app.BackStackRecord,boolean)> 1
+134-I-MB-<java.util.ArrayList: java.lang.Object get(int)> 0
+135-I-MB-<androidx.fragment.app.FragmentManagerImpl: int postponePostponableTransactions(java.util.ArrayList,java.util.ArrayList,int,int,androidx.collection.ArraySet)> 6
+136-I-MB-<java.util.ArrayList: boolean isEmpty()> 0
+137-I-MB-<java.util.ArrayList: int indexOf(java.lang.Object)> 0
+138-I-MB-<androidx.fragment.app.FragmentManagerImpl: void executePostponedTransaction(java.util.ArrayList,java.util.ArrayList)> 4
+139-I-MB-<androidx.fragment.app.FragmentManagerImpl: void removeRedundantOperationsAndExecute(java.util.ArrayList,java.util.ArrayList)> 5
+140-I-MB-<androidx.fragment.app.Fragment: android.view.LayoutInflater onGetLayoutInflater(android.os.Bundle)> 0
+141-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchStart()> 0
+142-I-MB-<android.util.SparseArray: int size()> 0
+143-I-MB-<android.util.SparseArray: java.lang.Object valueAt(int)> 0
+144-I-MB-<androidx.fragment.app.FragmentManagerImpl: void startPendingDeferredFragments()> 2
+145-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchActivityCreated()> 0
+146-I-MB-<androidx.fragment.app.FragmentManagerImpl: void performPendingDeferredStart(androidx.fragment.app.Fragment)> 0
+147-I-MB-<androidx.fragment.app.FragmentManagerImpl: androidx.fragment.app.Fragment findFragmentUnder(androidx.fragment.app.Fragment)> 2
+148-I-MB-<androidx.fragment.app.FragmentManagerImpl: int transitToStyleIndex(int,boolean)> 0
+149-I-MB-<androidx.appcompat.widget.VectorEnabledTintResources: void <clinit>()> 0
+150-I-MB-<androidx.appcompat.widget.VectorEnabledTintResources: boolean isCompatVectorFromResourcesEnabled()> 1
+151-I-MB-<android.os.Build$VERSION: void <clinit>()> 0
+152-I-MB-<androidx.appcompat.widget.VectorEnabledTintResources: boolean shouldBeUsed()> 3
+153-I-MB-<android.view.ContextThemeWrapper: android.content.res.Resources getResources()> 0
+154-I-MB-<android.content.res.Resources: android.content.res.Configuration getConfiguration()> 0
+155-I-MB-<java.lang.ref.WeakReference: void <init>(java.lang.Object)> 0
+156-I-MB-<android.content.res.Resources: android.content.res.AssetManager getAssets()> 0
+157-I-MB-<android.content.res.Resources: void <init>(android.content.res.AssetManager,android.util.DisplayMetrics,android.content.res.Configuration)> 0
+158-I-MB-<android.content.res.Resources: android.util.DisplayMetrics getDisplayMetrics()> 0
+159-I-MB-<androidx.appcompat.widget.VectorEnabledTintResources: void <init>(android.content.Context,android.content.res.Resources)> 5
+160-I-MB-<androidx.appcompat.app.AppCompatActivity: android.content.res.Resources getResources()> 4
+161-I-MB-<androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator: void <init>(android.animation.Animator)> 2
+162-I-MB-<androidx.fragment.app.Fragment: android.animation.Animator onCreateAnimator(int,boolean,int)> 0
+163-I-MB-<android.view.animation.AnimationUtils: android.view.animation.Animation loadAnimation(android.content.Context,int)> 0
+164-I-MB-<android.animation.AnimatorInflater: android.animation.Animator loadAnimator(android.content.Context,int)> 0
+165-I-MB-<androidx.fragment.app.Fragment: int getNextAnim()> 0
+166-I-MB-<androidx.fragment.app.Fragment: android.view.animation.Animation onCreateAnimation(int,boolean,int)> 0
+167-I-MB-<android.view.animation.AlphaAnimation: void setDuration(long)> 0
+168-I-MB-<android.view.animation.AlphaAnimation: void <init>(float,float)> 0
+169-I-MB-<android.view.animation.AlphaAnimation: void setInterpolator(android.view.animation.Interpolator)> 0
+170-I-MB-<android.view.animation.AccelerateInterpolator: void <init>(float)> 0
+171-I-MB-<android.view.animation.DecelerateInterpolator: void <init>(float)> 0
+172-I-MB-<androidx.fragment.app.FragmentManagerImpl: void <clinit>()> 2
+173-I-MB-<androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator: void <init>(android.view.animation.Animation)> 2
+174-I-MB-<androidx.fragment.app.FragmentManagerImpl: androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator makeFadeAnimation(android.content.Context,float,float)> 5
+175-I-MB-<android.content.res.Resources: java.lang.String getResourceTypeName(int)> 0
+176-I-MB-<android.app.Activity: android.view.Window getWindow()> 0
+177-I-MB-<androidx.fragment.app.FragmentActivity$HostCallbacks: int onGetWindowAnimations()> 1
+178-I-MB-<androidx.fragment.app.FragmentActivity$HostCallbacks: boolean onHasWindowAnimations()> 1
+179-I-MB-<android.view.animation.AnimationSet: void addAnimation(android.view.animation.Animation)> 0
+180-I-MB-<android.view.animation.ScaleAnimation: void setInterpolator(android.view.animation.Interpolator)> 0
+181-I-MB-<android.view.animation.ScaleAnimation: void <init>(float,float,float,float,int,float,int,float)> 0
+182-I-MB-<android.view.animation.ScaleAnimation: void setDuration(long)> 0
+183-I-MB-<android.view.animation.AnimationSet: void <init>(boolean)> 0
+184-I-MB-<androidx.fragment.app.FragmentManagerImpl: androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator makeOpenCloseAnimation(android.content.Context,float,float,float,float)> 10
+185-I-MB-<androidx.fragment.app.FragmentManagerImpl: androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int)> 17
+186-I-MB-<android.view.animation.Animation: void start()> 0
+187-I-MB-<android.animation.AnimatorListenerAdapter: void <init>()> 0
+188-I-MB-<androidx.fragment.app.FragmentManagerImpl$4: void <init>(androidx.fragment.app.FragmentManagerImpl,android.view.ViewGroup,android.view.View,androidx.fragment.app.Fragment)> 1
+189-I-MB-<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)> 0
+190-I-MB-<android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)> 0
+191-I-MB-<androidx.fragment.app.FragmentManagerImpl: android.view.animation.Animation$AnimationListener getAnimationListener(android.view.animation.Animation)> 3
+192-I-MB-<androidx.fragment.app.FragmentManagerImpl$AnimatorOnHWLayerIfNeededListener: void <init>(android.view.View)> 1
+193-I-MB-<java.util.concurrent.atomic.AtomicInteger: void <init>(int)> 0
+194-I-MB-<androidx.core.view.ViewCompat: void <clinit>()> 1
+195-I-MB-<androidx.core.view.ViewCompat: boolean hasOverlappingRendering(android.view.View)> 1
+196-I-MB-<android.view.animation.AnimationSet: java.util.List getAnimations()> 0
+197-I-MB-<androidx.fragment.app.FragmentManagerImpl: boolean modifiesAlpha(android.animation.Animator)> 2
+198-I-MB-<androidx.fragment.app.FragmentManagerImpl: boolean modifiesAlpha(androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator)> 3
+199-I-MB-<androidx.fragment.app.FragmentManagerImpl: boolean shouldRunOnHWLayer(android.view.View,androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator)> 5
+200-I-MB-<android.view.animation.Animation: void setAnimationListener(android.view.animation.Animation$AnimationListener)>  200-I-MB-<android.view.animation.Animation: void setAnimationListener(android.view.animation.Animation$AnimationListener)> 0
+201-I-MB-<androidx.fragment.app.FragmentManagerImpl$AnimationListenerWrapper: void <init>(android.view.animation.Animation$AnimationListener)> 1
+202-I-MB-<androidx.fragment.app.FragmentManagerImpl$AnimateOnHWLayerIfNeededListener: void <init>(android.view.View,android.view.animation.Animation$AnimationListener)> 1
+203-I-MB-<androidx.fragment.app.FragmentManagerImpl: void setHWLayerAnimListenerIfAlpha(android.view.View,androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator)> 6
+204-I-MB-<androidx.fragment.app.FragmentManagerImpl: void completeShowHideFragment(androidx.fragment.app.Fragment)> 5
+205-I-MB-<java.lang.Math: int min(int,int)> 0
+206-I-MB-<androidx.fragment.app.FragmentManagerImpl: void moveFragmentToExpectedState(androidx.fragment.app.Fragment)> 6
+207-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchStateChange(int)> 0
+208-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchStop()> 0
+209-I-MB-<androidx.collection.ArraySet: void <clinit>()> 0
+210-I-MB-<androidx.collection.ArraySet: void allocArrays(int)> 1
+211-I-MB-<androidx.collection.ArraySet: int indexOfNull()> 2
+212-I-MB-<androidx.collection.ArraySet: int indexOf(java.lang.Object,int)> 2
+213-I-MB-<androidx.collection.ArraySet: void freeArrays(int[],java.lang.Object[],int)> 1
+214-I-MB-<androidx.collection.ArraySet: boolean add(java.lang.Object)> 7
+215-I-MB-<androidx.fragment.app.FragmentManagerImpl: void addAddedFragments(androidx.collection.ArraySet)> 4
+216-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchCreate()> 0
+217-I-MB-<androidx.fragment.app.FragmentManagerImpl: android.view.LayoutInflater$Factory2 getLayoutInflaterFactory()> 0
+218-I-MB-<java.lang.Class: java.lang.String getName()> 1
+219-I-MB-<androidx.core.view.LayoutInflaterCompat: void forceSetFactory2(android.view.LayoutInflater,android.view.LayoutInflater$Factory2)> 7
+220-I-MB-<androidx.core.view.LayoutInflaterCompat: void setFactory2(android.view.LayoutInflater,android.view.LayoutInflater$Factory2)> 2
+221-I-MB-<android.app.Activity: android.view.LayoutInflater getLayoutInflater()> 0
+222-I-MB-<androidx.fragment.app.FragmentActivity$HostCallbacks: android.view.LayoutInflater onGetLayoutInflater()> 1
+223-I-MB-<androidx.fragment.app.Fragment: android.view.LayoutInflater getLayoutInflater(android.os.Bundle)> 4
+224-I-MB-<androidx.fragment.app.Fragment: void onAttach(android.app.Activity)> 0
+225-I-MB-<androidx.fragment.app.FragmentHostCallback: android.app.Activity getActivity()> 0
+226-I-MB-<androidx.fragment.app.Fragment: void onAttach(android.content.Context)> 2
+227-I-MB-<androidx.fragment.app.Fragment: androidx.fragment.app.FragmentManager getFragmentManager()> 0
+228-I-MB-<java.util.concurrent.CopyOnWriteArrayList: java.util.Iterator iterator()> 0
+229-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchOnFragmentActivityCreated(androidx.fragment.app.Fragment,android.os.Bundle,boolean)> 2
+230-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchOnFragmentPreCreated(androidx.fragment.app.Fragment,android.os.Bundle,boolean)> 2
+231-I-MB-<androidx.fragment.app.Fragment: void <clinit>()> 2
+232-I-MB-<androidx.fragment.app.Fragment$AnimationInfo: void <init>()> 2
+233-I-MB-<androidx.fragment.app.Fragment: androidx.fragment.app.Fragment$AnimationInfo ensureAnimationInfo()> 1
+234-I-MB-<androidx.fragment.app.Fragment: void setAnimatingAway(android.view.View)> 1
+235-I-MB-<android.content.res.Resources: java.lang.String getResourceName(int)> 0
+236-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchOnFragmentStopped(androidx.fragment.app.Fragment,boolean)> 2
+237-I-MB-<android.util.Log: int v(java.lang.String,java.lang.String)> 0
+238-I-MB-<androidx.fragment.app.Fragment$2: android.view.View onFindViewById(int)> 1
+239-I-MB-<java.lang.StringBuilder: java.lang.StringBuilder append(int)> 0
+240-I-MB-<androidx.fragment.app.Fragment: android.content.Context requireContext()> 6
+241-I-MB-<androidx.fragment.app.Fragment: android.content.res.Resources getResources()> 2
+242-I-MB-<androidx.fragment.app.FragmentActivity: void onAttachFragment(androidx.fragment.app.Fragment)> 0
+243-I-MB-<androidx.fragment.app.FragmentActivity$HostCallbacks: void onAttachFragment(androidx.fragment.app.Fragment)> 1
+244-I-MB-<androidx.fragment.app.Fragment: void setStateAfterAnimating(int)> 1
+245-I-MB-<androidx.fragment.app.Fragment: void setAnimator(android.animation.Animator)> 1
+246-I-MB-<androidx.fragment.app.Fragment: boolean isInBackStack()> 0
+247-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchOnFragmentDetached(androidx.fragment.app.Fragment,boolean)> 2
+248-I-MB-<androidx.fragment.app.Fragment: int getStateAfterAnimating()> 0
+249-I-MB-<java.lang.Integer: java.lang.String toHexString(int)> 1
+250-I-MB-<android.util.SparseArray: void put(int,java.lang.Object)> 0
+251-I-MB-<androidx.fragment.app.Fragment: void initState()> 0
+252-I-MB-<androidx.fragment.app.FragmentManagerImpl: void makeInactive(androidx.fragment.app.Fragment)> 8
+253-I-MB-<androidx.fragment.app.Fragment: android.view.View getAnimatingAway()> 0
+254-I-MB-<androidx.fragment.app.Fragment: void onAttachFragment(androidx.fragment.app.Fragment)> 0
+255-I-MB-<java.lang.String: void <clinit>()> 0
+256-I-MB-<java.io.PrintWriter: void print(int)> 0
+257-I-MB-<java.io.PrintWriter: void print(java.lang.String)> 0
+258-I-MB-<java.io.PrintWriter: void println(java.lang.String)> 0
+259-I-MB-<java.io.PrintWriter: void println(java.lang.Object)> 0
+260-I-MB-<java.lang.System: int identityHashCode(java.lang.Object)> 0
+261-I-MB-<java.io.PrintWriter: void println(boolean)> 0
+262-I-MB-<java.lang.Object: java.lang.Class getClass()> 1
+263-I-MB-<java.lang.StringBuilder: java.lang.StringBuilder append(char)> 0
+264-I-MB-<java.lang.Integer: void <clinit>()> 0
+265-I-MB-<androidx.core.util.DebugUtils: void buildShortClassTag(java.lang.Object,java.lang.StringBuilder)> 7
+266-I-MB-<java.lang.StringBuilder: void <init>(int)> 0
+267-I-MB-<androidx.fragment.app.Fragment: java.lang.String toString()> 8
+268-I-MB-<java.util.Arrays: java.lang.String toString(java.lang.Object[])> 0
+269-I-MB-<java.io.PrintWriter: void print(boolean)> 0
+270-I-MB-<java.util.ArrayList: java.lang.Object[] toArray()> 0
+271-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])> 20
+272-I-MB-<java.io.PrintWriter: void print(java.lang.Object)> 0
+273-I-MB-<androidx.collection.SparseArrayCompat: int keyAt(int)> 1
+274-I-MB-<androidx.loader.app.LoaderManagerImpl$LoaderViewModel: void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])> 9
+275-I-MB-<androidx.loader.app.LoaderManagerImpl: void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])> 1
+276-I-MB-<java.io.PrintWriter: void println(int)> 0
+277-I-MB-<androidx.fragment.app.Fragment: void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])> 20
+278-I-MB-SCC32996 2
+279-I-MB-<java.io.PrintWriter: void <init>(java.io.Writer)> 0
+280-I-MB-<java.lang.Throwable: java.lang.String getMessage()> 1
+281-I-MB-<android.util.Log: int e(java.lang.String,java.lang.String)> 0
+282-I-MB-<android.app.Activity: void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])> 0
+283-I-MB-<androidx.fragment.app.FragmentHostCallback: androidx.fragment.app.FragmentManagerImpl getFragmentManagerImpl()> 0
+284-I-MB-<androidx.fragment.app.FragmentController: androidx.fragment.app.FragmentManager getSupportFragmentManager()> 1
+285-I-MB-<androidx.fragment.app.FragmentActivity: void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])> 16
+286-I-MB-<androidx.fragment.app.FragmentActivity$HostCallbacks: void onDump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])> 1
+287-I-MB-<java.io.Writer: void <init>()> 0
+288-I-MB-<androidx.core.util.LogWriter: void <init>(java.lang.String)> 2
+289-I-MB-<androidx.fragment.app.FragmentManagerImpl: void throwException(java.lang.RuntimeException)> 8
+290-I-MB-<android.util.SparseArray: java.lang.Object get(int)> 0
+291-I-MB-<androidx.fragment.app.FragmentManagerImpl: androidx.fragment.app.Fragment getFragment(android.os.Bundle,java.lang.String)> 7
+292-I-MB-<androidx.fragment.app.Fragment: void onViewCreated(android.view.View,android.os.Bundle)> 0
+293-I-MB-<android.util.SparseArray: void clear()> 0
+294-I-MB-<android.util.SparseArray: void <init>()> 0
+295-I-MB-<androidx.fragment.app.FragmentManagerImpl: void saveFragmentViewState(androidx.fragment.app.Fragment)> 3
+296-I-MB-<androidx.fragment.app.Fragment$3: void <init>(androidx.fragment.app.Fragment)> 1
+297-I-MB-<androidx.fragment.app.Fragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)> 0
+298-I-MB-<androidx.arch.core.executor.ArchTaskExecutor$1: void <init>()> 1
+299-I-MB-<androidx.arch.core.executor.ArchTaskExecutor$2: void <init>()> 1
+300-I-MB-<androidx.arch.core.executor.ArchTaskExecutor: void <clinit>()>  300-I-MB-<androidx.arch.core.executor.ArchTaskExecutor: void <clinit>()> 2
+301-I-MB-<android.os.Looper: android.os.Looper getMainLooper()> 0
+302-I-MB-<java.lang.Thread: java.lang.Thread currentThread()> 0
+303-I-MB-<androidx.arch.core.executor.DefaultTaskExecutor: boolean isMainThread()> 2
+304-I-MB-<androidx.arch.core.executor.ArchTaskExecutor: boolean isMainThread()> 1
+305-I-MB-<androidx.arch.core.executor.DefaultTaskExecutor$1: void <init>(androidx.arch.core.executor.DefaultTaskExecutor)> 2
+306-I-MB-<androidx.arch.core.executor.TaskExecutor: void <init>()> 1
+307-I-MB-<java.util.concurrent.Executors: java.util.concurrent.ExecutorService newFixedThreadPool(int,java.util.concurrent.ThreadFactory)> 0
+308-I-MB-<androidx.arch.core.executor.DefaultTaskExecutor: void <init>()> 4
+309-I-MB-<androidx.arch.core.executor.ArchTaskExecutor: void <init>()> 2
+310-I-MB-<androidx.arch.core.executor.ArchTaskExecutor: androidx.arch.core.executor.ArchTaskExecutor getInstance()> 2
+311-I-MB-<androidx.lifecycle.LiveData: void assertMainThread(java.lang.String)> 7
+312-I-MB-<androidx.lifecycle.LiveData: void considerNotify(androidx.lifecycle.LiveData$ObserverWrapper)> 0
+313-I-MB-<androidx.lifecycle.LiveData: void dispatchingValue(androidx.lifecycle.LiveData$ObserverWrapper)> 4
+314-I-MB-<androidx.lifecycle.LiveData: void <clinit>()> 1
+315-I-MB-<androidx.lifecycle.LiveData: void setValue(java.lang.Object)> 3
+316-I-MB-<androidx.lifecycle.MutableLiveData: void setValue(java.lang.Object)> 1
+317-I-MB-<androidx.lifecycle.Lifecycle: void <init>()> 1
+318-I-MB-<java.util.WeakHashMap: void <init>()> 0
+319-I-MB-<androidx.arch.core.internal.SafeIterableMap: void <init>()> 2
+320-I-MB-<androidx.arch.core.internal.FastSafeIterableMap: void <init>()> 2
+321-I-MB-<androidx.lifecycle.LifecycleRegistry: void <init>(androidx.lifecycle.LifecycleOwner)> 5
+322-I-MB-<androidx.fragment.app.Fragment$3: androidx.lifecycle.Lifecycle getLifecycle()> 1
+323-I-MB-<androidx.fragment.app.FragmentManagerImpl: void noteStateNotSaved()> 2
+324-I-MB-<androidx.fragment.app.Fragment: void performCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)> 6
+325-I-MB-<android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)> 0
+326-I-MB-<androidx.appcompat.R$styleable: void <clinit>()> 0
+327-I-MB-<android.content.Context: android.content.res.TypedArray obtainStyledAttributes(int[])> 0
+328-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void applyFixedSizeWindow()> 2
+329-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void onSubDecorInstalled(android.view.ViewGroup)> 0
+330-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: java.lang.CharSequence getTitle()> 0
+331-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState: void <init>(int)> 1
+332-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState getPanelState(int,boolean)> 3
+333-I-MB-<android.text.TextUtils: void <clinit>()> 0
+334-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: androidx.appcompat.app.ActionBar peekSupportActionBar()> 0
+335-I-MB-<androidx.core.view.ViewCompat$1: void <init>(androidx.core.view.OnApplyWindowInsetsListener)> 1
+336-I-MB-<androidx.core.view.ViewCompat: void setOnApplyWindowInsetsListener(android.view.View,androidx.core.view.OnApplyWindowInsetsListener)> 2
+337-I-MB-<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)> 0
+338-I-MB-<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])> 1
+339-I-MB-<android.util.Log: int d(java.lang.String,java.lang.String)> 0
+340-I-MB-<androidx.appcompat.widget.ViewUtils: void <clinit>()> 3
+341-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$5: void <init>(androidx.appcompat.app.AppCompatDelegateImpl)> 1
+342-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void throwFeatureRequestIfSubDecorInstalled()> 1
+343-I-MB-<android.util.Log: int i(java.lang.String,java.lang.String)> 0
+344-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: int sanitizeWindowFeatureId(int)> 1
+345-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: boolean requestWindowFeature(int)> 2
+346-I-MB-<android.util.Log: int d(java.lang.String,java.lang.String,java.lang.Throwable)> 0
+347-I-MB-<androidx.appcompat.widget.ViewUtils: void makeOptionalFitsSystemWindows(android.view.View)> 3
+348-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: android.view.Window$Callback getWindowCallback()> 0
+349-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$3: void <init>(androidx.appcompat.app.AppCompatDelegateImpl)> 1
+350-I-MB-<android.view.LayoutInflater: android.view.LayoutInflater 'from'(android.content.Context)> 0
+351-I-MB-<android.util.TypedValue: void <init>()> 0
+352-I-MB-<android.view.ContextThemeWrapper: android.content.res.Resources$Theme getTheme()> 0
+353-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$4: void <init>(androidx.appcompat.app.AppCompatDelegateImpl)> 1
+354-I-MB-<android.content.ContextWrapper: void <init>(android.content.Context)> 0
+355-I-MB-<androidx.appcompat.view.ContextThemeWrapper: void <init>(android.content.Context,int)> 1
+356-I-MB-<androidx.appcompat.view.ContextThemeWrapper: void onApplyThemeResource(android.content.res.Resources$Theme,int,boolean)> 0
+357-I-MB-<android.content.ContextWrapper: android.content.Context getBaseContext()> 0
+358-I-MB-<android.content.ContextWrapper: android.content.res.Resources getResources()> 0
+359-I-MB-<android.content.ContextWrapper: android.content.Context createConfigurationContext(android.content.res.Configuration)> 0
+360-I-MB-<androidx.appcompat.view.ContextThemeWrapper: android.content.res.Resources getResourcesInternal()> 3
+361-I-MB-<androidx.appcompat.view.ContextThemeWrapper: android.content.res.Resources getResources()> 1
+362-I-MB-<androidx.appcompat.view.ContextThemeWrapper: void initializeTheme()> 3
+363-I-MB-<androidx.appcompat.view.ContextThemeWrapper: android.content.res.Resources$Theme getTheme()> 1
+364-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: android.view.ViewGroup createSubDecor()> 23
+365-I-MB-<androidx.appcompat.app.WindowDecorActionBar: void setWindowTitle(java.lang.CharSequence)> 0
+366-I-MB-<java.util.concurrent.CopyOnWriteArrayList: boolean isEmpty()> 0
+367-I-MB-<androidx.appcompat.view.menu.MenuBuilder: void stopDispatchingItemsChanged()> 0
+368-I-MB-<java.util.concurrent.CopyOnWriteArrayList: boolean remove(java.lang.Object)> 0
+369-I-MB-<androidx.appcompat.view.menu.MenuBuilder: void dispatchPresenterUpdate(boolean)> 4
+370-I-MB-<androidx.appcompat.view.menu.MenuBuilder: void startDispatchingItemsChanged()> 0
+371-I-MB-<androidx.appcompat.view.menu.MenuBuilder: void onItemsChanged(boolean)> 0
+372-I-MB-SCC33223 3
+373-I-MB-<androidx.appcompat.view.menu.MenuBuilder: boolean collapseItemActionView(androidx.appcompat.view.menu.MenuItemImpl)> 5
+374-I-MB-<java.util.ArrayList: void clear()> 0
+375-I-MB-<androidx.appcompat.view.menu.MenuBuilder: void clear()> 3
+376-I-MB-<android.os.BaseBundle: int size()> 0
+377-I-MB-<android.os.Bundle: void putInt(java.lang.String,int)> 0
+378-I-MB-<android.os.Bundle: void putSparseParcelableArray(java.lang.String,android.util.SparseArray)> 0
+379-I-MB-<androidx.appcompat.view.menu.MenuBuilder: int size()> 1
+380-I-MB-<androidx.appcompat.view.menu.MenuBuilder: android.view.MenuItem getItem(int)> 1
+381-I-MB-<androidx.appcompat.view.menu.MenuBuilder: void saveActionViewStates(android.os.Bundle)> 5
+382-I-MB-<android.os.Bundle: void <clinit>()> 0
+383-I-MB-<androidx.appcompat.view.menu.MenuBuilder: void setCallback(androidx.appcompat.view.menu.MenuBuilder$Callback)> 0
+384-I-MB-<androidx.appcompat.view.menu.MenuBuilder: void removeMenuPresenter(androidx.appcompat.view.menu.MenuPresenter)> 2
+385-I-MB-<java.util.concurrent.CopyOnWriteArrayList: boolean add(java.lang.Object)> 0
+386-I-MB-<androidx.appcompat.view.menu.MenuBuilder: void addMenuPresenter(androidx.appcompat.view.menu.MenuPresenter,android.content.Context)> 2
+387-I-MB-<androidx.appcompat.view.menu.MenuBuilder: void addMenuPresenter(androidx.appcompat.view.menu.MenuPresenter)> 1
+388-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState: void setMenu(androidx.appcompat.view.menu.MenuBuilder)> 2
+389-I-MB-<androidx.appcompat.view.menu.MenuBuilder: void <clinit>()> 0
+390-I-MB-<android.content.res.Resources: android.content.res.Resources$Theme newTheme()> 0
+391-I-MB-<java.util.concurrent.CopyOnWriteArrayList: void <init>()> 0
+392-I-MB-<android.view.ViewConfiguration: android.view.ViewConfiguration get(android.content.Context)> 0
+393-I-MB-<androidx.core.view.ViewConfigurationCompat: void <clinit>()> 3
+394-I-MB-<android.content.res.Resources: int getIdentifier(java.lang.String,java.lang.String,java.lang.String)> 0
+395-I-MB-<android.content.res.Resources: boolean getBoolean(int)> 0
+396-I-MB-<androidx.core.view.ViewConfigurationCompat: boolean shouldShowMenuShortcutsWhenKeyboardPresent(android.view.ViewConfiguration,android.content.Context)> 5
+397-I-MB-<androidx.appcompat.view.menu.MenuBuilder: void setShortcutsVisibleInner(boolean)> 4
+398-I-MB-<androidx.appcompat.view.menu.MenuBuilder: void <init>(android.content.Context)> 6
+399-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: boolean initializePanelMenu(androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState)> 11
+400-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$ActionMenuPresenterCallback: void <init>(androidx.appcompat.app.AppCompatDelegateImpl)>  400-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$ActionMenuPresenterCallback: void <init>(androidx.appcompat.app.AppCompatDelegateImpl)> 1
+401-I-MB-<androidx.appcompat.view.menu.MenuBuilder: android.view.MenuItem findItem(int)> 2
+402-I-MB-<android.os.Bundle: int getInt(java.lang.String)> 0
+403-I-MB-<android.os.Bundle: android.util.SparseArray getSparseParcelableArray(java.lang.String)> 0
+404-I-MB-<androidx.appcompat.view.menu.MenuBuilder: void restoreActionViewStates(android.os.Bundle)> 5
+405-I-MB-<android.view.KeyCharacterMap: void <clinit>()> 0
+406-I-MB-<androidx.appcompat.view.menu.MenuBuilder: void setQwertyMode(boolean)> 1
+407-I-MB-<android.app.Activity: java.lang.Object getSystemService(java.lang.String)> 0
+408-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void closePanel(androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState,boolean)> 1
+409-I-MB-<android.view.KeyCharacterMap: android.view.KeyCharacterMap load(int)> 0
+410-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: boolean preparePanel(androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState,android.view.KeyEvent)> 12
+411-I-MB-<android.os.Bundle: void <init>()> 0
+412-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void doInvalidatePanelMenu(int)> 8
+413-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$2: void run()> 1
+414-I-MB-<android.animation.ValueAnimator: long getFrameDelay()> 0
+415-I-MB-<androidx.core.view.ViewCompat: void postOnAnimation(android.view.View,java.lang.Runnable)> 3
+416-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void invalidatePanelMenu(int)> 2
+417-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void ensureSubDecor()> 10
+418-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: android.view.View findViewById(int)> 1
+419-I-MB-<androidx.appcompat.app.AppCompatDelegate: void <clinit>()> 0
+420-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$1: void <init>(java.lang.Thread$UncaughtExceptionHandler)> 1
+421-I-MB-<java.lang.Thread: java.lang.Thread$UncaughtExceptionHandler getDefaultUncaughtExceptionHandler()> 1
+422-I-MB-<java.lang.Thread: void setDefaultUncaughtExceptionHandler(java.lang.Thread$UncaughtExceptionHandler)> 1
+423-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void <clinit>()> 5
+424-I-MB-<androidx.appcompat.app.AppCompatDelegate: void <init>()> 1
+425-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$2: void <init>(androidx.appcompat.app.AppCompatDelegateImpl)> 1
+426-I-MB-<java.lang.Class: java.lang.String getSimpleName()> 1
+427-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: void <clinit>()> 1
+428-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager$AsldcInflateDelegate: android.graphics.drawable.Drawable createFromXmlInner(android.content.Context,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 3
+429-I-MB-<java.lang.ThreadLocal: void <init>()> 0
+430-I-MB-<androidx.appcompat.widget.ThemeUtils: void <clinit>()> 1
+431-I-MB-<android.graphics.drawable.Drawable: boolean setState(int[])> 0
+432-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: int[] getState()> 0
+433-I-MB-<android.graphics.drawable.Drawable: int[] getState()> 0
+434-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCommon: int[] getState()> 1
+435-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: int[] getState()> 1
+436-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: int[] getState()> 0
+437-I-MB-SCC33871 4
+438-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: boolean setState(int[])> 0
+439-I-MB-<android.content.res.ColorStateList: int getColorForState(int[],int)> 0
+440-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi21: boolean isCompatTintEnabled()> 1
+441-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: boolean isCompatTintEnabled()> 0
+442-I-MB-<android.content.res.ColorStateList: int getDefaultColor()> 0
+443-I-MB-<android.graphics.drawable.Drawable: void clearColorFilter()> 0
+444-I-MB-<android.graphics.drawable.Drawable: void setColorFilter(int,android.graphics.PorterDuff$Mode)> 0
+445-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: boolean updateTint(int[])> 6
+446-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: boolean setState(int[])> 2
+447-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: boolean setState(int[])> 0
+448-I-MB-<android.graphics.drawable.Drawable: void invalidateSelf()> 0
+449-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi21: boolean setState(int[])> 1
+450-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCommon: boolean setState(int[])> 1
+451-I-MB-SCC33861 5
+452-I-MB-<androidx.appcompat.widget.DrawableUtils: void fixVectorDrawableTinting(android.graphics.drawable.Drawable)> 5
+453-I-MB-<android.graphics.Rect: void <clinit>()> 0
+454-I-MB-<java.lang.Class: java.lang.Class forName(java.lang.String)> 1
+455-I-MB-<android.graphics.Rect: void <init>()> 0
+456-I-MB-<androidx.appcompat.widget.DrawableUtils: void <clinit>()> 4
+457-I-MB-<androidx.appcompat.widget.DrawableUtils: void fixDrawable(android.graphics.drawable.Drawable)> 5
+458-I-MB-<java.util.LinkedHashMap: void <init>(int,float,boolean)> 0
+459-I-MB-<androidx.collection.LruCache: void <init>(int)> 2
+460-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager$ColorFilterLruCache: void <init>(int)> 1
+461-I-MB-<android.graphics.PorterDuff$Mode: void <clinit>()> 0
+462-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: void <clinit>()> 2
+463-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: void setAlpha(int)> 0
+464-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: void jumpToCurrentState()> 0
+465-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatedStateListState cloneConstantState()> 0
+466-I-MB-<android.graphics.drawable.Drawable: boolean setVisible(boolean,boolean)> 0
+467-I-MB-<android.graphics.drawable.LayerDrawable: boolean setVisible(boolean,boolean)> 0
+468-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: boolean setVisible(boolean,boolean)> 2
+469-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState cloneConstantState()> 0
+470-I-MB-<android.graphics.drawable.LayerDrawable: void jumpToCurrentState()> 0
+471-I-MB-<androidx.core.graphics.drawable.DrawableCompat: void jumpToCurrentState(android.graphics.drawable.Drawable)> 1
+472-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPathRenderer: int getRootAlpha()> 0
+473-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPathRenderer: void setRootAlpha(int)> 0
+474-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: void invalidateSelf()> 1
+475-I-MB-<android.graphics.drawable.LayerDrawable: void setAlpha(int)> 0
+476-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: void setAlpha(int)> 4
+477-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: void setAlpha(int)> 1
+478-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: boolean setVisible(boolean,boolean)> 1
+479-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState: int getChangingConfigurations()> 0
+480-I-MB-<android.graphics.drawable.Drawable: int getChangingConfigurations()> 0
+481-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: int getChangingConfigurations()> 2
+482-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: int getChangingConfigurations()> 1
+483-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: android.graphics.drawable.Drawable$ConstantState getConstantState()> 1
+484-I-MB-<androidx.appcompat.graphics.drawable.StateListDrawable: void setConstantState(androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState)> 0
+485-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: void jumpToCurrentState()> 1
+486-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: void setConstantState(androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState)> 0
+487-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: void jumpToCurrentState()> 0
+488-I-MB-<java.lang.Error: void <init>()> 1
+489-I-MB-<java.lang.AssertionError: void <init>(java.lang.Object)> 2
+490-I-MB-<androidx.collection.SparseArrayCompat: androidx.collection.SparseArrayCompat clone()> 2
+491-I-MB-<androidx.collection.LongSparseArray: androidx.collection.LongSparseArray clone()> 2
+492-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatedStateListState: void mutate()> 2
+493-I-MB-<androidx.appcompat.graphics.drawable.StateListDrawable: android.graphics.drawable.Drawable mutate()> 1
+494-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: void setAlpha(int)> 0
+495-I-MB-<android.graphics.drawable.LayerDrawable: android.graphics.drawable.Drawable mutate()> 0
+496-I-MB-<android.graphics.drawable.Drawable: android.graphics.drawable.Drawable mutate()> 0
+497-I-MB-<android.graphics.Paint: void <init>(android.graphics.Paint)> 0
+498-I-MB-<android.graphics.drawable.Drawable$ConstantState: void <init>()> 0
+499-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: void <clinit>()> 1
+500-I-MB-<android.graphics.Path: void <init>(android.graphics.Path)>  500-I-MB-<android.graphics.Path: void <init>(android.graphics.Path)> 0
+501-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VObject: void <init>()> 1
+502-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VObject: void <init>(androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$1)> 1
+503-I-MB-<android.graphics.Paint$Cap: void <clinit>()> 0
+504-I-MB-<android.graphics.Paint$Join: void <clinit>()> 0
+505-I-MB-<java.lang.RuntimeException: void <init>()> 1
+506-I-MB-<java.lang.IndexOutOfBoundsException: void <init>()> 2
+507-I-MB-<java.lang.ArrayIndexOutOfBoundsException: void <init>()> 2
+508-I-MB-<androidx.core.graphics.PathParser: float[] copyOfRange(float[],int,int)> 5
+509-I-MB-<androidx.core.graphics.PathParser$PathDataNode: void <init>(androidx.core.graphics.PathParser$PathDataNode)> 2
+510-I-MB-<androidx.core.graphics.PathParser: androidx.core.graphics.PathParser$PathDataNode[] deepCopyNodes(androidx.core.graphics.PathParser$PathDataNode[])> 1
+511-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPath: void <init>(androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPath)> 2
+512-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: void <init>(androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath)> 3
+513-I-MB-<android.graphics.Matrix: void set(android.graphics.Matrix)> 0
+514-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VClipPath: void <init>(androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VClipPath)> 1
+515-I-MB-<android.graphics.Matrix: void <init>()> 0
+516-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: void <init>(androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup,androidx.collection.ArrayMap)> 11
+517-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPathRenderer: void <init>(androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPathRenderer)> 6
+518-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPathRenderer: void <clinit>()> 1
+519-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VectorDrawableCompatState: void <init>(androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VectorDrawableCompatState)> 5
+520-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: android.graphics.drawable.Drawable mutate()> 0
+521-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: android.graphics.drawable.Drawable mutate()> 4
+522-I-MB-<android.graphics.drawable.Drawable: void setCallback(android.graphics.drawable.Drawable$Callback)> 0
+523-I-MB-<android.graphics.drawable.Drawable: boolean setLayoutDirection(int)> 0
+524-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState: android.graphics.drawable.Drawable prepareDrawable(android.graphics.drawable.Drawable)> 5
+525-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: boolean setVisible(boolean,boolean)> 2
+526-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: void setConstantState(androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState)> 0
+527-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: void setAlpha(int)> 1
+528-I-MB-<androidx.collection.LongSparseArray: void <clinit>()> 1
+529-I-MB-<androidx.collection.ContainerHelpers: int idealLongArraySize(int)> 2
+530-I-MB-<androidx.collection.LongSparseArray: void <init>(int)> 3
+531-I-MB-<androidx.collection.LongSparseArray: void <init>()> 1
+532-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatedStateListState: void <init>(androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatedStateListState,androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat,android.content.res.Resources)> 4
+533-I-MB-<android.graphics.drawable.Drawable: void unscheduleSelf(java.lang.Runnable)> 0
+534-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$1: void <init>(androidx.appcompat.graphics.drawable.DrawableContainer)> 1
+535-I-MB-<android.os.SystemClock: long uptimeMillis()> 0
+536-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: boolean selectDrawable(int)> 5
+537-I-MB-<android.animation.AnimatorSet: void start()> 0
+538-I-MB-<android.animation.AnimatorSet: boolean isStarted()> 0
+539-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: void start()> 3
+540-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatableTransition: void start()> 1
+541-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimationDrawableTransition: void start()> 0
+542-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatedVectorDrawableTransition: void start()> 1
+543-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: boolean setVisible(boolean,boolean)> 3
+544-I-MB-<android.graphics.drawable.LayerDrawable: android.graphics.drawable.Drawable$ConstantState getConstantState()> 0
+545-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14$DrawableWrapperState: boolean canConstantState()> 0
+546-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: int getChangingConfigurations()> 1
+547-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VectorDrawableCompatState: int getChangingConfigurations()> 0
+548-I-MB-<android.graphics.drawable.LayerDrawable: int getChangingConfigurations()> 0
+549-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: int getChangingConfigurations()> 5
+550-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat$AnimatedVectorDrawableDelegateState: int getChangingConfigurations()> 0
+551-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14$DrawableWrapperState: int getChangingConfigurations()> 3
+552-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VectorDrawableDelegateState: int getChangingConfigurations()> 3
+553-I-MB-SCC33823 2
+554-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: int getChangingConfigurations()> 5
+555-I-MB-SCC33822 2
+556-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: android.graphics.drawable.Drawable$ConstantState getConstantState()> 2
+557-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VectorDrawableDelegateState: void <init>(android.graphics.drawable.Drawable$ConstantState)> 1
+558-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat$AnimatedVectorDrawableDelegateState: void <init>(android.graphics.drawable.Drawable$ConstantState)> 1
+559-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: android.graphics.drawable.Drawable$ConstantState getConstantState()> 2
+560-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: android.graphics.drawable.Drawable$ConstantState getConstantState()> 6
+561-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: android.graphics.drawable.Drawable mutate()> 1
+562-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: boolean setVisible(boolean,boolean)> 2
+563-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: void jumpToCurrentState()> 3
+564-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCommon: void jumpToCurrentState()> 0
+565-I-MB-<android.util.SparseArray: android.util.SparseArray clone()> 0
+566-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: int resolveDensity(android.content.res.Resources,int)> 1
+567-I-MB-<android.graphics.Rect: void <init>(android.graphics.Rect)> 0
+568-I-MB-<android.util.SparseArray: void <init>(int)> 0
+569-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState: void <init>(androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState,androidx.appcompat.graphics.drawable.DrawableContainer,android.content.res.Resources)> 10
+570-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimationDrawableTransition: void stop()> 0
+571-I-MB-<android.animation.AnimatorSet: void end()> 0
+572-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: void stop()> 1
+573-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatableTransition: void stop()> 1
+574-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatedVectorDrawableTransition: void stop()> 1
+575-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: void jumpToCurrentState()> 3
+576-I-MB-<android.util.SparseArray: int keyAt(int)> 0
+577-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState: void createAllFutures()> 3
+578-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: void <clinit>()> 1
+579-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14$DrawableWrapperState: void <init>(androidx.core.graphics.drawable.WrappedDrawableApi14$DrawableWrapperState,android.content.res.Resources)> 2
+580-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi21$DrawableWrapperStateLollipop: void <init>(androidx.core.graphics.drawable.WrappedDrawableApi14$DrawableWrapperState,android.content.res.Resources)> 1
+581-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi21: androidx.core.graphics.drawable.WrappedDrawableApi14$DrawableWrapperState mutateConstantState()> 1
+582-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14$DrawableWrapperStateBase: void <init>(androidx.core.graphics.drawable.WrappedDrawableApi14$DrawableWrapperState,android.content.res.Resources)> 1
+583-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: androidx.core.graphics.drawable.WrappedDrawableApi14$DrawableWrapperState mutateConstantState()> 1
+584-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: android.graphics.drawable.Drawable mutate()> 8
+585-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: android.graphics.drawable.Drawable mutate()> 2
+586-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState: int getCapacity()> 0
+587-I-MB-<androidx.appcompat.graphics.drawable.StateListDrawable$StateListState: void <init>(androidx.appcompat.graphics.drawable.StateListDrawable$StateListState,androidx.appcompat.graphics.drawable.StateListDrawable,android.content.res.Resources)> 1
+588-I-MB-<android.util.SparseArray: int indexOfKey(int)> 0
+589-I-MB-<android.util.SparseArray: void removeAt(int)> 0
+590-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState: android.graphics.drawable.Drawable getChild(int)> 4
+591-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState: boolean canConstantState()> 3
+592-I-MB-<android.graphics.drawable.Drawable: void scheduleSelf(java.lang.Runnable,long)> 0
+593-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: void animate(boolean)> 4
+594-I-MB-<android.graphics.drawable.Drawable: void setHotspotBounds(int,int,int,int)> 0
+595-I-MB-<android.graphics.drawable.Drawable: boolean setLevel(int)> 0
+596-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$BlockInvalidateCallback: androidx.appcompat.graphics.drawable.DrawableContainer$BlockInvalidateCallback wrap(android.graphics.drawable.Drawable$Callback)> 0
+597-I-MB-<android.graphics.drawable.Drawable: android.graphics.Rect getBounds()> 0
+598-I-MB-<android.graphics.drawable.LayerDrawable: void setDither(boolean)> 0
+599-I-MB-<android.graphics.drawable.Drawable: int getLevel()> 0
+600-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$BlockInvalidateCallback: void <init>()>  600-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$BlockInvalidateCallback: void <init>()> 1
+601-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: void setDither(boolean)> 0
+602-I-MB-<android.graphics.drawable.Drawable: void setDither(boolean)> 0
+603-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: void setDither(boolean)> 2
+604-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: void setDither(boolean)> 2
+605-I-MB-SCC33760 3
+606-I-MB-<android.graphics.drawable.Drawable: int getLayoutDirection()> 0
+607-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: void setTintList(android.content.res.ColorStateList)> 0
+608-I-MB-<android.graphics.drawable.LayerDrawable: void setTintList(android.content.res.ColorStateList)> 0
+609-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: void setTintList(android.content.res.ColorStateList)> 2
+610-I-MB-<androidx.core.graphics.drawable.DrawableCompat: void setTintList(android.graphics.drawable.Drawable,android.content.res.ColorStateList)> 3
+611-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: void setTintList(android.content.res.ColorStateList)> 0
+612-I-MB-<android.graphics.PorterDuffColorFilter: void <init>(int,android.graphics.PorterDuff$Mode)> 0
+613-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: android.graphics.PorterDuffColorFilter updateTintFilter(android.graphics.PorterDuffColorFilter,android.content.res.ColorStateList,android.graphics.PorterDuff$Mode)> 3
+614-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: void setTintList(android.content.res.ColorStateList)> 2
+615-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi21: void setTintList(android.content.res.ColorStateList)> 3
+616-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: void setTintList(android.content.res.ColorStateList)> 0
+617-I-MB-SCC33776 6
+618-I-MB-<android.graphics.drawable.Drawable: void setBounds(android.graphics.Rect)> 0
+619-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$BlockInvalidateCallback: android.graphics.drawable.Drawable$Callback unwrap()> 0
+620-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCommon: void setHotspotBounds(int,int,int,int)> 0
+621-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: void setHotspotBounds(int,int,int,int)> 0
+622-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: void setHotspotBounds(int,int,int,int)> 0
+623-I-MB-<android.graphics.Rect: void <init>(int,int,int,int)> 0
+624-I-MB-<android.graphics.Rect: void set(int,int,int,int)> 0
+625-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: void setHotspotBounds(int,int,int,int)> 3
+626-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: void setHotspotBounds(int,int,int,int)> 0
+627-I-MB-<android.graphics.drawable.LayerDrawable: void setHotspotBounds(int,int,int,int)> 0
+628-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi21: void setHotspotBounds(int,int,int,int)> 2
+629-I-MB-<androidx.core.graphics.drawable.DrawableCompat: void setHotspotBounds(android.graphics.drawable.Drawable,int,int,int,int)> 3
+630-I-MB-SCC33769 7
+631-I-MB-<android.graphics.drawable.LayerDrawable: void setColorFilter(android.graphics.ColorFilter)> 0
+632-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: void setColorFilter(android.graphics.ColorFilter)> 1
+633-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: void setColorFilter(android.graphics.ColorFilter)> 0
+634-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: void setColorFilter(android.graphics.ColorFilter)> 1
+635-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: void setColorFilter(android.graphics.ColorFilter)> 0
+636-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: void setColorFilter(android.graphics.ColorFilter)> 2
+637-I-MB-SCC33774 5
+638-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: void setTintMode(android.graphics.PorterDuff$Mode)> 2
+639-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: void setTintMode(android.graphics.PorterDuff$Mode)> 0
+640-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: void setTintMode(android.graphics.PorterDuff$Mode)> 2
+641-I-MB-<android.graphics.drawable.Drawable: void setTintMode(android.graphics.PorterDuff$Mode)> 0
+642-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi21: void setTintMode(android.graphics.PorterDuff$Mode)> 3
+643-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: void setTintMode(android.graphics.PorterDuff$Mode)> 0
+644-I-MB-<androidx.core.graphics.drawable.DrawableCompat: void setTintMode(android.graphics.drawable.Drawable,android.graphics.PorterDuff$Mode)> 3
+645-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: void setTintMode(android.graphics.PorterDuff$Mode)> 0
+646-I-MB-SCC33755 6
+647-I-MB-<android.graphics.drawable.LayerDrawable: void setAutoMirrored(boolean)> 0
+648-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: void setAutoMirrored(boolean)> 0
+649-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: void setAutoMirrored(boolean)> 0
+650-I-MB-<androidx.core.graphics.drawable.DrawableCompat: void setAutoMirrored(android.graphics.drawable.Drawable,boolean)> 2
+651-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: void setAutoMirrored(boolean)> 1
+652-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: void setAutoMirrored(boolean)> 0
+653-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: void setAutoMirrored(boolean)> 0
+654-I-MB-SCC33781 6
+655-I-MB-<android.graphics.drawable.Drawable: android.graphics.drawable.Drawable$Callback getCallback()> 0
+656-I-MB-<android.graphics.drawable.Drawable: boolean isVisible()> 0
+657-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: void initializeDrawableForDisplay(android.graphics.drawable.Drawable)> 30
+658-I-MB-SCC33704 39
+659-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: android.graphics.drawable.Drawable getWrappedDrawable()> 0
+660-I-MB-<androidx.appcompat.widget.DrawableUtils: boolean canSafelyMutateDrawable(android.graphics.drawable.Drawable)> 7
+661-I-MB-<android.graphics.drawable.LayerDrawable: android.graphics.drawable.Drawable findDrawableByLayerId(int)> 0
+662-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: boolean arrayContains(int[],int)> 0
+663-I-MB-<androidx.core.graphics.ColorUtils: void <clinit>()> 1
+664-I-MB-<android.content.res.ColorStateList: void <init>(int[][],int[])> 0
+665-I-MB-<androidx.core.graphics.ColorUtils: int compositeComponent(int,int,int,int,int)> 0
+666-I-MB-<android.graphics.Color: int alpha(int)> 0
+667-I-MB-<android.graphics.Color: int red(int)> 0
+668-I-MB-<android.graphics.Color: int green(int)> 0
+669-I-MB-<androidx.core.graphics.ColorUtils: int compositeAlpha(int,int)> 0
+670-I-MB-<android.graphics.Color: int argb(int,int,int,int)> 0
+671-I-MB-<android.graphics.Color: int blue(int)> 0
+672-I-MB-<androidx.core.graphics.ColorUtils: int compositeColors(int,int)> 8
+673-I-MB-<android.content.res.ColorStateList: void <clinit>()> 0
+674-I-MB-<androidx.appcompat.widget.TintTypedArray: int getColor(int,int)> 0
+675-I-MB-<androidx.appcompat.widget.TintTypedArray: void recycle()> 0
+676-I-MB-<androidx.appcompat.widget.TintTypedArray: void <init>(android.content.Context,android.content.res.TypedArray)> 1
+677-I-MB-<android.content.Context: android.content.res.TypedArray obtainStyledAttributes(android.util.AttributeSet,int[])> 0
+678-I-MB-<androidx.appcompat.widget.TintTypedArray: androidx.appcompat.widget.TintTypedArray obtainStyledAttributes(android.content.Context,android.util.AttributeSet,int[])> 2
+679-I-MB-<androidx.appcompat.widget.ThemeUtils: int getThemeAttrColor(android.content.Context,int)> 4
+680-I-MB-<java.lang.ThreadLocal: void set(java.lang.Object)> 0
+681-I-MB-<java.lang.ThreadLocal: java.lang.Object get()> 0
+682-I-MB-<androidx.appcompat.widget.ThemeUtils: android.util.TypedValue getTypedValue()> 4
+683-I-MB-<java.util.WeakHashMap: void <init>(int)> 0
+684-I-MB-<androidx.appcompat.content.res.AppCompatResources: void <clinit>()> 3
+685-I-MB-<java.util.WeakHashMap: java.lang.Object get(java.lang.Object)> 0
+686-I-MB-<androidx.appcompat.content.res.AppCompatResources: android.content.res.ColorStateList getCachedColorStateList(android.content.Context,int)> 4
+687-I-MB-<android.content.Context: android.content.res.ColorStateList getColorStateList(int)> 0
+688-I-MB-<android.content.res.Resources: android.content.res.ColorStateList getColorStateList(int)> 0
+689-I-MB-<androidx.core.content.ContextCompat: android.content.res.ColorStateList getColorStateList(android.content.Context,int)> 4
+690-I-MB-<androidx.appcompat.content.res.AppCompatResources$ColorStateListCacheEntry: void <init>(android.content.res.ColorStateList,android.content.res.Configuration)> 1
+691-I-MB-<android.util.SparseArray: void append(int,java.lang.Object)> 0
+692-I-MB-<androidx.appcompat.content.res.AppCompatResources: void addColorStateListToCache(android.content.Context,int,android.content.res.ColorStateList)> 8
+693-I-MB-<androidx.appcompat.content.res.AppCompatResources: android.util.TypedValue getTypedValue()> 4
+694-I-MB-<android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)> 0
+695-I-MB-<androidx.appcompat.content.res.AppCompatResources: boolean isColorInt(android.content.Context,int)> 4
+696-I-MB-<android.util.Xml: void <clinit>()> 0
+697-I-MB-<org.xmlpull.v1.XmlPullParserException: void <init>(java.lang.String)> 1
+698-I-MB-<android.util.Xml: android.util.AttributeSet asAttributeSet(org.xmlpull.v1.XmlPullParser)> 0
+699-I-MB-<java.lang.Math: int round(float)> 0
+700-I-MB-<androidx.core.content.res.ColorStateListInflaterCompat: int modulateColorAlpha(int,float)>  700-I-MB-<androidx.core.content.res.ColorStateListInflaterCompat: int modulateColorAlpha(int,float)> 2
+701-I-MB-<androidx.core.R$styleable: void <clinit>()> 0
+702-I-MB-<android.content.res.Resources: android.content.res.TypedArray obtainAttributes(android.util.AttributeSet,int[])> 0
+703-I-MB-<androidx.core.content.res.ColorStateListInflaterCompat: android.content.res.TypedArray obtainAttributes(android.content.res.Resources,android.content.res.Resources$Theme,android.util.AttributeSet,int[])> 1
+704-I-MB-<android.util.StateSet: void <clinit>()> 0
+705-I-MB-<androidx.core.content.res.GrowingArrayUtils: int growSize(int)> 0
+706-I-MB-<androidx.core.content.res.GrowingArrayUtils: void <clinit>()> 0
+707-I-MB-<androidx.core.content.res.GrowingArrayUtils: int[] append(int[],int,int)> 4
+708-I-MB-<java.lang.reflect.Array: java.lang.Object newInstance(java.lang.Class,int)> 0
+709-I-MB-<androidx.core.content.res.GrowingArrayUtils: java.lang.Object[] append(java.lang.Object[],int,java.lang.Object)> 6
+710-I-MB-<android.util.StateSet: int[] trimStateSet(int[],int)> 0
+711-I-MB-<androidx.core.content.res.ColorStateListInflaterCompat: android.content.res.ColorStateList inflate(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 12
+712-I-MB-<androidx.core.content.res.ColorStateListInflaterCompat: android.content.res.ColorStateList createFromXmlInner(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 5
+713-I-MB-<androidx.core.content.res.ColorStateListInflaterCompat: android.content.res.ColorStateList createFromXml(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.content.res.Resources$Theme)> 4
+714-I-MB-<android.content.res.Resources: android.content.res.XmlResourceParser getXml(int)> 0
+715-I-MB-<androidx.appcompat.content.res.AppCompatResources: android.content.res.ColorStateList inflateColorStateList(android.content.Context,int)> 7
+716-I-MB-<androidx.core.content.ContextCompat: void <clinit>()> 1
+717-I-MB-<androidx.appcompat.content.res.AppCompatResources: android.content.res.ColorStateList getColorStateList(android.content.Context,int)> 8
+718-I-MB-<androidx.appcompat.widget.TintTypedArray: android.content.res.ColorStateList getColorStateList(int)> 2
+719-I-MB-<androidx.appcompat.widget.ThemeUtils: android.content.res.ColorStateList getThemeAttrColorStateList(android.content.Context,int)> 4
+720-I-MB-<androidx.core.graphics.ColorUtils: int setAlphaComponent(int,int)> 1
+721-I-MB-<androidx.appcompat.widget.ThemeUtils: int getThemeAttrColor(android.content.Context,int,float)> 6
+722-I-MB-<android.util.TypedValue: float getFloat()> 0
+723-I-MB-<android.content.res.ColorStateList: boolean isStateful()> 0
+724-I-MB-<androidx.appcompat.widget.ThemeUtils: int getDisabledThemeAttrColor(android.content.Context,int)> 9
+725-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: android.content.res.ColorStateList createButtonColorStateList(android.content.Context,int)> 7
+726-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: android.content.res.ColorStateList createDefaultButtonColorStateList(android.content.Context)> 3
+727-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: android.content.res.ColorStateList createSwitchThumbColorStateList(android.content.Context)> 9
+728-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: android.content.res.ColorStateList createBorderlessButtonColorStateList(android.content.Context)> 1
+729-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: android.content.res.ColorStateList createColoredButtonColorStateList(android.content.Context)> 3
+730-I-MB-<androidx.collection.SparseArrayCompat: void put(int,java.lang.Object)> 7
+731-I-MB-<androidx.collection.SparseArrayCompat: void append(int,java.lang.Object)> 6
+732-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: void addTintListToCache(android.content.Context,int,android.content.res.ColorStateList)> 6
+733-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: android.content.res.ColorStateList getTintListFromCache(android.content.Context,int)> 1
+734-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: android.content.res.ColorStateList getTintList(android.content.Context,int)> 12
+735-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager$ColorFilterLruCache: int generateCacheKey(int,android.graphics.PorterDuff$Mode)> 0
+736-I-MB-<java.lang.Integer: java.lang.Integer valueOf(int)> 1
+737-I-MB-<java.util.LinkedHashMap: java.lang.Object put(java.lang.Object,java.lang.Object)> 0
+738-I-MB-<java.lang.NullPointerException: void <init>(java.lang.String)> 2
+739-I-MB-<java.util.LinkedHashMap: java.lang.Object remove(java.lang.Object)> 0
+740-I-MB-<java.util.LinkedHashMap: boolean isEmpty()> 0
+741-I-MB-<java.util.LinkedHashMap: java.util.Set entrySet()> 0
+742-I-MB-<FLOWDROID_EXCEPTIONS: void throw0()> 1
+743-I-MB-<androidx.collection.LruCache: void entryRemoved(boolean,java.lang.Object,java.lang.Object,java.lang.Object)> 0
+744-I-MB-<androidx.collection.LruCache: void trimToSize(int)> 10
+745-I-MB-<androidx.collection.LruCache: java.lang.Object put(java.lang.Object,java.lang.Object)> 5
+746-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager$ColorFilterLruCache: android.graphics.PorterDuffColorFilter put(int,android.graphics.PorterDuff$Mode,android.graphics.PorterDuffColorFilter)> 4
+747-I-MB-<java.util.LinkedHashMap: java.lang.Object get(java.lang.Object)> 0
+748-I-MB-<androidx.collection.LruCache: java.lang.Object create(java.lang.Object)> 0
+749-I-MB-<androidx.collection.LruCache: java.lang.Object get(java.lang.Object)> 7
+750-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager$ColorFilterLruCache: android.graphics.PorterDuffColorFilter get(int,android.graphics.PorterDuff$Mode)> 4
+751-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: android.graphics.PorterDuffColorFilter getPorterDuffColorFilter(int,android.graphics.PorterDuff$Mode)> 4
+752-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: boolean tintDrawableUsingColorFilter(android.content.Context,int,android.graphics.drawable.Drawable)> 15
+753-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: void setPorterDuffColorFilter(android.graphics.drawable.Drawable,int,android.graphics.PorterDuff$Mode)> 4
+754-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: android.graphics.PorterDuff$Mode getTintMode(int)> 1
+755-I-MB-<android.graphics.drawable.Drawable: void <init>()> 0
+756-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: void setWrappedDrawable(android.graphics.drawable.Drawable)> 14
+757-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: void <init>(android.graphics.drawable.Drawable)> 4
+758-I-MB-<android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)> 0
+759-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi21: void findAndCacheIsProjectedDrawableMethod()> 2
+760-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi21: void <init>(android.graphics.drawable.Drawable)> 2
+761-I-MB-<androidx.core.graphics.drawable.DrawableCompat: android.graphics.drawable.Drawable wrap(android.graphics.drawable.Drawable)> 4
+762-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: android.graphics.drawable.Drawable tintDrawable(android.content.Context,int,boolean,android.graphics.drawable.Drawable)> 17
+763-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: android.graphics.drawable.Drawable getDrawable(android.content.Context,int,boolean)> 4
+764-I-MB-<android.graphics.drawable.Drawable: void setChangingConfigurations(int)> 0
+765-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: android.graphics.drawable.Drawable getCachedDrawable(android.content.Context,long)> 2
+766-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: void setChangingConfigurations(int)> 0
+767-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCommon: void setChangingConfigurations(int)> 1
+768-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: void setChangingConfigurations(int)> 0
+769-I-MB-<androidx.core.graphics.drawable.WrappedDrawableApi14: void setChangingConfigurations(int)> 1
+770-I-MB-SCC33838 4
+771-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: long createCacheKey(android.util.TypedValue)> 0
+772-I-MB-<android.graphics.drawable.LayerDrawable: void <init>(android.graphics.drawable.Drawable[])> 0
+773-I-MB-<androidx.collection.ContainerHelpers: int binarySearch(long[],int,long)> 0
+774-I-MB-<androidx.collection.LongSparseArray: void gc()> 1
+775-I-MB-<androidx.collection.LongSparseArray: void put(long,java.lang.Object)> 7
+776-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: boolean addDrawableToCache(android.content.Context,long,android.graphics.drawable.Drawable)> 10
+777-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: android.graphics.drawable.Drawable createDrawableIfNeeded(android.content.Context,int)> 10
+778-I-MB-<android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)> 0
+779-I-MB-<androidx.appcompat.widget.VectorEnabledTintResources: android.graphics.drawable.Drawable superGetDrawable(int)> 1
+780-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: android.graphics.drawable.Drawable onDrawableLoadedFromResources(android.content.Context,androidx.appcompat.widget.VectorEnabledTintResources,int)> 2
+781-I-MB-<androidx.collection.SimpleArrayMap: boolean isEmpty()> 0
+782-I-MB-<androidx.collection.SparseArrayCompat: java.lang.Object get(int)> 1
+783-I-MB-<java.lang.String: boolean endsWith(java.lang.String)> 1
+784-I-MB-<androidx.collection.SimpleArrayMap: int indexOfKey(java.lang.Object)> 4
+785-I-MB-<androidx.collection.SimpleArrayMap: java.lang.Object get(java.lang.Object)> 1
+786-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: android.graphics.drawable.Drawable loadDrawableFromDelegates(android.content.Context,int)> 23
+787-I-MB-<android.graphics.Path: void <init>()> 0
+788-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: void <init>()> 3
+789-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPathRenderer: void <init>()> 5
+790-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VectorDrawableCompatState: void <init>()> 4
+791-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCommon: void <init>()> 1
+792-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: void <init>()> 5
+793-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: androidx.vectordrawable.graphics.drawable.VectorDrawableCompat createFromXmlInner(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 2
+794-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: android.graphics.drawable.Drawable getCurrent()> 0
+795-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: android.graphics.drawable.Drawable getCurrent()> 1
+796-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: int getCurrentIndex()> 0
+797-I-MB-<androidx.collection.LongSparseArray: java.lang.Object get(long,java.lang.Object)> 3
+798-I-MB-<java.lang.Long: void <clinit>()> 0
+799-I-MB-<java.lang.Long: java.lang.Long valueOf(long)> 1
+800-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatedStateListState: long generateTransitionKey(int,int)>  800-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatedStateListState: long generateTransitionKey(int,int)> 0
+801-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatedStateListState: int indexOfTransition(int,int)> 4
+802-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$Transition: void <init>()> 1
+803-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$Transition: void <init>(androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$1)> 1
+804-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatedVectorDrawableTransition: void <init>(androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat)> 1
+805-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$Transition: boolean canReverse()> 0
+806-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatedStateListState: boolean isTransitionReversed(int,int)> 4
+807-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimationDrawableTransition: void reverse()> 0
+808-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$Transition: void reverse()> 0
+809-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatableTransition: void <init>(android.graphics.drawable.Animatable)> 1
+810-I-MB-<android.animation.ObjectAnimator: android.animation.ObjectAnimator ofInt(java.lang.Object,java.lang.String,int[])> 0
+811-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$FrameInterpolator: int updateFrames(android.graphics.drawable.AnimationDrawable,boolean)> 0
+812-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$FrameInterpolator: void <init>(android.graphics.drawable.AnimationDrawable,boolean)> 2
+813-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$FrameInterpolator: int getTotalDuration()> 0
+814-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimationDrawableTransition: void <init>(android.graphics.drawable.AnimationDrawable,boolean,boolean)> 5
+815-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimationDrawableTransition: boolean canReverse()> 0
+816-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatedStateListState: boolean transitionHasReversibleFlag(int,int)> 4
+817-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatedStateListState: int getKeyframeIdAt(int)> 3
+818-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: boolean selectTransition(int)> 20
+819-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState: int getChildCount()> 0
+820-I-MB-<android.util.StateSet: boolean stateSetMatches(int[],int[])> 0
+821-I-MB-<androidx.appcompat.graphics.drawable.StateListDrawable$StateListState: int indexOfStateSet(int[])> 3
+822-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatedStateListState: int indexOfKeyframe(int[])> 2
+823-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: boolean onStateChange(int[])> 7
+824-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: void init()> 2
+825-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState: void setEnterFadeDuration(int)> 0
+826-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState: void setExitFadeDuration(int)> 0
+827-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState: void setVariablePadding(boolean)> 0
+828-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState: void setConstantSize(boolean)> 0
+829-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: void updateStateFromTypedArray(android.content.res.TypedArray)> 7
+830-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState: void updateDensity(android.content.res.Resources)> 1
+831-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: void updateDensity(android.content.res.Resources)> 1
+832-I-MB-<androidx.core.content.res.TypedArrayUtils: android.content.res.TypedArray obtainAttributes(android.content.res.Resources,android.content.res.Resources$Theme,android.util.AttributeSet,int[])> 1
+833-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: void inflate(android.content.Context,android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 6
+834-I-MB-<android.graphics.drawable.Drawable: android.graphics.drawable.Drawable createFromXmlInner(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 0
+835-I-MB-<android.graphics.drawable.Drawable: android.graphics.drawable.Drawable createFromXmlInner(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet)> 0
+836-I-MB-<androidx.collection.LongSparseArray: void append(long,java.lang.Object)> 6
+837-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState: void growArray(int,int)> 2
+838-I-MB-<androidx.appcompat.graphics.drawable.StateListDrawable$StateListState: void growArray(int,int)> 3
+839-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState: void invalidateCache()> 0
+840-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState: int addChild(android.graphics.drawable.Drawable)> 11
+841-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatedStateListState: int addTransition(int,int,android.graphics.drawable.Drawable,boolean)> 5
+842-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: int parseTransition(android.content.Context,android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 11
+843-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager$AvdcInflateDelegate: android.graphics.drawable.Drawable createFromXmlInner(android.content.Context,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 2
+844-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: android.graphics.drawable.Drawable getDrawable(android.content.Context,int)> 0
+845-I-MB-<android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int,android.content.res.Resources$Theme)> 0
+846-I-MB-<androidx.core.content.res.ResourcesCompat: android.graphics.drawable.Drawable getDrawable(android.content.res.Resources,int,android.content.res.Resources$Theme)> 2
+847-I-MB-<android.graphics.drawable.Drawable: void inflate(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet)> 0
+848-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: void inflate(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet)> 1
+849-I-MB-<androidx.core.content.res.TypedArrayUtils: boolean hasAttribute(org.xmlpull.v1.XmlPullParser,java.lang.String)> 0
+850-I-MB-<androidx.core.content.res.TypedArrayUtils: boolean getNamedBoolean(android.content.res.TypedArray,org.xmlpull.v1.XmlPullParser,java.lang.String,int,boolean)> 1
+851-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPathRenderer: float getAlpha()> 1
+852-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: android.graphics.PorterDuff$Mode parseTintModeCompat(int,android.graphics.PorterDuff$Mode)> 1
+853-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPathRenderer: void setAlpha(float)> 1
+854-I-MB-<androidx.core.content.res.TypedArrayUtils: int getNamedInt(android.content.res.TypedArray,org.xmlpull.v1.XmlPullParser,java.lang.String,int,int)> 1
+855-I-MB-<androidx.core.content.res.TypedArrayUtils: float getNamedFloat(android.content.res.TypedArray,org.xmlpull.v1.XmlPullParser,java.lang.String,int,float)> 1
+856-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: void updateStateFromTypedArray(android.content.res.TypedArray,org.xmlpull.v1.XmlPullParser)> 13
+857-I-MB-<androidx.vectordrawable.graphics.drawable.AndroidResources: void <clinit>()> 0
+858-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPath: void <init>()> 1
+859-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VClipPath: void <init>()> 1
+860-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: void <init>()> 3
+861-I-MB-<androidx.core.content.res.ComplexColorCompat: void <init>(android.graphics.Shader,android.content.res.ColorStateList,int)> 1
+862-I-MB-<androidx.core.content.res.ComplexColorCompat: androidx.core.content.res.ComplexColorCompat 'from'(int)> 1
+863-I-MB-<androidx.core.content.res.ComplexColorCompat: androidx.core.content.res.ComplexColorCompat 'from'(android.graphics.Shader)> 1
+864-I-MB-<java.util.ArrayList: void <init>(int)> 0
+865-I-MB-<androidx.core.content.res.GradientColorInflaterCompat$ColorStops: void <init>(java.util.List,java.util.List)> 3
+866-I-MB-<java.lang.Float: void <clinit>()> 0
+867-I-MB-<java.lang.Float: java.lang.Float valueOf(float)> 1
+868-I-MB-<androidx.core.content.res.GradientColorInflaterCompat: androidx.core.content.res.GradientColorInflaterCompat$ColorStops inflateChildElements(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 14
+869-I-MB-<android.graphics.SweepGradient: void <init>(float,float,int[],float[])> 0
+870-I-MB-<android.graphics.LinearGradient: void <init>(float,float,float,float,int[],float[],android.graphics.Shader$TileMode)> 0
+871-I-MB-<android.graphics.RadialGradient: void <init>(float,float,float,int[],float[],android.graphics.Shader$TileMode)> 0
+872-I-MB-<android.graphics.Shader$TileMode: void <clinit>()> 0
+873-I-MB-<androidx.core.content.res.GradientColorInflaterCompat: android.graphics.Shader$TileMode parseTileMode(int)> 1
+874-I-MB-<androidx.core.content.res.GradientColorInflaterCompat$ColorStops: void <init>(int,int)> 1
+875-I-MB-<androidx.core.content.res.GradientColorInflaterCompat$ColorStops: void <init>(int,int,int)> 1
+876-I-MB-<androidx.core.content.res.GradientColorInflaterCompat: androidx.core.content.res.GradientColorInflaterCompat$ColorStops checkColors(androidx.core.content.res.GradientColorInflaterCompat$ColorStops,int,int,boolean,int)> 2
+877-I-MB-<androidx.core.content.res.TypedArrayUtils: int getNamedColor(android.content.res.TypedArray,org.xmlpull.v1.XmlPullParser,java.lang.String,int,int)> 1
+878-I-MB-<androidx.core.content.res.GradientColorInflaterCompat: android.graphics.Shader createFromXmlInner(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 16
+879-I-MB-<androidx.core.content.res.ComplexColorCompat: androidx.core.content.res.ComplexColorCompat 'from'(android.content.res.ColorStateList)> 2
+880-I-MB-<androidx.core.content.res.ComplexColorCompat: androidx.core.content.res.ComplexColorCompat createFromXml(android.content.res.Resources,int,android.content.res.Resources$Theme)> 10
+881-I-MB-<androidx.core.content.res.ComplexColorCompat: androidx.core.content.res.ComplexColorCompat inflate(android.content.res.Resources,int,android.content.res.Resources$Theme)> 2
+882-I-MB-<androidx.core.content.res.TypedArrayUtils: androidx.core.content.res.ComplexColorCompat getNamedComplexColor(android.content.res.TypedArray,org.xmlpull.v1.XmlPullParser,android.content.res.Resources$Theme,java.lang.String,int,int)> 4
+883-I-MB-<java.lang.String: int length()> 1
+884-I-MB-<java.lang.String: char charAt(int)> 0
+885-I-MB-<androidx.core.graphics.PathParser: int nextStart(java.lang.String,int)> 2
+886-I-MB-<java.lang.RuntimeException: void <init>(java.lang.String,java.lang.Throwable)> 1
+887-I-MB-<androidx.core.graphics.PathParser: void extract(java.lang.String,int,androidx.core.graphics.PathParser$ExtractFloatResult)> 0
+888-I-MB-<androidx.core.graphics.PathParser$ExtractFloatResult: void <init>()> 1
+889-I-MB-<java.lang.Float: float parseFloat(java.lang.String)> 1
+890-I-MB-<androidx.core.graphics.PathParser: float[] getFloats(java.lang.String)> 9
+891-I-MB-<java.util.ArrayList: java.lang.Object[] toArray(java.lang.Object[])> 0
+892-I-MB-<java.lang.String: java.lang.String substring(int,int)> 1
+893-I-MB-<androidx.core.graphics.PathParser$PathDataNode: void <init>(char,float[])> 1
+894-I-MB-<androidx.core.graphics.PathParser: void addNode(java.util.ArrayList,char,float[])> 2
+895-I-MB-<androidx.core.graphics.PathParser: androidx.core.graphics.PathParser$PathDataNode[] createNodesFromPathData(java.lang.String)> 9
+896-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: android.graphics.Paint$Cap getStrokeLineCap(int,android.graphics.Paint$Cap)> 1
+897-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: android.graphics.Paint$Join getStrokeLineJoin(int,android.graphics.Paint$Join)> 1
+898-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: void updateStateFromTypedArray(android.content.res.TypedArray,org.xmlpull.v1.XmlPullParser,android.content.res.Resources$Theme)> 7
+899-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VFullPath: void inflate(android.content.res.Resources,android.util.AttributeSet,android.content.res.Resources$Theme,org.xmlpull.v1.XmlPullParser)> 3
+900-I-MB-<android.graphics.Matrix: void reset()>  900-I-MB-<android.graphics.Matrix: void reset()> 0
+901-I-MB-<android.graphics.Matrix: boolean postRotate(float,float,float)> 0
+902-I-MB-<android.graphics.Matrix: boolean postTranslate(float,float)> 0
+903-I-MB-<android.graphics.Matrix: boolean postScale(float,float)> 0
+904-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: void updateLocalMatrix()> 4
+905-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: void updateStateFromTypedArray(android.content.res.TypedArray,org.xmlpull.v1.XmlPullParser)> 2
+906-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: void inflate(android.content.res.Resources,android.util.AttributeSet,android.content.res.Resources$Theme,org.xmlpull.v1.XmlPullParser)> 3
+907-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup: java.lang.String getGroupName()> 0
+908-I-MB-<java.util.ArrayDeque: java.lang.Object peek()> 0
+909-I-MB-<java.util.ArrayDeque: java.lang.Object pop()> 0
+910-I-MB-<java.util.ArrayDeque: void push(java.lang.Object)> 0
+911-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VPath: java.lang.String getPathName()> 0
+912-I-MB-<java.util.ArrayDeque: void <init>()> 0
+913-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VClipPath: void updateStateFromTypedArray(android.content.res.TypedArray)> 1
+914-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VClipPath: void inflate(android.content.res.Resources,android.util.AttributeSet,android.content.res.Resources$Theme,org.xmlpull.v1.XmlPullParser)> 4
+915-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: void inflateInternal(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 16
+916-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: void inflate(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 8
+917-I-MB-<androidx.appcompat.graphics.drawable.StateListDrawable$StateListState: int addStateSet(int[],android.graphics.drawable.Drawable)> 1
+918-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatedStateListState: int addStateSet(int[],android.graphics.drawable.Drawable,int)> 4
+919-I-MB-<androidx.appcompat.graphics.drawable.StateListDrawable: int[] extractStateSet(android.util.AttributeSet)> 2
+920-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: int parseItem(android.content.Context,android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 13
+921-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat$1: void <init>(androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat)> 1
+922-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState: void <init>(android.content.Context,androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState,android.graphics.drawable.Drawable$Callback,android.content.res.Resources)> 1
+923-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: void <init>(android.content.Context,androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState,android.content.res.Resources)> 3
+924-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: void <init>(android.content.Context)> 1
+925-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat createFromXmlInner(android.content.Context,android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 1
+926-I-MB-<androidx.appcompat.graphics.drawable.DrawableContainer: void <init>()> 1
+927-I-MB-<androidx.appcompat.graphics.drawable.StateListDrawable: void <init>(androidx.appcompat.graphics.drawable.StateListDrawable$StateListState)> 1
+928-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: void <init>(androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatedStateListState,android.content.res.Resources)> 4
+929-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: void <init>()> 1
+930-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat createFromXmlInner(android.content.Context,android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 6
+931-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: void inflate(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet)> 0
+932-I-MB-<android.content.Context: android.graphics.drawable.Drawable getDrawable(int)> 0
+933-I-MB-<androidx.core.content.ContextCompat: android.graphics.drawable.Drawable getDrawable(android.content.Context,int)> 6
+934-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: androidx.vectordrawable.graphics.drawable.VectorDrawableCompat create(android.content.res.Resources,int,android.content.res.Resources$Theme)> 13
+935-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: void <init>()> 2
+936-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager$AvdcInflateDelegate: void <init>()> 1
+937-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager$VdcInflateDelegate: void <init>()> 1
+938-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager$AsldcInflateDelegate: void <init>()> 1
+939-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: void installDefaultInflateDelegates(androidx.appcompat.widget.AppCompatDrawableManager)> 5
+940-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: androidx.appcompat.widget.AppCompatDrawableManager get()> 3
+941-I-MB-<androidx.appcompat.content.res.AppCompatResources: android.graphics.drawable.Drawable getDrawable(android.content.Context,int)> 2
+942-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager$VdcInflateDelegate: android.graphics.drawable.Drawable createFromXmlInner(android.content.Context,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 3
+943-I-MB-<android.animation.Animator: void setTarget(java.lang.Object)> 0
+944-I-MB-<android.animation.ObjectAnimator: void setTarget(java.lang.Object)> 0
+945-I-MB-<android.animation.AnimatorSet: java.util.ArrayList getChildAnimations()> 0
+946-I-MB-<android.animation.ValueAnimator: void setEvaluator(android.animation.TypeEvaluator)> 0
+947-I-MB-<android.animation.ObjectAnimator: java.lang.String getPropertyName()> 0
+948-I-MB-<android.animation.ArgbEvaluator: void <init>()> 0
+949-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: void setupColorAnimator(android.animation.Animator)> 5
+950-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: java.lang.Object getTargetByName(java.lang.String)> 1
+951-I-MB-<android.animation.AnimatorSet: void setTarget(java.lang.Object)> 0
+952-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: void setupAnimatorsForTarget(java.lang.String,android.animation.Animator)> 10
+953-I-MB-<androidx.vectordrawable.graphics.drawable.VectorDrawableCompat: void setAllowCaching(boolean)> 0
+954-I-MB-<android.animation.AnimatorSet: void playTogether(java.util.Collection)> 0
+955-I-MB-<android.animation.AnimatorSet: void <init>()> 0
+956-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState: void setupAnimatorSet()> 2
+957-I-MB-<android.content.res.Resources$NotFoundException: void <init>(java.lang.String)> 0
+958-I-MB-<android.content.res.Resources$NotFoundException: java.lang.Throwable initCause(java.lang.Throwable)> 0
+959-I-MB-<android.animation.ValueAnimator: void <init>()> 0
+960-I-MB-<androidx.interpolator.view.animation.LookupTableInterpolator: void <init>(float[])> 1
+961-I-MB-<androidx.interpolator.view.animation.LinearOutSlowInInterpolator: void <clinit>()> 0
+962-I-MB-<androidx.interpolator.view.animation.LinearOutSlowInInterpolator: void <init>()> 2
+963-I-MB-<androidx.interpolator.view.animation.FastOutSlowInInterpolator: void <clinit>()> 0
+964-I-MB-<androidx.interpolator.view.animation.FastOutLinearInInterpolator: void <clinit>()> 0
+965-I-MB-<androidx.interpolator.view.animation.FastOutLinearInInterpolator: void <init>()> 2
+966-I-MB-<androidx.interpolator.view.animation.FastOutSlowInInterpolator: void <init>()> 2
+967-I-MB-<android.content.res.Resources: android.content.res.XmlResourceParser getAnimation(int)> 0
+968-I-MB-<android.view.animation.AnimationUtils: android.view.animation.Interpolator loadInterpolator(android.content.Context,int)> 0
+969-I-MB-<android.view.animation.DecelerateInterpolator: void <init>(android.content.Context,android.util.AttributeSet)> 0
+970-I-MB-<android.view.animation.AnticipateOvershootInterpolator: void <init>(android.content.Context,android.util.AttributeSet)> 0
+971-I-MB-<android.view.animation.BounceInterpolator: void <init>()> 0
+972-I-MB-<android.view.animation.CycleInterpolator: void <init>(android.content.Context,android.util.AttributeSet)> 0
+973-I-MB-<android.view.animation.AnticipateInterpolator: void <init>(android.content.Context,android.util.AttributeSet)> 0
+974-I-MB-<android.view.animation.LinearInterpolator: void <init>()> 0
+975-I-MB-<android.view.animation.OvershootInterpolator: void <init>(android.content.Context,android.util.AttributeSet)> 0
+976-I-MB-<android.view.animation.AccelerateInterpolator: void <init>(android.content.Context,android.util.AttributeSet)> 0
+977-I-MB-<android.view.animation.AccelerateDecelerateInterpolator: void <init>()> 0
+978-I-MB-<androidx.core.content.res.TypedArrayUtils: java.lang.String getNamedString(android.content.res.TypedArray,org.xmlpull.v1.XmlPullParser,java.lang.String,int)> 1
+979-I-MB-<android.graphics.PathMeasure: boolean getPosTan(float,float[],float[])> 0
+980-I-MB-<java.lang.StringBuilder: java.lang.StringBuilder append(float)> 0
+981-I-MB-<android.graphics.PathMeasure: boolean nextContour()> 0
+982-I-MB-<java.lang.Math: float abs(float)> 0
+983-I-MB-<android.graphics.PathMeasure: void <init>(android.graphics.Path,boolean)> 0
+984-I-MB-<android.graphics.PathMeasure: float getLength()> 0
+985-I-MB-<androidx.vectordrawable.graphics.drawable.PathInterpolatorCompat: void initPath(android.graphics.Path)> 11
+986-I-MB-<android.view.InflateException: void <init>(java.lang.String)> 0
+987-I-MB-<android.graphics.Path: void moveTo(float,float)> 0
+988-I-MB-<android.graphics.Path: void cubicTo(float,float,float,float,float,float)> 0
+989-I-MB-<androidx.vectordrawable.graphics.drawable.PathInterpolatorCompat: void initCubic(float,float,float,float)> 4
+990-I-MB-<android.graphics.Path: void quadTo(float,float,float,float)> 0
+991-I-MB-<androidx.vectordrawable.graphics.drawable.PathInterpolatorCompat: void initQuad(float,float)> 4
+992-I-MB-<android.graphics.Path: void rCubicTo(float,float,float,float,float,float)> 0
+993-I-MB-<android.graphics.Path: void rQuadTo(float,float,float,float)> 0
+994-I-MB-<android.graphics.Path: void rLineTo(float,float)> 0
+995-I-MB-<android.graphics.Path: void close()> 0
+996-I-MB-<android.graphics.Path: void lineTo(float,float)> 0
+997-I-MB-<java.lang.Double: void <clinit>()> 0
+998-I-MB-<java.lang.StringBuilder: java.lang.StringBuilder append(double)> 0
+999-I-MB-<java.lang.Math: double sin(double)> 0
+1000-I-MB-<java.lang.Math: double cos(double)>  1000-I-MB-<java.lang.Math: double cos(double)> 0
+1001-I-MB-<java.lang.Math: double toRadians(double)> 0
+1002-I-MB-<java.lang.Math: double sqrt(double)> 0
+1003-I-MB-<java.lang.Math: double ceil(double)> 0
+1004-I-MB-<java.lang.Double: boolean isNaN(double)> 1
+1005-I-MB-<java.lang.Math: double abs(double)> 0
+1006-I-MB-<java.lang.Math: double tan(double)> 0
+1007-I-MB-<androidx.core.graphics.PathParser$PathDataNode: void arcToBezier(android.graphics.Path,double,double,double,double,double,double,double,double,double)> 10
+1008-I-MB-<java.lang.Math: double atan2(double,double)> 0
+1009-I-MB-<androidx.core.graphics.PathParser$PathDataNode: void drawArc(android.graphics.Path,float,float,float,float,float,float,float,boolean,boolean)> 13
+1010-I-MB-<android.graphics.Path: void rMoveTo(float,float)> 0
+1011-I-MB-<androidx.core.graphics.PathParser$PathDataNode: void addCommand(android.graphics.Path,float[],char,char,float[])> 10
+1012-I-MB-<androidx.core.graphics.PathParser$PathDataNode: void nodesToPath(androidx.core.graphics.PathParser$PathDataNode[],android.graphics.Path)> 1
+1013-I-MB-<androidx.core.graphics.PathParser: android.graphics.Path createPathFromPathData(java.lang.String)> 7
+1014-I-MB-<androidx.vectordrawable.graphics.drawable.PathInterpolatorCompat: void parseInterpolatorFromTypeArray(android.content.res.TypedArray,org.xmlpull.v1.XmlPullParser)> 11
+1015-I-MB-<androidx.vectordrawable.graphics.drawable.PathInterpolatorCompat: void <init>(android.content.res.Resources,android.content.res.Resources$Theme,android.util.AttributeSet,org.xmlpull.v1.XmlPullParser)> 4
+1016-I-MB-<androidx.vectordrawable.graphics.drawable.PathInterpolatorCompat: void <init>(android.content.Context,android.util.AttributeSet,org.xmlpull.v1.XmlPullParser)> 3
+1017-I-MB-<androidx.vectordrawable.graphics.drawable.AnimationUtilsCompat: android.view.animation.Interpolator createInterpolatorFromXml(android.content.Context,android.content.res.Resources,android.content.res.Resources$Theme,org.xmlpull.v1.XmlPullParser)> 16
+1018-I-MB-<androidx.vectordrawable.graphics.drawable.AnimationUtilsCompat: android.view.animation.Interpolator loadInterpolator(android.content.Context,int)> 19
+1019-I-MB-<android.animation.ValueAnimator: void setInterpolator(android.animation.TimeInterpolator)> 0
+1020-I-MB-<androidx.core.content.res.TypedArrayUtils: int getNamedResourceId(android.content.res.TypedArray,org.xmlpull.v1.XmlPullParser,java.lang.String,int,int)> 1
+1021-I-MB-<android.animation.PropertyValuesHolder: android.animation.PropertyValuesHolder ofObject(java.lang.String,android.animation.TypeEvaluator,java.lang.Object[])> 0
+1022-I-MB-<android.animation.PropertyValuesHolder: android.animation.PropertyValuesHolder ofInt(java.lang.String,int[])> 0
+1023-I-MB-<androidx.vectordrawable.graphics.drawable.ArgbEvaluator: void <init>()> 1
+1024-I-MB-<androidx.vectordrawable.graphics.drawable.ArgbEvaluator: void <clinit>()> 1
+1025-I-MB-<androidx.vectordrawable.graphics.drawable.ArgbEvaluator: androidx.vectordrawable.graphics.drawable.ArgbEvaluator getInstance()> 1
+1026-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: boolean isColorType(int)> 0
+1027-I-MB-<androidx.core.graphics.PathParser: boolean canMorph(androidx.core.graphics.PathParser$PathDataNode[],androidx.core.graphics.PathParser$PathDataNode[])> 0
+1028-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat$PathDataEvaluator: void <init>()> 1
+1029-I-MB-<android.animation.PropertyValuesHolder: android.animation.PropertyValuesHolder ofFloat(java.lang.String,float[])> 0
+1030-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: android.animation.PropertyValuesHolder getPVH(android.content.res.TypedArray,int,int,int,java.lang.String)> 13
+1031-I-MB-<android.animation.ValueAnimator: void setStartDelay(long)> 0
+1032-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: int inferValueTypeFromValues(android.content.res.TypedArray,int,int)> 1
+1033-I-MB-<android.animation.ValueAnimator: void setRepeatCount(int)> 0
+1034-I-MB-<android.animation.ValueAnimator: android.animation.ValueAnimator setDuration(long)> 0
+1035-I-MB-<android.animation.ObjectAnimator: android.animation.ValueAnimator setDuration(long)> 0
+1036-I-MB-<android.animation.ValueAnimator: void setRepeatMode(int)> 0
+1037-I-MB-<android.animation.ValueAnimator: void setValues(android.animation.PropertyValuesHolder[])> 0
+1038-I-MB-<android.animation.ObjectAnimator: void setPropertyName(java.lang.String)> 0
+1039-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: void setupPathMotion(android.graphics.Path,android.animation.ObjectAnimator,float,java.lang.String,java.lang.String)> 13
+1040-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: void setupObjectAnimator(android.animation.ValueAnimator,android.content.res.TypedArray,int,float,org.xmlpull.v1.XmlPullParser)> 8
+1041-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: void parseAnimatorFromTypeArray(android.animation.ValueAnimator,android.content.res.TypedArray,android.content.res.TypedArray,float,org.xmlpull.v1.XmlPullParser)> 11
+1042-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: android.animation.ValueAnimator loadAnimator(android.content.Context,android.content.res.Resources,android.content.res.Resources$Theme,android.util.AttributeSet,android.animation.ValueAnimator,float,org.xmlpull.v1.XmlPullParser)> 7
+1043-I-MB-<android.animation.Keyframe: android.animation.Keyframe ofFloat(float)> 0
+1044-I-MB-<android.animation.Keyframe: android.animation.Keyframe ofObject(float)> 0
+1045-I-MB-<android.animation.Keyframe: android.animation.Keyframe ofInt(float)> 0
+1046-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: android.animation.Keyframe createNewKeyframe(android.animation.Keyframe,float)> 5
+1047-I-MB-<androidx.core.content.res.TypedArrayUtils: android.util.TypedValue peekNamedValue(android.content.res.TypedArray,org.xmlpull.v1.XmlPullParser,java.lang.String,int)> 1
+1048-I-MB-<android.animation.Keyframe: android.animation.Keyframe ofInt(float,int)> 0
+1049-I-MB-<android.animation.Keyframe: android.animation.Keyframe ofFloat(float,float)> 0
+1050-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: android.animation.Keyframe loadKeyframe(android.content.Context,android.content.res.Resources,android.content.res.Resources$Theme,android.util.AttributeSet,int,org.xmlpull.v1.XmlPullParser)> 12
+1051-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: void distributeKeyframes(android.animation.Keyframe[],float,int,int)> 0
+1052-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: int inferValueTypeOfKeyframe(android.content.res.Resources,android.content.res.Resources$Theme,android.util.AttributeSet,org.xmlpull.v1.XmlPullParser)> 4
+1053-I-MB-<android.animation.PropertyValuesHolder: android.animation.PropertyValuesHolder ofKeyframe(java.lang.String,android.animation.Keyframe[])> 0
+1054-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: android.animation.PropertyValuesHolder loadPvh(android.content.Context,android.content.res.Resources,android.content.res.Resources$Theme,org.xmlpull.v1.XmlPullParser,java.lang.String,int)> 15
+1055-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: android.animation.PropertyValuesHolder[] loadValues(android.content.Context,android.content.res.Resources,android.content.res.Resources$Theme,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet)> 11
+1056-I-MB-<java.util.ArrayList: java.util.Iterator iterator()> 0
+1057-I-MB-<android.animation.AnimatorSet: void playTogether(android.animation.Animator[])> 0
+1058-I-MB-<android.animation.ObjectAnimator: void <init>()> 0
+1059-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: android.animation.ObjectAnimator loadObjectAnimator(android.content.Context,android.content.res.Resources,android.content.res.Resources$Theme,android.util.AttributeSet,float,org.xmlpull.v1.XmlPullParser)> 2
+1060-I-MB-<android.animation.AnimatorSet: void playSequentially(android.animation.Animator[])> 0
+1061-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: android.animation.Animator createAnimatorFromXml(android.content.Context,android.content.res.Resources,android.content.res.Resources$Theme,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.animation.AnimatorSet,int,float)> 20
+1062-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: android.animation.Animator createAnimatorFromXml(android.content.Context,android.content.res.Resources,android.content.res.Resources$Theme,org.xmlpull.v1.XmlPullParser,float)> 3
+1063-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: android.animation.Animator loadAnimator(android.content.Context,android.content.res.Resources,android.content.res.Resources$Theme,int,float)> 9
+1064-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: android.animation.Animator loadAnimator(android.content.Context,android.content.res.Resources,android.content.res.Resources$Theme,int)> 1
+1065-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat: android.animation.Animator loadAnimator(android.content.Context,int)> 5
+1066-I-MB-<androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat: void inflate(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 11
+1067-I-MB-<androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat: void inflateChildElements(android.content.Context,android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 0
+1068-I-MB-<android.graphics.drawable.LayerDrawable: void inflate(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 0
+1069-I-MB-<android.graphics.drawable.Drawable: void inflate(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 0
+1070-I-MB-<androidx.core.graphics.drawable.DrawableCompat: void inflate(android.graphics.drawable.Drawable,android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet,android.content.res.Resources$Theme)> 4
+1071-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: boolean isVectorDrawable(android.graphics.drawable.Drawable)> 2
+1072-I-MB-<androidx.appcompat.widget.AppCompatDrawableManager: void checkVectorDrawableSetup(android.content.Context)> 3
+1073-I-MB-<androidx.appcompat.widget.VectorEnabledTintResources: android.graphics.drawable.Drawable getDrawable(int)> 4
+1074-I-MB-SCC33300 26
+1075-I-MB-<androidx.appcompat.widget.TintTypedArray: android.graphics.drawable.Drawable getDrawableIfKnown(int)> 3
+1076-I-MB-<androidx.appcompat.view.WindowCallbackWrapper: void <init>(android.view.Window$Callback)> 2
+1077-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$AppCompatWindowCallback: void <init>(androidx.appcompat.app.AppCompatDelegateImpl,android.view.Window$Callback)> 1
+1078-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void <init>(android.content.Context,android.view.Window,androidx.appcompat.app.AppCompatCallback)> 9
+1079-I-MB-<androidx.appcompat.app.AppCompatDelegate: androidx.appcompat.app.AppCompatDelegate create(android.app.Activity,androidx.appcompat.app.AppCompatCallback)> 4
+1080-I-MB-<androidx.appcompat.app.AppCompatActivity: androidx.appcompat.app.AppCompatDelegate getDelegate()> 2
+1081-I-MB-<androidx.appcompat.app.AppCompatActivity: android.view.View findViewById(int)> 2
+1082-I-MB-<androidx.fragment.app.FragmentActivity$HostCallbacks: android.view.View onFindViewById(int)> 1
+1083-I-MB-<androidx.fragment.app.Fragment: android.animation.Animator getAnimator()> 0
+1084-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchOnFragmentCreated(androidx.fragment.app.Fragment,android.os.Bundle,boolean)> 2
+1085-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchOnFragmentPreAttached(androidx.fragment.app.Fragment,android.content.Context,boolean)> 2
+1086-I-MB-<androidx.fragment.app.FragmentManagerImpl$3: void <init>(androidx.fragment.app.FragmentManagerImpl,android.view.ViewGroup,android.view.View,androidx.fragment.app.Fragment)> 1
+1087-I-MB-<androidx.fragment.app.FragmentManagerImpl$2: void <init>(androidx.fragment.app.FragmentManagerImpl,android.view.animation.Animation$AnimationListener,android.view.ViewGroup,androidx.fragment.app.Fragment)> 1
+1088-I-MB-<androidx.fragment.app.FragmentManagerImpl$EndViewTransitionAnimator: void run()> 0
+1089-I-MB-<androidx.fragment.app.FragmentManagerImpl$EndViewTransitionAnimator: void <init>(android.view.animation.Animation,android.view.ViewGroup,android.view.View)> 3
+1090-I-MB-<androidx.fragment.app.FragmentManagerImpl: void animateRemoveFragment(androidx.fragment.app.Fragment,androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator,int)> 10
+1091-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchOnFragmentDestroyed(androidx.fragment.app.Fragment,boolean)> 2
+1092-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchOnFragmentStarted(androidx.fragment.app.Fragment,boolean)> 2
+1093-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchOnFragmentViewCreated(androidx.fragment.app.Fragment,android.view.View,android.os.Bundle,boolean)> 2
+1094-I-MB-<android.app.Activity: boolean isFinishing()> 0
+1095-I-MB-<androidx.fragment.app.FragmentActivity$HostCallbacks: boolean onShouldSaveFragmentState(androidx.fragment.app.Fragment)> 1
+1096-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchOnFragmentResumed(androidx.fragment.app.Fragment,boolean)> 2
+1097-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchOnFragmentAttached(androidx.fragment.app.Fragment,android.content.Context,boolean)> 2
+1098-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchOnFragmentViewDestroyed(androidx.fragment.app.Fragment,boolean)> 2
+1099-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchOnFragmentPaused(androidx.fragment.app.Fragment,boolean)> 2
+1100-I-MB-<android.content.ContextWrapper: java.lang.ClassLoader getClassLoader()>  1100-I-MB-<android.content.ContextWrapper: java.lang.ClassLoader getClassLoader()> 0
+1101-I-MB-<androidx.fragment.app.Fragment: void onViewStateRestored(android.os.Bundle)> 0
+1102-I-MB-<androidx.fragment.app.Fragment: void restoreViewState(android.os.Bundle)> 8
+1103-I-MB-<androidx.fragment.app.FragmentManagerImpl: void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean)> 55
+1104-I-MB-<androidx.fragment.app.Fragment: void onStop()> 0
+1105-I-MB-<androidx.fragment.app.Fragment: void performStop()> 8
+1106-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchPause()> 0
+1107-I-MB-<androidx.fragment.app.Fragment: void onActivityCreated(android.os.Bundle)> 0
+1108-I-MB-<androidx.fragment.app.Fragment: void performActivityCreated(android.os.Bundle)> 7
+1109-I-MB-<androidx.core.view.ViewPropertyAnimatorListenerAdapter: void <init>()> 1
+1110-I-MB-<androidx.appcompat.app.WindowDecorActionBar$2: void <init>(androidx.appcompat.app.WindowDecorActionBar)> 1
+1111-I-MB-<androidx.core.view.ViewCompat: void setElevation(android.view.View,float)> 1
+1112-I-MB-<androidx.appcompat.app.WindowDecorActionBar: void setElevation(float)> 2
+1113-I-MB-<androidx.appcompat.view.ActionBarPolicy: boolean hasEmbeddedTabs()> 0
+1114-I-MB-<androidx.appcompat.view.ActionBarPolicy: void <init>(android.content.Context)> 1
+1115-I-MB-<androidx.appcompat.view.ActionBarPolicy: androidx.appcompat.view.ActionBarPolicy get(android.content.Context)> 1
+1116-I-MB-<androidx.appcompat.app.WindowDecorActionBar: void setHomeButtonEnabled(boolean)> 0
+1117-I-MB-<androidx.appcompat.view.ActionBarPolicy: boolean enableHomeButtonByDefault()> 0
+1118-I-MB-<androidx.appcompat.app.WindowDecorActionBar: void setHideOnContentScrollEnabled(boolean)> 1
+1119-I-MB-<androidx.appcompat.app.WindowDecorActionBar: androidx.appcompat.widget.DecorToolbar getDecorToolbar(android.view.View)> 4
+1120-I-MB-<androidx.core.view.ViewCompat: void requestApplyInsets(android.view.View)> 1
+1121-I-MB-<androidx.appcompat.app.WindowDecorActionBar: int getNavigationMode()> 0
+1122-I-MB-<androidx.appcompat.app.WindowDecorActionBar: void setHasEmbeddedTabs(boolean)> 3
+1123-I-MB-<androidx.appcompat.app.WindowDecorActionBar: void init(android.view.View)> 14
+1124-I-MB-<androidx.appcompat.app.ActionBar: void <init>()> 1
+1125-I-MB-<androidx.appcompat.app.WindowDecorActionBar$3: void <init>(androidx.appcompat.app.WindowDecorActionBar)> 1
+1126-I-MB-<androidx.appcompat.app.WindowDecorActionBar$1: void <init>(androidx.appcompat.app.WindowDecorActionBar)> 1
+1127-I-MB-<androidx.appcompat.app.WindowDecorActionBar: void <init>(android.app.Dialog)> 6
+1128-I-MB-<android.view.animation.AccelerateInterpolator: void <init>()> 0
+1129-I-MB-<android.view.animation.DecelerateInterpolator: void <init>()> 0
+1130-I-MB-<androidx.appcompat.app.WindowDecorActionBar: void <clinit>()> 2
+1131-I-MB-<androidx.appcompat.app.WindowDecorActionBar: void setDisplayOptions(int,int)> 0
+1132-I-MB-<androidx.appcompat.app.WindowDecorActionBar: void setDisplayHomeAsUpEnabled(boolean)> 1
+1133-I-MB-<androidx.appcompat.app.WindowDecorActionBar: void setDefaultDisplayHomeAsUpEnabled(boolean)> 1
+1134-I-MB-<androidx.appcompat.app.WindowDecorActionBar: void <init>(android.app.Activity,boolean)> 6
+1135-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void initWindowDecorActionBar()> 5
+1136-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: androidx.appcompat.app.ActionBar getSupportActionBar()> 1
+1137-I-MB-<androidx.appcompat.app.ActionBar: boolean invalidateOptionsMenu()> 0
+1138-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void invalidateOptionsMenu()> 3
+1139-I-MB-<androidx.appcompat.app.AppCompatActivity: void supportInvalidateOptionsMenu()> 2
+1140-I-MB-<androidx.fragment.app.FragmentActivity$HostCallbacks: void onSupportInvalidateOptionsMenu()> 1
+1141-I-MB-<androidx.fragment.app.FragmentManagerImpl: void moveToState(int,boolean)> 6
+1142-I-MB-<androidx.fragment.app.FragmentManagerImpl: androidx.fragment.app.Fragment getPrimaryNavigationFragment()> 0
+1143-I-MB-<androidx.collection.ArraySet: java.lang.Object valueAt(int)> 0
+1144-I-MB-<androidx.collection.ArraySet: int size()> 0
+1145-I-MB-<androidx.fragment.app.FragmentManagerImpl: void makeRemovedFragmentsInvisible(androidx.collection.ArraySet)> 2
+1146-I-MB-<androidx.fragment.app.FragmentManagerImpl: void executeOps(java.util.ArrayList,java.util.ArrayList,int,int)> 1
+1147-I-MB-<androidx.fragment.app.FragmentTransitionImpl: void <init>()> 1
+1148-I-MB-<androidx.fragment.app.FragmentTransitionCompat21: void <init>()> 1
+1149-I-MB-<androidx.fragment.app.FragmentTransition: androidx.fragment.app.FragmentTransitionImpl resolveSupportImpl()> 1
+1150-I-MB-<androidx.fragment.app.FragmentTransition: void <clinit>()> 3
+1151-I-MB-<java.util.ArrayList: boolean addAll(java.util.Collection)> 0
+1152-I-MB-<androidx.collection.ArraySet: void <init>(int)> 2
+1153-I-MB-<androidx.collection.ArraySet: void <init>()> 1
+1154-I-MB-<android.view.View: void <init>(android.content.Context)> 0
+1155-I-MB-<androidx.fragment.app.FragmentTransition$FragmentContainerTransition: void <init>()> 1
+1156-I-MB-<androidx.fragment.app.FragmentTransition: androidx.fragment.app.FragmentTransition$FragmentContainerTransition ensureContainer(androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.util.SparseArray,int)> 2
+1157-I-MB-<androidx.fragment.app.FragmentTransition: void addToFirstInLastOut(androidx.fragment.app.BackStackRecord,androidx.fragment.app.BackStackRecord$Op,android.util.SparseArray,boolean,boolean)> 3
+1158-I-MB-<androidx.fragment.app.FragmentTransition: void calculateFragments(androidx.fragment.app.BackStackRecord,android.util.SparseArray,boolean)> 2
+1159-I-MB-<android.view.View: void <clinit>()> 0
+1160-I-MB-<androidx.fragment.app.FragmentTransition: void calculatePopFragments(androidx.fragment.app.BackStackRecord,android.util.SparseArray,boolean)> 2
+1161-I-MB-<androidx.collection.SimpleArrayMap: java.lang.Object removeAt(int)> 6
+1162-I-MB-<androidx.collection.SimpleArrayMap: java.lang.Object remove(java.lang.Object)> 2
+1163-I-MB-<androidx.fragment.app.FragmentTransition: androidx.collection.ArrayMap calculateNameOverrides(int,java.util.ArrayList,java.util.ArrayList,int,int)> 4
+1164-I-MB-<androidx.fragment.app.Fragment$2: boolean onHasView()> 0
+1165-I-MB-<android.transition.TransitionSet: android.transition.Transition clone()> 0
+1166-I-MB-<androidx.fragment.app.FragmentTransitionCompat21: java.lang.Object cloneTransition(java.lang.Object)> 1
+1167-I-MB-<androidx.fragment.app.FragmentTransition: java.lang.Object getExitTransition(androidx.fragment.app.FragmentTransitionImpl,androidx.fragment.app.Fragment,boolean)> 1
+1168-I-MB-<androidx.core.view.ViewCompat: java.lang.String getTransitionName(android.view.View)> 3
+1169-I-MB-<androidx.core.view.ViewGroupCompat: boolean isTransitionGroup(android.view.ViewGroup)> 3
+1170-I-MB-<androidx.fragment.app.FragmentTransitionImpl: void captureTransitioningViews(java.util.ArrayList,android.view.View)> 2
+1171-I-MB-<java.util.ArrayList: boolean removeAll(java.util.Collection)> 0
+1172-I-MB-<android.transition.TransitionSet: android.transition.Transition getTransitionAt(int)> 0
+1173-I-MB-<android.transition.Transition: java.util.List getTargetIds()> 0
+1174-I-MB-<androidx.fragment.app.FragmentTransitionImpl: boolean isNullOrEmpty(java.util.List)> 0
+1175-I-MB-<android.transition.Transition: java.util.List getTargetNames()> 0
+1176-I-MB-<android.transition.Transition: java.util.List getTargetTypes()> 0
+1177-I-MB-<androidx.fragment.app.FragmentTransitionCompat21: boolean hasSimpleTarget(android.transition.Transition)> 4
+1178-I-MB-<android.transition.TransitionSet: java.util.List getTargets()> 0
+1179-I-MB-<android.transition.TransitionSet: int getTransitionCount()> 0
+1180-I-MB-<android.transition.TransitionSet: android.transition.Transition addTarget(android.view.View)> 0
+1181-I-MB-<androidx.fragment.app.FragmentTransitionCompat21: void addTargets(java.lang.Object,java.util.ArrayList)> 8
+1182-I-MB-<androidx.fragment.app.FragmentTransition: java.util.ArrayList configureEnteringExitingViews(androidx.fragment.app.FragmentTransitionImpl,java.lang.Object,androidx.fragment.app.Fragment,java.util.ArrayList,android.view.View)> 6
+1183-I-MB-<androidx.fragment.app.FragmentTransitionCompat21: boolean canHandle(java.lang.Object)> 0
+1184-I-MB-<androidx.fragment.app.FragmentTransition: boolean canHandleAll(androidx.fragment.app.FragmentTransitionImpl,java.util.List)> 3
+1185-I-MB-<androidx.fragment.app.FragmentTransition: androidx.fragment.app.FragmentTransitionImpl chooseImpl(androidx.fragment.app.Fragment,androidx.fragment.app.Fragment)> 6
+1186-I-MB-<androidx.fragment.app.FragmentTransition: java.lang.Object getEnterTransition(androidx.fragment.app.FragmentTransitionImpl,androidx.fragment.app.Fragment,boolean)> 1
+1187-I-MB-<androidx.fragment.app.FragmentActivity$HostCallbacks: boolean onHasView()> 1
+1188-I-MB-<android.transition.TransitionManager: void beginDelayedTransition(android.view.ViewGroup,android.transition.Transition)> 0
+1189-I-MB-<androidx.fragment.app.FragmentTransitionCompat21: void beginDelayedTransition(android.view.ViewGroup,java.lang.Object)> 1
+1190-I-MB-<androidx.fragment.app.OneShotPreDrawListener: void <init>(android.view.View,java.lang.Runnable)> 1
+1191-I-MB-<androidx.fragment.app.OneShotPreDrawListener: androidx.fragment.app.OneShotPreDrawListener add(android.view.View,java.lang.Runnable)> 1
+1192-I-MB-<androidx.fragment.app.FragmentTransitionImpl$1: void <init>(androidx.fragment.app.FragmentTransitionImpl,int,java.util.ArrayList,java.util.ArrayList,java.util.ArrayList,java.util.ArrayList)> 1
+1193-I-MB-<androidx.core.view.ViewCompat: void setTransitionName(android.view.View,java.lang.String)> 4
+1194-I-MB-<androidx.fragment.app.FragmentTransitionImpl: void setNameOverridesReordered(android.view.View,java.util.ArrayList,java.util.ArrayList,java.util.ArrayList,java.util.Map)> 11
+1195-I-MB-<androidx.fragment.app.FragmentTransition: void setViewVisibility(java.util.ArrayList,int)> 2
+1196-I-MB-<androidx.fragment.app.FragmentTransitionCompat21$3: void <init>(androidx.fragment.app.FragmentTransitionCompat21,java.lang.Object,java.util.ArrayList,java.lang.Object,java.util.ArrayList,java.lang.Object,java.util.ArrayList)> 1
+1197-I-MB-<android.transition.TransitionSet: android.transition.Transition addListener(android.transition.Transition$TransitionListener)> 0
+1198-I-MB-<androidx.fragment.app.FragmentTransitionCompat21: void scheduleRemoveTargets(java.lang.Object,java.lang.Object,java.util.ArrayList,java.lang.Object,java.util.ArrayList,java.lang.Object,java.util.ArrayList)> 2
+1199-I-MB-<android.transition.TransitionSet: void <init>()> 0
+1200-I-MB-<android.transition.TransitionSet: android.transition.TransitionSet addTransition(android.transition.Transition)>  1200-I-MB-<android.transition.TransitionSet: android.transition.TransitionSet addTransition(android.transition.Transition)> 0
+1201-I-MB-<androidx.fragment.app.FragmentTransitionCompat21: java.lang.Object mergeTransitionsTogether(java.lang.Object,java.lang.Object,java.lang.Object)> 2
+1202-I-MB-<android.transition.TransitionSet: android.transition.TransitionSet setOrdering(int)> 0
+1203-I-MB-<androidx.fragment.app.FragmentTransitionCompat21: java.lang.Object mergeTransitionsInSequence(java.lang.Object,java.lang.Object,java.lang.Object)> 3
+1204-I-MB-<androidx.fragment.app.FragmentTransition: java.lang.Object mergeTransitions(androidx.fragment.app.FragmentTransitionImpl,java.lang.Object,java.lang.Object,java.lang.Object,androidx.fragment.app.Fragment,boolean)> 2
+1205-I-MB-<androidx.fragment.app.FragmentTransition$1: void <init>(java.util.ArrayList)> 1
+1206-I-MB-<androidx.fragment.app.FragmentTransitionCompat21$2: void <init>(androidx.fragment.app.FragmentTransitionCompat21,android.view.View,java.util.ArrayList)> 1
+1207-I-MB-<androidx.fragment.app.FragmentTransitionCompat21: void scheduleHideFragmentView(java.lang.Object,android.view.View,java.util.ArrayList)> 2
+1208-I-MB-<androidx.fragment.app.FragmentTransition: void replaceHide(androidx.fragment.app.FragmentTransitionImpl,java.lang.Object,androidx.fragment.app.Fragment,java.util.ArrayList)> 3
+1209-I-MB-<androidx.collection.SimpleArrayMap: void clear()> 3
+1210-I-MB-<androidx.fragment.app.FragmentTransitionImpl: boolean containedBeforeIndex(java.util.List,android.view.View,int)> 0
+1211-I-MB-<androidx.fragment.app.FragmentTransitionImpl: void bfsAddViewChildren(java.util.List,android.view.View)> 1
+1212-I-MB-<androidx.fragment.app.FragmentTransitionCompat21: void setSharedElementTargets(java.lang.Object,android.view.View,java.util.ArrayList)> 6
+1213-I-MB-<androidx.fragment.app.FragmentTransition: android.view.View getInEpicenterView(androidx.collection.ArrayMap,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,java.lang.Object,boolean)> 1
+1214-I-MB-<androidx.collection.MapCollections: void <init>()> 1
+1215-I-MB-<androidx.collection.ArrayMap$1: void <init>(androidx.collection.ArrayMap)> 1
+1216-I-MB-<androidx.collection.ArrayMap: androidx.collection.MapCollections getCollection()> 1
+1217-I-MB-<androidx.collection.MapCollections$KeySet: void <init>(androidx.collection.MapCollections)> 1
+1218-I-MB-<androidx.collection.MapCollections: java.util.Set getKeySet()> 1
+1219-I-MB-<androidx.collection.ArrayMap: java.util.Set keySet()> 2
+1220-I-MB-<androidx.collection.SimpleArrayMap: int size()> 0
+1221-I-MB-<androidx.collection.SimpleArrayMap: java.lang.Object keyAt(int)> 0
+1222-I-MB-<androidx.collection.SimpleArrayMap: java.lang.Object valueAt(int)> 0
+1223-I-MB-<androidx.fragment.app.FragmentTransition: void callSharedElementStartEnd(androidx.fragment.app.Fragment,androidx.fragment.app.Fragment,boolean,androidx.collection.ArrayMap,boolean)> 5
+1224-I-MB-<android.transition.Transition$EpicenterCallback: void <init>()> 0
+1225-I-MB-<androidx.fragment.app.FragmentTransitionCompat21$1: void <init>(androidx.fragment.app.FragmentTransitionCompat21,android.graphics.Rect)> 1
+1226-I-MB-<android.transition.TransitionSet: void setEpicenterCallback(android.transition.Transition$EpicenterCallback)> 0
+1227-I-MB-<androidx.fragment.app.FragmentTransitionImpl: void getBoundsOnScreen(android.view.View,android.graphics.Rect)> 1
+1228-I-MB-<androidx.fragment.app.FragmentTransitionCompat21: void setEpicenter(java.lang.Object,android.view.View)> 5
+1229-I-MB-<androidx.fragment.app.FragmentTransition: void setOutEpicenter(androidx.fragment.app.FragmentTransitionImpl,java.lang.Object,java.lang.Object,androidx.collection.ArrayMap,boolean,androidx.fragment.app.BackStackRecord)> 2
+1230-I-MB-<androidx.fragment.app.FragmentTransitionCompat21$4: void <init>(androidx.fragment.app.FragmentTransitionCompat21,android.graphics.Rect)> 1
+1231-I-MB-<androidx.fragment.app.FragmentTransitionCompat21: void setEpicenter(java.lang.Object,android.graphics.Rect)> 2
+1232-I-MB-<androidx.fragment.app.FragmentTransitionCompat21: java.lang.Object wrapTransitionInSet(java.lang.Object)> 2
+1233-I-MB-<androidx.fragment.app.FragmentTransition: java.lang.Object getSharedElementTransition(androidx.fragment.app.FragmentTransitionImpl,androidx.fragment.app.Fragment,androidx.fragment.app.Fragment,boolean)> 2
+1234-I-MB-<androidx.collection.SimpleArrayMap: int indexOfValue(java.lang.Object)> 2
+1235-I-MB-<androidx.collection.ArrayMap$1: int colIndexOfValue(java.lang.Object)> 1
+1236-I-MB-<androidx.collection.MapCollections$ValuesCollection: boolean contains(java.lang.Object)> 1
+1237-I-MB-<androidx.collection.ArrayMap$1: int colIndexOfKey(java.lang.Object)> 1
+1238-I-MB-<androidx.collection.MapCollections$KeySet: boolean contains(java.lang.Object)> 1
+1239-I-MB-<androidx.fragment.app.FragmentTransition: void addSharedElementsWithMatchingNames(java.util.ArrayList,androidx.collection.ArrayMap,java.util.Collection)> 7
+1240-I-MB-<androidx.fragment.app.FragmentTransition$3: void <init>(androidx.fragment.app.Fragment,androidx.fragment.app.Fragment,boolean,androidx.collection.ArrayMap,android.view.View,androidx.fragment.app.FragmentTransitionImpl,android.graphics.Rect)> 1
+1241-I-MB-<androidx.fragment.app.FragmentTransition: java.lang.String findKeyForValue(androidx.collection.ArrayMap,java.lang.String)> 4
+1242-I-MB-<androidx.collection.SimpleArrayMap: boolean containsKey(java.lang.Object)> 1
+1243-I-MB-<androidx.fragment.app.FragmentTransition: void retainValues(androidx.collection.ArrayMap,androidx.collection.ArrayMap)> 4
+1244-I-MB-<androidx.collection.MapCollections$ValuesCollection: void <init>(androidx.collection.MapCollections)> 1
+1245-I-MB-<androidx.collection.MapCollections: java.util.Collection getValues()> 1
+1246-I-MB-<androidx.collection.ArrayMap: java.util.Collection values()> 2
+1247-I-MB-<androidx.collection.ArrayMap$1: java.lang.Object colGetEntry(int,int)> 0
+1248-I-MB-<java.util.NoSuchElementException: void <init>()> 0
+1249-I-MB-<androidx.collection.MapCollections$ArrayIterator: boolean hasNext()> 0
+1250-I-MB-<androidx.collection.MapCollections$ArrayIterator: java.lang.Object next()> 3
+1251-I-MB-<androidx.collection.ArrayMap$1: void colRemoveAt(int)> 1
+1252-I-MB-<java.lang.IllegalStateException: void <init>()> 0
+1253-I-MB-<androidx.collection.MapCollections$ArrayIterator: void remove()> 2
+1254-I-MB-<androidx.collection.ArrayMap$1: int colGetSize()> 0
+1255-I-MB-<androidx.collection.MapCollections$ArrayIterator: void <init>(androidx.collection.MapCollections,int)> 2
+1256-I-MB-<androidx.collection.MapCollections$KeySet: java.util.Iterator iterator()> 1
+1257-I-MB-<androidx.collection.MapCollections: boolean retainAllHelper(java.util.Map,java.util.Collection)> 8
+1258-I-MB-<androidx.collection.ArrayMap: boolean retainAll(java.util.Collection)> 1
+1259-I-MB-<androidx.fragment.app.FragmentTransitionImpl: void findNamedViews(java.util.Map,android.view.View)> 3
+1260-I-MB-<androidx.fragment.app.FragmentTransition: androidx.collection.ArrayMap captureInSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition)> 15
+1261-I-MB-<androidx.fragment.app.FragmentTransition: androidx.collection.ArrayMap captureOutSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition)> 12
+1262-I-MB-<androidx.fragment.app.FragmentTransition: java.lang.Object configureSharedElementsReordered(androidx.fragment.app.FragmentTransitionImpl,android.view.ViewGroup,android.view.View,androidx.collection.ArrayMap,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,java.util.ArrayList,java.util.ArrayList,java.lang.Object,java.lang.Object)> 19
+1263-I-MB-<androidx.fragment.app.FragmentTransitionImpl: java.util.ArrayList prepareSetNameOverridesReordered(java.util.ArrayList)> 7
+1264-I-MB-<android.transition.TransitionSet: android.transition.Transition removeTarget(android.view.View)> 0
+1265-I-MB-<androidx.fragment.app.FragmentTransitionCompat21: void replaceTargets(java.lang.Object,java.util.ArrayList,java.util.ArrayList)> 8
+1266-I-MB-<androidx.fragment.app.FragmentTransitionCompat21: void swapSharedElementTargets(java.lang.Object,java.util.ArrayList,java.util.ArrayList)> 2
+1267-I-MB-<androidx.fragment.app.FragmentTransition: void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap)> 19
+1268-I-MB-<androidx.fragment.app.FragmentTransition$2: void <init>(java.lang.Object,androidx.fragment.app.FragmentTransitionImpl,android.view.View,androidx.fragment.app.Fragment,java.util.ArrayList,java.util.ArrayList,java.util.ArrayList,java.lang.Object)> 1
+1269-I-MB-<androidx.fragment.app.FragmentTransition: void scheduleTargetChange(androidx.fragment.app.FragmentTransitionImpl,android.view.ViewGroup,androidx.fragment.app.Fragment,android.view.View,java.util.ArrayList,java.lang.Object,java.util.ArrayList,java.lang.Object,java.util.ArrayList)> 2
+1270-I-MB-<androidx.fragment.app.FragmentTransition$4: void <init>(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,java.util.ArrayList,android.view.View,androidx.fragment.app.Fragment,androidx.fragment.app.Fragment,boolean,java.util.ArrayList,java.lang.Object,android.graphics.Rect)> 1
+1271-I-MB-<androidx.fragment.app.FragmentTransition: java.lang.Object configureSharedElementsOrdered(androidx.fragment.app.FragmentTransitionImpl,android.view.ViewGroup,android.view.View,androidx.collection.ArrayMap,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,java.util.ArrayList,java.util.ArrayList,java.lang.Object,java.lang.Object)> 14
+1272-I-MB-<androidx.fragment.app.FragmentTransitionImpl$3: void <init>(androidx.fragment.app.FragmentTransitionImpl,java.util.ArrayList,java.util.Map)> 1
+1273-I-MB-<androidx.fragment.app.FragmentTransitionImpl: void scheduleNameReset(android.view.ViewGroup,java.util.ArrayList,java.util.Map)> 2
+1274-I-MB-<androidx.fragment.app.FragmentTransitionImpl$2: void <init>(androidx.fragment.app.FragmentTransitionImpl,java.util.ArrayList,java.util.Map)> 1
+1275-I-MB-<androidx.fragment.app.FragmentTransitionImpl: void setNameOverridesOrdered(android.view.View,java.util.ArrayList,java.util.Map)> 2
+1276-I-MB-<androidx.fragment.app.FragmentTransitionCompat21: void addTarget(java.lang.Object,android.view.View)> 1
+1277-I-MB-<androidx.fragment.app.FragmentTransition: void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap)> 19
+1278-I-MB-<androidx.fragment.app.FragmentTransition: void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean)> 14
+1279-I-MB-<androidx.fragment.app.FragmentManagerImpl: void reportBackStackChanged()> 0
+1280-I-MB-<java.util.ArrayList: java.lang.Object set(int,java.lang.Object)> 0
+1281-I-MB-<androidx.fragment.app.FragmentManagerImpl: void freeBackStackIndex(int)> 11
+1282-I-MB-<androidx.fragment.app.FragmentManagerImpl: void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int)> 14
+1283-I-MB-<androidx.fragment.app.Fragment: void onResume()> 0
+1284-I-MB-<androidx.fragment.app.Fragment: void performResume()> 9
+1285-I-MB-<androidx.fragment.app.Fragment: void onStart()> 0
+1286-I-MB-<androidx.fragment.app.Fragment: void performStart()> 9
+1287-I-MB-<androidx.fragment.app.FragmentContainer: void <init>()> 1
+1288-I-MB-<androidx.fragment.app.Fragment$2: void <init>(androidx.fragment.app.Fragment)> 1
+1289-I-MB-<androidx.fragment.app.FragmentManagerImpl$1: void <init>(androidx.fragment.app.FragmentManagerImpl)> 1
+1290-I-MB-<androidx.fragment.app.FragmentManager: void <init>()> 1
+1291-I-MB-<androidx.fragment.app.FragmentManagerImpl: void <init>()> 4
+1292-I-MB-<androidx.fragment.app.FragmentManagerImpl: void attachController(androidx.fragment.app.FragmentHostCallback,androidx.fragment.app.FragmentContainer,androidx.fragment.app.Fragment)> 1
+1293-I-MB-<androidx.fragment.app.Fragment: void instantiateChildFragmentManager()> 5
+1294-I-MB-<androidx.fragment.app.FragmentManagerImpl: void setBackStackIndex(int,androidx.fragment.app.BackStackRecord)> 13
+1295-I-MB-<java.io.PrintWriter: void close()> 0
+1296-I-MB-<java.util.ArrayList: boolean contains(java.lang.Object)> 0
+1297-I-MB-<androidx.fragment.app.FragmentManagerImpl: void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig)> 23
+1298-I-MB-<androidx.fragment.app.Fragment: void restoreChildFragmentState(android.os.Bundle)> 2
+1299-I-MB-<androidx.fragment.app.FragmentManagerImpl: void doPendingDeferredStart()> 0
+1300-I-MB-<androidx.fragment.app.Fragment: androidx.fragment.app.FragmentManager getChildFragmentManager()>  1300-I-MB-<androidx.fragment.app.Fragment: androidx.fragment.app.FragmentManager getChildFragmentManager()> 1
+1301-I-MB-<androidx.fragment.app.Fragment: void performCreate(android.os.Bundle)> 8
+1302-I-MB-<android.util.SparseArray: void delete(int)> 0
+1303-I-MB-<androidx.fragment.app.FragmentManagerImpl: void burpActive()> 4
+1304-I-MB-<androidx.fragment.app.FragmentHostCallback: android.os.Handler getHandler()> 0
+1305-I-MB-<android.os.Looper: android.os.Looper myLooper()> 0
+1306-I-MB-<android.os.Handler: android.os.Looper getLooper()> 0
+1307-I-MB-<androidx.fragment.app.FragmentManagerImpl: void ensureExecReady(boolean)> 6
+1308-I-MB-<android.os.Handler: void removeCallbacks(java.lang.Runnable)> 0
+1309-I-MB-<androidx.fragment.app.FragmentManagerImpl: boolean generateOpsForPendingActions(java.util.ArrayList,java.util.ArrayList)> 3
+1310-I-MB-<androidx.fragment.app.FragmentManagerImpl: void cleanupExec()> 1
+1311-I-MB-<androidx.fragment.app.FragmentManagerImpl: boolean execPendingActions()> 4
+1312-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchDestroyView()> 0
+1313-I-MB-<androidx.fragment.app.Fragment: android.view.LayoutInflater performGetLayoutInflater(android.os.Bundle)> 0
+1314-I-MB-<androidx.fragment.app.FragmentManagerImpl: void ensureInflatedFragmentView(androidx.fragment.app.Fragment)> 3
+1315-I-MB-<android.app.Activity: boolean isChangingConfigurations()> 0
+1316-I-MB-<java.util.HashMap: java.util.Collection values()> 0
+1317-I-MB-<java.util.HashMap: void clear()> 0
+1318-I-MB-<androidx.lifecycle.ViewModelStore: void clear()> 2
+1319-I-MB-<androidx.fragment.app.Fragment: androidx.fragment.app.FragmentActivity getActivity()> 1
+1320-I-MB-<androidx.fragment.app.Fragment: void onDestroy()> 3
+1321-I-MB-<androidx.fragment.app.Fragment: void performDestroy()> 8
+1322-I-MB-<androidx.fragment.app.FragmentManagerImpl: boolean isStateAtLeast(int)> 0
+1323-I-MB-<androidx.fragment.app.Fragment: void onCreate(android.os.Bundle)> 1
+1324-I-MB-SCC32750 36
+1325-I-MB-<androidx.fragment.app.FragmentController: boolean execPendingActions()> 1
+1326-I-MB-<android.app.Activity: void onSaveInstanceState(android.os.Bundle)> 0
+1327-I-MB-<androidx.lifecycle.LifecycleRegistry: void markState(androidx.lifecycle.Lifecycle$State)> 1
+1328-I-MB-<androidx.core.app.ComponentActivity: void onSaveInstanceState(android.os.Bundle)> 3
+1329-I-MB-<androidx.fragment.app.FragmentManagerImpl$2$1: void run()> 4
+1330-I-MB-<androidx.fragment.app.FragmentController: void dispatchStart()> 1
+1331-I-MB-<android.app.Activity: void onStart()> 0
+1332-I-MB-<androidx.fragment.app.FragmentController: void noteStateNotSaved()> 1
+1333-I-MB-<androidx.fragment.app.FragmentController: void dispatchActivityCreated()> 1
+1334-I-MB-<androidx.fragment.app.FragmentActivity: void onStart()> 5
+1335-I-MB-<androidx.appcompat.app.AppCompatDelegate: int getDefaultNightMode()> 1
+1336-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: int getNightMode()> 3
+1337-I-MB-<android.content.IntentFilter: void <init>()> 0
+1338-I-MB-<android.content.IntentFilter: void <clinit>()> 0
+1339-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager$1: void onReceive(android.content.Context,android.content.Intent)> 0
+1340-I-MB-<android.content.ContextWrapper: void unregisterReceiver(android.content.BroadcastReceiver)> 0
+1341-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager: void cleanup()> 1
+1342-I-MB-<android.content.IntentFilter: void addAction(java.lang.String)> 0
+1343-I-MB-<android.content.BroadcastReceiver: void <init>()> 0
+1344-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager$1: void <init>(androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager)> 1
+1345-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager: void setup()> 6
+1346-I-MB-<androidx.appcompat.app.ResourcesFlusher: void flushThemedResourcesCache(java.lang.Object)> 2
+1347-I-MB-<androidx.appcompat.app.ResourcesFlusher: void flushMarshmallows(android.content.res.Resources)> 3
+1348-I-MB-<androidx.appcompat.app.ResourcesFlusher: void flushLollipops(android.content.res.Resources)> 2
+1349-I-MB-<androidx.appcompat.app.ResourcesFlusher: void flushNougats(android.content.res.Resources)> 3
+1350-I-MB-<androidx.appcompat.app.ResourcesFlusher: void flush(android.content.res.Resources)> 4
+1351-I-MB-<android.app.Activity: void recreate()> 0
+1352-I-MB-<android.content.res.Resources: void updateConfiguration(android.content.res.Configuration,android.util.DisplayMetrics)> 0
+1353-I-MB-<android.content.res.Configuration: void <init>(android.content.res.Configuration)> 0
+1354-I-MB-<android.content.ContextWrapper: android.content.pm.PackageManager getPackageManager()> 0
+1355-I-MB-<android.content.ComponentName: void <clinit>()> 0
+1356-I-MB-<android.content.ComponentName: void <init>(android.content.Context,java.lang.Class)> 0
+1357-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: boolean shouldRecreateOnNightModeChange()> 5
+1358-I-MB-<android.content.res.Configuration: void <clinit>()> 0
+1359-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: boolean updateForNightMode(int)> 10
+1360-I-MB-<java.lang.System: long currentTimeMillis()> 0
+1361-I-MB-<androidx.appcompat.app.TwilightManager: boolean isStateValid()> 2
+1362-I-MB-<android.os.Process: int myPid()> 0
+1363-I-MB-<android.content.ContextWrapper: int checkPermission(java.lang.String,int,int)> 0
+1364-I-MB-<android.content.Context: java.lang.Object getSystemService(java.lang.Class)> 0
+1365-I-MB-<androidx.core.app.AppOpsManagerCompat: int noteProxyOpNoThrow(android.content.Context,java.lang.String,java.lang.String)> 2
+1366-I-MB-<android.app.AppOpsManager: java.lang.String permissionToOp(java.lang.String)> 0
+1367-I-MB-<androidx.core.app.AppOpsManagerCompat: java.lang.String permissionToOp(java.lang.String)> 2
+1368-I-MB-<androidx.core.content.PermissionChecker: int checkPermission(android.content.Context,java.lang.String,int,int,java.lang.String)> 4
+1369-I-MB-<android.os.Process: int myUid()> 0
+1370-I-MB-<androidx.core.content.PermissionChecker: int checkSelfPermission(android.content.Context,java.lang.String)> 4
+1371-I-MB-<androidx.appcompat.app.TwilightManager: android.location.Location getLastKnownLocationForProvider(java.lang.String)> 1
+1372-I-MB-<androidx.appcompat.app.TwilightManager: android.location.Location getLastKnownLocation()> 2
+1373-I-MB-<java.util.Calendar: java.util.Calendar getInstance()> 0
+1374-I-MB-<java.lang.Math: long round(double)> 0
+1375-I-MB-<java.lang.Math: double acos(double)> 0
+1376-I-MB-<java.lang.Math: double asin(double)> 0
+1377-I-MB-<androidx.appcompat.app.TwilightCalculator: void calculateTwilight(long,double,double)> 7
+1378-I-MB-<androidx.appcompat.app.TwilightCalculator: void <init>()> 1
+1379-I-MB-<androidx.appcompat.app.TwilightCalculator: androidx.appcompat.app.TwilightCalculator getInstance()> 1
+1380-I-MB-<androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)> 4
+1381-I-MB-<androidx.appcompat.app.TwilightManager: boolean isNight()> 5
+1382-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager: void <init>(androidx.appcompat.app.AppCompatDelegateImpl,androidx.appcompat.app.TwilightManager)> 2
+1383-I-MB-<androidx.appcompat.app.TwilightManager$TwilightState: void <init>()> 1
+1384-I-MB-<androidx.appcompat.app.TwilightManager: void <init>(android.content.Context,android.location.LocationManager)> 2
+1385-I-MB-<android.content.ContextWrapper: android.content.Context getApplicationContext()> 0
+1386-I-MB-<androidx.appcompat.app.TwilightManager: androidx.appcompat.app.TwilightManager getInstance(android.content.Context)> 3
+1387-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void ensureAutoNightModeManager()> 2
+1388-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager: int getApplyableNightMode()> 1
+1389-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: int mapNightMode(int)> 4
+1390-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: boolean applyDayNight()> 5
+1391-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void onStart()> 1
+1392-I-MB-<androidx.appcompat.app.AppCompatActivity: void onStart()> 3
+1393-I-MB-<androidx.appcompat.app.WindowDecorActionBar: void setShowHideAnimationEnabled(boolean)> 0
+1394-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void onPostResume()> 2
+1395-I-MB-<androidx.fragment.app.BackStackState: void <init>(androidx.fragment.app.BackStackRecord)> 2
+1396-I-MB-<androidx.fragment.app.FragmentManagerImpl$AnimationListenerWrapper: void onAnimationRepeat(android.view.animation.Animation)> 0
+1397-I-MB-<android.os.AsyncTask: void <clinit>()> 0
+1398-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void onStop()> 3
+1399-I-MB-<androidx.appcompat.app.ActionBar: void onDestroy()> 0
+1400-I-MB-<android.app.Activity: void onPostResume()>  1400-I-MB-<android.app.Activity: void onPostResume()> 0
+1401-I-MB-<androidx.lifecycle.LiveData$1: void <init>(androidx.lifecycle.LiveData)> 1
+1402-I-MB-<androidx.lifecycle.LiveData: void <init>()> 4
+1403-I-MB-<androidx.fragment.app.FragmentManagerState$1: void <init>()> 1
+1404-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void onSaveInstanceState(android.os.Bundle)> 0
+1405-I-MB-<androidx.fragment.app.FragmentManagerImpl: void dispatchOnFragmentSaveInstanceState(androidx.fragment.app.Fragment,android.os.Bundle,boolean)> 2
+1406-I-MB-<androidx.fragment.app.FragmentManagerState: void <clinit>()> 1
+1407-I-MB-<androidx.fragment.app.FragmentActivity$1: void handleMessage(android.os.Message)> 0
+1408-I-MB-<android.app.Activity: void onResume()> 0
+1409-I-MB-<androidx.fragment.app.FragmentActivity: void onResume()> 3
+1410-I-MB-<android.view.WindowInsets: int getSystemWindowInsetBottom()> 0
+1411-I-MB-<androidx.core.view.WindowInsetsCompat: int getSystemWindowInsetBottom()> 2
+1412-I-MB-<androidx.core.view.WindowInsetsCompat: java.lang.Object unwrap(androidx.core.view.WindowInsetsCompat)> 0
+1413-I-MB-<android.view.WindowInsets: int getSystemWindowInsetRight()> 0
+1414-I-MB-<androidx.core.view.WindowInsetsCompat: int getSystemWindowInsetRight()> 2
+1415-I-MB-<androidx.fragment.app.FragmentState$1: void <init>()> 1
+1416-I-MB-<androidx.fragment.app.FragmentActivity: androidx.fragment.app.FragmentManager getSupportFragmentManager()> 1
+1417-I-MB-<android.view.View: void setVisibility(int)> 0
+1418-I-MB-<android.os.AsyncTask: void <init>()> 0
+1419-I-MB-<dev.navids.AsyncTask5.MainActivity$MyAsyncTask: void <init>(dev.navids.AsyncTask5.MainActivity)> 1
+1420-I-MB-<android.os.Handler: boolean hasMessages(int)> 0
+1421-I-MB-<android.os.Bundle: void putBoolean(java.lang.String,boolean)> 0
+1422-I-MB-<android.os.Bundle: boolean isEmpty()> 0
+1423-I-MB-<androidx.fragment.app.FragmentManagerImpl: android.os.Bundle saveFragmentBasicState(androidx.fragment.app.Fragment)> 7
+1424-I-MB-<java.lang.IllegalArgumentException: void <init>(java.lang.Throwable)> 0
+1425-I-MB-<androidx.core.app.NavUtils: java.lang.String getParentActivityName(android.content.Context,android.content.ComponentName)> 4
+1426-I-MB-<androidx.core.app.NavUtils: java.lang.String getParentActivityName(android.app.Activity)> 2
+1427-I-MB-<android.app.Activity: void <init>()> 0
+1428-I-MB-<androidx.core.app.ComponentActivity: void <init>()> 3
+1429-I-MB-<androidx.fragment.app.FragmentController: void <init>(androidx.fragment.app.FragmentHostCallback)> 1
+1430-I-MB-<androidx.fragment.app.FragmentController: androidx.fragment.app.FragmentController createController(androidx.fragment.app.FragmentHostCallback)> 1
+1431-I-MB-<java.lang.String: java.lang.String valueOf(java.lang.Object)> 1
+1432-I-MB-<androidx.core.util.Preconditions: java.lang.Object checkNotNull(java.lang.Object,java.lang.Object)> 3
+1433-I-MB-<androidx.fragment.app.FragmentHostCallback: void <init>(android.app.Activity,android.content.Context,android.os.Handler,int)> 4
+1434-I-MB-<androidx.fragment.app.FragmentHostCallback: void <init>(androidx.fragment.app.FragmentActivity)> 1
+1435-I-MB-<androidx.fragment.app.FragmentActivity$HostCallbacks: void <init>(androidx.fragment.app.FragmentActivity)> 1
+1436-I-MB-<android.os.Handler: void <init>()> 0
+1437-I-MB-<androidx.fragment.app.FragmentActivity$1: void <init>(androidx.fragment.app.FragmentActivity)> 1
+1438-I-MB-<androidx.fragment.app.FragmentActivity: void <init>()> 4
+1439-I-MB-<android.graphics.Rect: boolean isEmpty()> 0
+1440-I-MB-<androidx.fragment.app.FragmentTransitionCompat21$4: android.graphics.Rect onGetEpicenter(android.transition.Transition)> 1
+1441-I-MB-<androidx.fragment.app.BackStackState$1: void <init>()> 1
+1442-I-MB-<androidx.fragment.app.FragmentState: void <init>(androidx.fragment.app.Fragment)> 2
+1443-I-MB-<android.app.Activity: void onPause()> 0
+1444-I-MB-<java.util.ArrayList: java.lang.Object clone()> 0
+1445-I-MB-<androidx.fragment.app.FragmentController: void dispatchResume()> 1
+1446-I-MB-<androidx.fragment.app.FragmentActivity: void onResumeFragments()> 1
+1447-I-MB-<android.app.Activity: void onCreate(android.os.Bundle)> 0
+1448-I-MB-<androidx.fragment.app.FragmentManagerNonConfig: void <init>(java.util.List,java.util.List,java.util.List)> 1
+1449-I-MB-<androidx.fragment.app.FragmentManagerImpl: void saveNonConfig()> 12
+1450-I-MB-<androidx.fragment.app.FragmentState: void <clinit>()> 1
+1451-I-MB-<androidx.fragment.app.FragmentManagerImpl: void forcePostponedTransactions()> 2
+1452-I-MB-<androidx.fragment.app.BackStackState: void <clinit>()> 1
+1453-I-MB-<androidx.fragment.app.FragmentManagerImpl: void putFragment(android.os.Bundle,java.lang.String,androidx.fragment.app.Fragment)> 7
+1454-I-MB-<androidx.fragment.app.FragmentManagerState: void <init>()> 1
+1455-I-MB-<androidx.fragment.app.FragmentManagerImpl: void endAnimatingAwayFragments()> 3
+1456-I-MB-<androidx.fragment.app.FragmentManagerImpl: android.os.Parcelable saveAllState()> 27
+1457-I-MB-<android.os.Bundle: void putParcelable(java.lang.String,android.os.Parcelable)> 0
+1458-I-MB-<androidx.fragment.app.Fragment: void onSaveInstanceState(android.os.Bundle)> 0
+1459-I-MB-<androidx.fragment.app.Fragment: void performSaveInstanceState(android.os.Bundle)> 2
+1460-I-MB-SCC28048 3
+1461-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void onPostCreate(android.os.Bundle)> 1
+1462-I-MB-<android.app.Activity: void onPostCreate(android.os.Bundle)> 0
+1463-I-MB-<androidx.appcompat.app.AppCompatActivity: void onPostCreate(android.os.Bundle)> 3
+1464-I-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> 0
+1465-I-MB-<android.app.Activity: void setTheme(int)> 0
+1466-I-MB-<androidx.fragment.app.FragmentController: void dispatchStop()> 1
+1467-I-MB-<android.view.View: android.view.ViewGroup$LayoutParams getLayoutParams()> 0
+1468-I-MB-<androidx.fragment.app.FragmentController: android.os.Parcelable saveAllState()> 1
+1469-I-MB-<android.os.Handler: void removeMessages(int)> 0
+1470-I-MB-<androidx.fragment.app.FragmentController: void dispatchPause()> 1
+1471-I-MB-<androidx.fragment.app.FragmentActivity: void onPause()> 5
+1472-I-MB-<androidx.fragment.app.FragmentManagerImpl$AnimationListenerWrapper: void onAnimationEnd(android.view.animation.Animation)> 0
+1473-I-MB-<java.util.Collections: void <clinit>()> 0
+1474-I-MB-<java.util.Collections: java.util.List emptyList()> 0
+1475-I-MB-<androidx.fragment.app.FragmentManagerImpl: java.util.List getFragments()> 4
+1476-I-MB-<android.view.WindowInsets: void <init>(android.view.WindowInsets)> 0
+1477-I-MB-<androidx.fragment.app.FragmentActivity: boolean markState(androidx.fragment.app.FragmentManager,androidx.lifecycle.Lifecycle$State)> 2
+1478-I-MB-<androidx.fragment.app.FragmentActivity: void markFragmentsCreated()> 3
+1479-I-MB-<androidx.fragment.app.FragmentActivity: void onSaveInstanceState(android.os.Bundle)> 7
+1480-I-MB-<androidx.appcompat.app.AppCompatActivity: void onSaveInstanceState(android.os.Bundle)> 3
+1481-I-MB-<java.lang.Thread: void sleep(long)> 1
+1482-I-MB-<androidx.fragment.app.FragmentTransitionCompat21$2: void onTransitionEnd(android.transition.Transition)> 2
+1483-I-MB-<android.app.Activity: android.app.FragmentManager getFragmentManager()> 0
+1484-I-MB-<android.app.Fragment: void <init>()> 0
+1485-I-MB-<androidx.lifecycle.ReportFragment: void <init>()> 1
+1486-I-MB-<androidx.lifecycle.ReportFragment: void injectIfNeededIn(android.app.Activity)> 2
+1487-I-MB-<androidx.core.app.ComponentActivity: void onCreate(android.os.Bundle)> 2
+1488-I-MB-<androidx.core.view.WindowInsetsCompat: void <init>(java.lang.Object)> 1
+1489-I-MB-<androidx.core.view.WindowInsetsCompat: androidx.core.view.WindowInsetsCompat wrap(java.lang.Object)> 1
+1490-I-MB-<androidx.fragment.app.FragmentController: void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig)> 1
+1491-I-MB-<androidx.fragment.app.FragmentController: void attachHost(androidx.fragment.app.Fragment)> 1
+1492-I-MB-<androidx.fragment.app.FragmentController: void dispatchCreate()> 1
+1493-I-MB-<androidx.fragment.app.FragmentActivity: void onCreate(android.os.Bundle)> 10
+1494-I-MB-<androidx.lifecycle.MutableLiveData: void <init>()> 1
+1495-I-MB-<androidx.fragment.app.Fragment: void <init>()> 3
+1496-I-MB-<java.util.Random: void <init>()> 0
+1497-I-MB-<android.view.View: void setLayoutParams(android.view.ViewGroup$LayoutParams)> 0
+1498-I-MB-<android.view.View: void setBackgroundColor(int)> 0
+1499-I-MB-<android.view.WindowInsets: int getSystemWindowInsetTop()> 0
+1500-I-MB-<androidx.core.view.ViewCompat: androidx.core.view.WindowInsetsCompat onApplyWindowInsets(android.view.View,androidx.core.view.WindowInsetsCompat)>  1500-I-MB-<androidx.core.view.ViewCompat: androidx.core.view.WindowInsetsCompat onApplyWindowInsets(android.view.View,androidx.core.view.WindowInsetsCompat)> 4
+1501-I-MB-<android.view.WindowInsets: int getSystemWindowInsetLeft()> 0
+1502-I-MB-<androidx.core.view.ViewCompat: boolean isAttachedToWindow(android.view.View)> 1
+1503-I-MB-<androidx.appcompat.app.AppCompatActivity: void setTheme(int)> 1
+1504-I-MB-<androidx.core.view.WindowInsetsCompat: int getSystemWindowInsetTop()> 2
+1505-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void installViewFactory()> 3
+1506-I-MB-<androidx.appcompat.widget.ViewUtils: void computeFitSystemWindows(android.view.View,android.graphics.Rect,android.graphics.Rect)> 2
+1507-I-MB-<android.content.res.Resources: int getColor(int)> 0
+1508-I-MB-<android.view.ViewGroup$LayoutParams: void <init>(int,int)> 0
+1509-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: int updateStatusGuard(int)> 14
+1510-I-MB-<dev.navids.AsyncTask5.MainActivity$MyAsyncTask: void onPostExecute(java.lang.Object)> 0
+1511-I-MB-<java.util.Random: int nextInt(int)> 0
+1512-I-MB-<dev.navids.AsyncTask5.MainActivity$MyAsyncTask: java.lang.Object doInBackground(java.lang.Object[])> 5
+1513-I-MB-<dev.navids.AsyncTask5.MainActivity$1: void onClick(android.view.View)> 3
+1514-I-MB-<androidx.core.view.WindowInsetsCompat: int getSystemWindowInsetLeft()> 2
+1515-I-MB-<android.view.WindowInsets: android.view.WindowInsets replaceSystemWindowInsets(int,int,int,int)> 0
+1516-I-MB-<androidx.core.view.WindowInsetsCompat: androidx.core.view.WindowInsetsCompat replaceSystemWindowInsets(int,int,int,int)> 3
+1517-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$3: androidx.core.view.WindowInsetsCompat onApplyWindowInsets(android.view.View,androidx.core.view.WindowInsetsCompat)> 8
+1518-I-MB-<androidx.fragment.app.FragmentActivity: void onPostResume()> 4
+1519-I-MB-<androidx.fragment.app.FragmentManagerImpl$AnimateOnHWLayerIfNeededListener$1: void run()> 0
+1520-I-MB-<dev.navids.AsyncTask5.MainActivity$1: void <init>(dev.navids.AsyncTask5.MainActivity)> 1
+1521-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void onCreate(android.os.Bundle)> 3
+1522-I-MB-<android.app.Activity: void onApplyThemeResource(android.content.res.Resources$Theme,int,boolean)> 0
+1523-I-MB-<androidx.appcompat.app.AppCompatActivity: void onCreate(android.os.Bundle)> 9
+1524-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl$AppCompatWindowCallback: void onContentChanged()> 0
+1525-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void setContentView(int)> 3
+1526-I-MB-<androidx.appcompat.app.AppCompatActivity: void setContentView(int)> 2
+1527-I-MB-<dev.navids.AsyncTask5.MainActivity: void onCreate(android.os.Bundle)> 6
+1528-I-MB-<androidx.appcompat.app.AppCompatDelegateImpl: void onDestroy()> 2
+1529-I-MB-<android.app.Activity: void onDestroy()> 0
+1530-I-MB-<androidx.fragment.app.FragmentController: void dispatchDestroy()> 1
+1531-I-MB-<androidx.fragment.app.FragmentActivity: void onDestroy()> 4
+1532-I-MB-<androidx.appcompat.app.AppCompatActivity: void onDestroy()> 3
+1533-I-MB-<androidx.appcompat.app.AppCompatActivity: void <init>()> 1
+1534-I-MB-<dev.navids.AsyncTask5.MainActivity: void <init>()> 1
+1535-I-MB-<androidx.fragment.app.FragmentManagerImpl$AnimateOnHWLayerIfNeededListener$1: void <init>(androidx.fragment.app.FragmentManagerImpl$AnimateOnHWLayerIfNeededListener)> 1
+1536-I-MB-<androidx.fragment.app.FragmentManagerImpl$AnimateOnHWLayerIfNeededListener: void onAnimationEnd(android.view.animation.Animation)> 6
+1537-I-MB-<android.app.Activity: void onStop()> 0
+1538-I-MB-<androidx.core.view.ViewCompat$1: android.view.WindowInsets onApplyWindowInsets(android.view.View,android.view.WindowInsets)> 3
+1539-I-MB-<androidx.fragment.app.FragmentActivity: void onStop()> 3
+1540-I-MB-<androidx.fragment.app.FragmentManagerImpl$2$1: void <init>(androidx.fragment.app.FragmentManagerImpl$2)> 1
+1541-I-MB-<androidx.fragment.app.FragmentManagerImpl$2: void onAnimationEnd(android.view.animation.Animation)> 3
+1542-I-MB-<androidx.fragment.app.FragmentTransitionCompat21$1: android.graphics.Rect onGetEpicenter(android.transition.Transition)> 0
+1543-I-MB-<androidx.fragment.app.FragmentManagerImpl$AnimationListenerWrapper: void onAnimationStart(android.view.animation.Animation)> 0
+1544-I-MB-<androidx.appcompat.app.AppCompatActivity: void onPostResume()> 3
+1545-I-MB-<androidx.fragment.app.FragmentTransitionCompat21$3: void onTransitionStart(android.transition.Transition)> 1
+1546-I-MB-<androidx.appcompat.app.AppCompatActivity: void onStop()> 3
+1547-I-MB-<dummyMainClass: dev.navids.AsyncTask5.MainActivity dummyMainMethod_dev_navids_AsyncTask5_MainActivity(android.content.Intent)> 35
+1548-I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])> 1
+Accessible Methods: 7, Reachable Methods: 1548
+Unkown call from dummyMainClass to CE-I-MB-<dummyMainClass: dev.navids.AsyncTask5.MainActivity dummyMainMethod_dev_navids_AsyncTask5_MainActivity(android.content.Intent)> through CInvoke-trueI-MB-<dummyMainClass: dev.navids.AsyncTask5.MainActivity dummyMainMethod_dev_navids_AsyncTask5_MainActivity(android.content.Intent)> on unit staticinvoke <dummyMainClass: dev.navids.AsyncTask5.MainActivity dummyMainMethod_dev_navids_AsyncTask5_MainActivity(android.content.Intent)>(null)
+Unkown call from dummyMainClass to CE-I-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> through CInvoke-trueI-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> on unit staticinvoke <dummyMainClass: void NOP_ASYNC_METHOD()>()
+Unkown call from dummyMainClass to CE-I-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> through CInvoke-trueI-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> on unit staticinvoke <dummyMainClass: void NOP_ASYNC_METHOD()>()
+Unkown call from dummyMainClass to CE-I-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> through CInvoke-trueI-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> on unit staticinvoke <dummyMainClass: void NOP_ASYNC_METHOD()>()
+Cvents: 10 Threads: 5
+Event in Unkown Thread: CE-I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])>@UNKNOWN
+<7,1,0,1,1>
+Event Extraction took [34m3 seconds[0m
+----------------------------------
+1/1 Component: I-MB-<dummyMainClass: dev.navids.AsyncTask5.MainActivity dummyMainMethod_dev_navids_AsyncTask5_MainActivity(android.content.Intent)>
+Edges: 3352
+Starting [33mReachability Filter[0m...
+Reachable MRs: 2 out of 4
+Reachability Filter took [34m0 seconds[0m
+Accessible Methods: 6, Reachable Methods: 1547
+Cvents: 9 Threads: 5
+Event in Unkown Thread: CE-I-MB-<dummyMainClass: dev.navids.AsyncTask5.MainActivity dummyMainMethod_dev_navids_AsyncTask5_MainActivity(android.content.Intent)>@UNKNOWN
+<6,1,0,1,1>
+Starting [33mIfGuardNullAtEndFilter[0m...
+Using Super Fast Event Race Detection
+IGNAE ERs: 2 out of 2
+IfGuardNullAtEndFilter took [34m0 seconds[0m
+Starting [33mOn-Demand HB Analysis[0m...
+Starting [33mSHB Constructor[0m...
+Starting [33mSVCEvent Creation[0m...
+SVCEvent Creation took [34m0 seconds[0m
+Starting [33mSVC Init[0m...
+SVC Init took [34m0 seconds[0m
+SHB Constructor took [34m0 seconds[0m
+Using Fast SHB
+Ordered list has been built.
+SameThread Pass has been completed.
+Iter: 0 Sum: 49 Average: 1.814815
+Ordered list has been built.
+SameThread Pass has been completed.
+Iter: 1 Sum: 55 Average: 2.037037
+Ordered list has been built.
+SameThread Pass has been completed.
+Ordered list has been built.
+HB is created
+On-Demand HB Analysis took [34m0 seconds[0m
+Starting [33mEventRaceDetector[0m...
+Precise MaxCMRs: 4 Fast MaxCMRS: 4
+Context of methods have been extracted, MaxCMRs: 4
+Using Precise Event Race Detection
+MR: W-> <dev.navids.AsyncTask5.MainActivity: void setIntent(android.content.Intent)>, R-> <dev.navids.AsyncTask5.MainActivity: android.content.Intent getIntent()>, M-> <dev.navids.AsyncTask5.MainActivity: android.content.Intent ipcIntent>
+MR: W-> <dev.navids.AsyncTask5.MainActivity$MyAsyncTask: void onPostExecute(java.lang.Object)>, R-> <dev.navids.AsyncTask5.MainActivity$MyAsyncTask: void onPostExecute(java.lang.Object)>, M-> <dev.navids.AsyncTask5.MainActivity: java.lang.Object A>
+Context ERs: 2
+ERs: 2 out of 2
+EventRaceDetector took [34m0 seconds[0m
+Starting [33mIfGuardNullAtEndFilter[0m...
+Using Super Fast Event Race Detection
+IGNAE ERs: 1 out of 2
+IfGuardNullAtEndFilter took [34m0 seconds[0m
+Ordered list has been built.
+SameThread Pass has been completed.
+Ordered list has been built.
+HB is created
+Starting [33mEventRaceDetector[0m...
+Precise MaxCMRs: 4 Fast MaxCMRS: 4
+Context of methods have been extracted, MaxCMRs: 4
+Using Precise Event Race Detection
+MR: W-> <dev.navids.AsyncTask5.MainActivity$MyAsyncTask: void onPostExecute(java.lang.Object)>, R-> <dev.navids.AsyncTask5.MainActivity$MyAsyncTask: void onPostExecute(java.lang.Object)>, M-> <dev.navids.AsyncTask5.MainActivity: java.lang.Object A>
+Context ERs: 2
+ERs: 1 out of 1
+EventRaceDetector took [34m0 seconds[0m
+Starting [33mIfGuardNullAtEndFilter[0m...
+Using Super Fast Event Race Detection
+IGNAE ERs: 1 out of 1
+IfGuardNullAtEndFilter took [34m0 seconds[0m
+Ordered list has been built.
+SameThread Pass has been completed.
+Iter: 0 Sum: 65 Average: 2.407408
+Ordered list has been built.
+SameThread Pass has been completed.
+Iter: 1 Sum: 67 Average: 2.481482
+Ordered list has been built.
+SameThread Pass has been completed.
+Ordered list has been built.
+HB is created
+Starting [33mEventRaceDetector[0m...
+Precise MaxCMRs: 4 Fast MaxCMRS: 4
+Context of methods have been extracted, MaxCMRs: 4
+Using Precise Event Race Detection
+MR: W-> <dev.navids.AsyncTask5.MainActivity$MyAsyncTask: void onPostExecute(java.lang.Object)>, R-> <dev.navids.AsyncTask5.MainActivity$MyAsyncTask: void onPostExecute(java.lang.Object)>, M-> <dev.navids.AsyncTask5.MainActivity: java.lang.Object A>
+Context ERs: 2
+ERs: 1 out of 1
+EventRaceDetector took [34m0 seconds[0m
+Filtered ERs: 2, With paths: 2
+Prioritized ERs: 1
+WholeProcess took [34m27 seconds[0m

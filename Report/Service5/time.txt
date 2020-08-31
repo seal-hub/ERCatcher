@@ -1,0 +1,33 @@
+FlowDroid Setup took 8 seconds
+Memory Analysis took 0 seconds
+MethodBox Generation took 1 seconds
+CaSF Generation took 1 seconds
+GeneralInitalMethodRaceDetector took 0 seconds
+CaSF took 0 seconds
+Cycle Elimination took 0 seconds
+CaCG Generation took 0 seconds
+Reachability Filter took 0 seconds
+Event Extraction took 6 seconds
+Reachability Filter took 0 seconds
+IfGuardNullAtEndFilter took 0 seconds
+SVCEvent Creation took 0 seconds
+SVC Init took 0 seconds
+SHB Constructor took 0 seconds
+On-Demand HB Analysis took 0 seconds
+EventRaceDetector took 0 seconds
+IfGuardNullAtEndFilter took 0 seconds
+EventRaceDetector took 0 seconds
+IfGuardNullAtEndFilter took 0 seconds
+EventRaceDetector took 0 seconds
+Reachability Filter took 0 seconds
+IfGuardNullAtEndFilter took 0 seconds
+SVCEvent Creation took 0 seconds
+SVC Init took 0 seconds
+SHB Constructor took 0 seconds
+On-Demand HB Analysis took 0 seconds
+EventRaceDetector took 0 seconds
+IfGuardNullAtEndFilter took 0 seconds
+EventRaceDetector took 0 seconds
+IfGuardNullAtEndFilter took 0 seconds
+EventRaceDetector took 0 seconds
+WholeProcess took 18 seconds

@@ -1,0 +1,11 @@
+Id,Priority,Race Description,IfGuard,NullAtEnd,InitiatedByInvoke,Write Threads,Read Threads,WriteMethod,ReadMethod,Field
+1,7,"Write Event: <com.concurrencybench.service1.MainActivity$1: void onServiceDisconnected(android.content.ComponentName)>
+Write Stmt: 31: $r2.<com.concurrencybench.service1.MainActivity: java.lang.String coordinates> = null
+Read Event: <com.concurrencybench.service1.MainActivity: void onClick(android.view.View)>
+Read Stmt: 57: $r4 = virtualinvoke $r3.<java.lang.String: java.lang.String[] split(java.lang.String)>("","")
+Memory: <com.concurrencybench.service1.MainActivity: java.lang.String coordinates>",false,true,false,"UI ","UI ",<com.concurrencybench.service1.MainActivity$1: void onServiceDisconnected(android.content.ComponentName)>,<com.concurrencybench.service1.MainActivity: void onClick(android.view.View)>,<com.concurrencybench.service1.MainActivity: java.lang.String coordinates>
+2,7,"Write Event: <com.concurrencybench.service1.MainActivity$1: void onServiceDisconnected(android.content.ComponentName)>
+Write Stmt: 31: $r2.<com.concurrencybench.service1.MainActivity: java.lang.String coordinates> = null
+Read Event: <com.concurrencybench.service1.MainActivity: void onClick(android.view.View)>
+Read Stmt: 58: $r4 = virtualinvoke $r3.<java.lang.String: java.lang.String[] split(java.lang.String)>("","")
+Memory: <com.concurrencybench.service1.MainActivity: java.lang.String coordinates>",false,true,false,"UI ","UI ",<com.concurrencybench.service1.MainActivity$1: void onServiceDisconnected(android.content.ComponentName)>,<com.concurrencybench.service1.MainActivity: void onClick(android.view.View)>,<com.concurrencybench.service1.MainActivity: java.lang.String coordinates>

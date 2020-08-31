@@ -1,0 +1,20 @@
+Reachable Methods: 22, APK Methods: 33, PossibleLib : 14
+FlowDroid Setup took [34m2 seconds[0m
+CaSF Generation took [34m5 seconds[0m
+ER: 1, UAF: 1, IfGuard: 0, NullAtEnd: 1, nAdroid: 1, Read Fields: 1 Write Fields 1
+New Method: <com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskWrite: java.lang.String doInBackground(java.lang.String[])>
+New Method: <com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskRead: void onPostExecute(java.lang.String)>
+New Method: <com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskRead: java.lang.Object doInBackground(java.lang.Object[])>
+New Method: <com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskWrite: java.lang.Object doInBackground(java.lang.Object[])>
+New Method: <com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskRead: void onPostExecute(java.lang.Object)>
+New Method: <com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskRead: java.lang.String doInBackground(java.lang.String[])>
+New: 10, HasActiveBody: 6, FD: 22, Us: 33
+CaCG Generation took [34m0 seconds[0m
+Reachable MRs: 1 out of 1
+Reachable Method With Races: 2 out of 33 (All method with races: 2)
+Cvents: 5 Threads: 4
+Event Extraction took [34m0 seconds[0m
+Cvents: 4 Threads: 4
+Filtered ERs: 0, With paths: 0
+Prioritized ERs: 0
+WholeProcess took [34m13 seconds[0m

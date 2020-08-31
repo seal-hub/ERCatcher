@@ -1,0 +1,11 @@
+Id,Priority,Race Description,IfGuard,NullAtEnd,InitiatedByInvoke,Write Threads,Read Threads,WriteMethod,ReadMethod,Field
+1,15,"Write Event: <com.concurrencybench.lifecycle4.MainActivity$1: void run()>
+Write Stmt: 33: <com.concurrencybench.lifecycle4.MainActivity: java.lang.String coordinates> = null
+Read Event: <com.concurrencybench.lifecycle4.MainActivity: void onPause()>
+Read Stmt: 47: $r5 = virtualinvoke $r1.<java.lang.String: java.lang.String[] split(java.lang.String)>("","")
+Memory: <com.concurrencybench.lifecycle4.MainActivity: java.lang.String coordinates>",true,true,false,"New Alloc Thread AllocNode 2 new java.lang.Thread in method <com.concurrencybench.lifecycle4.MainActivity: void onResume()> ","UI ",<com.concurrencybench.lifecycle4.MainActivity$1: void run()>,<com.concurrencybench.lifecycle4.MainActivity: void onPause()>,<com.concurrencybench.lifecycle4.MainActivity: java.lang.String coordinates>
+2,15,"Write Event: <com.concurrencybench.lifecycle4.MainActivity$1: void run()>
+Write Stmt: 33: <com.concurrencybench.lifecycle4.MainActivity: java.lang.String coordinates> = null
+Read Event: <com.concurrencybench.lifecycle4.MainActivity: void onPause()>
+Read Stmt: 47: $r5 = virtualinvoke $r1.<java.lang.String: java.lang.String[] split(java.lang.String)>("","")
+Memory: <com.concurrencybench.lifecycle4.MainActivity: java.lang.String coordinates>",true,true,false,"New Alloc Thread AllocNode 2 new java.lang.Thread in method <com.concurrencybench.lifecycle4.MainActivity: void onResume()> ","UI ",<com.concurrencybench.lifecycle4.MainActivity$1: void run()>,<com.concurrencybench.lifecycle4.MainActivity: void onPause()>,<com.concurrencybench.lifecycle4.MainActivity: java.lang.String coordinates>

@@ -1,0 +1,6 @@
+Id,Priority,Race Description,IfGuard,NullAtEnd,InitiatedByInvoke,Write Threads,Read Threads,WriteMethod,ReadMethod,Field
+1,1,"Write Event: <dev.navids.AsyncTask6.MainActivity: void setIntent(android.content.Intent)>
+Write Stmt: : this.<dev.navids.AsyncTask6.MainActivity: android.content.Intent ipcIntent> = parameter0
+Read Event: <dev.navids.AsyncTask6.MainActivity: android.content.Intent getIntent()>
+Read Stmt: : return $r0
+Memory: <dev.navids.AsyncTask6.MainActivity: android.content.Intent ipcIntent>",false,false,false,,,<dev.navids.AsyncTask6.MainActivity: void setIntent(android.content.Intent)>,<dev.navids.AsyncTask6.MainActivity: android.content.Intent getIntent()>,<dev.navids.AsyncTask6.MainActivity: android.content.Intent ipcIntent>

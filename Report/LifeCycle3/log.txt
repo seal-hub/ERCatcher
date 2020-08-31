@@ -1,0 +1,169 @@
+Starting [33mWholeProcess[0m...
+Starting [33mFlowDroid Setup[0m...
+ICC config is set: false
+soot.jimple.spark.pag.PAG@22cd8ec2
+Reachable Methods: 24, APK Methods: 30, PossibleLib : 13
+FlowDroid Setup took [34m2 seconds[0m
+Starting [33mMemory Analysis[0m...
+Memory Analysis took [34m0 seconds[0m
+Starting [33mCaSF Generation[0m...
+Starting [33mMethodBox Generation[0m...
+1000-2000-3000-4000-5000-6000-7000-8000-9000-10000-11000-12000-13000-14000-15000-16000-17000-18000-19000-20000-21000-22000-MethodBox Generation took [34m6 seconds[0m
+CaSF Generation took [34m6 seconds[0m
+Starting [33mInitalMethodRaceDetector[0m...
+MR: W-> <dev.navids.lifecycle3.MainActivity$1: void onClick(android.view.View)>, R-> <dev.navids.lifecycle3.MainActivity: void onCreate(android.os.Bundle)>, M-> <dev.navids.lifecycle3.MainActivity: java.lang.Object onCreate_onClick>
+MR: W-> <dev.navids.lifecycle3.MainActivity$1: void onClick(android.view.View)>, R-> <dev.navids.lifecycle3.MainActivity: void onStop()>, M-> <dev.navids.lifecycle3.MainActivity: java.lang.Object onClick_onStop>
+MR: W-> <dev.navids.lifecycle3.MainActivity$2: boolean onDrag(android.view.View,android.view.DragEvent)>, R-> <dev.navids.lifecycle3.MainActivity: void onResume()>, M-> <dev.navids.lifecycle3.MainActivity: java.lang.Object onResume_onScrollChange>
+ER: 3, UAF: 3, IfGuard: 0, NullAtEnd: 3, nAdroid: 3, Read Fields: 3 Write Fields 3
+InitalMethodRaceDetector took [34m6 seconds[0m
+Starting [33mCaCG Generation[0m...
+Starting [33mCaSF[0m...
+Edges: 35
+CaSF took [34m0 seconds[0m
+Starting [33mCycle Elimination[0m...
+--------------- 22624
+Reachable Async IMB: 7
+SCC Size 29
+Cycles 1
+Asynch IMB in Cycles: 0
+Cycles with Asynch IMB: 0
+Real Heads: 4
+ Head: I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])>
+ Head: I-MB-<java.lang.Object: void finalize()>
+ Head: I-MB-<android.app.Service: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<android.support.v4.app.NotificationCompatSideChannelService: void interimBindMethod(android.content.ServiceConnection)>
+Before Update
+After Update
+Edges: 32
+--------------- 22625
+Reachable Async IMB: 7
+SCC Size 33
+Cycles 0
+Asynch IMB in Cycles: 0
+Cycles with Asynch IMB: 0
+Real Heads: 4
+ Head: I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])>
+ Head: I-MB-<java.lang.Object: void finalize()>
+ Head: I-MB-<android.app.Service: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<android.support.v4.app.NotificationCompatSideChannelService: void interimBindMethod(android.content.ServiceConnection)>
+Cycle Elimination took [34m0 seconds[0m
+New: 0, HasActiveBody: 0, FD: 24, Us: 25
+CaCG Generation took [34m0 seconds[0m
+Starting [33mReachability Filter[0m...
+Reachable MRs: 3 out of 3
+Reachability Filter took [34m0 seconds[0m
+Reachable MRs: 3 out of 3
+Starting [33mEvent Extraction[0m...
+Reachable Method With Races: 5 out of 25 (All method with races: 5)
+1-I-MB-<java.lang.RuntimeException: void <init>(java.lang.String)> 0
+2-I-MB-<java.lang.Exception: void <init>()> 0
+3-I-MB-<java.lang.Object: void <init>()> 0
+4-I-MB-<java.lang.Throwable: void <init>()> 0
+5-I-MB-SCC21917 4
+6-I-MB-<java.lang.Object: java.lang.String toString()> 1
+7-I-MB-<android.app.Activity: void onStop()> 0
+8-I-MB-<dev.navids.lifecycle3.MainActivity: void onStop()> 2
+9-I-MB-<dev.navids.lifecycle3.MainActivity$2: void <init>(dev.navids.lifecycle3.MainActivity)> 1
+10-I-MB-<dev.navids.lifecycle3.MainActivity$1: void <init>(dev.navids.lifecycle3.MainActivity)> 1
+11-I-MB-<android.app.Activity: void <init>()> 0
+12-I-MB-<dev.navids.lifecycle3.MainActivity: void <init>()> 2
+13-I-MB-<dev.navids.lifecycle3.MainActivity$1: void onClick(android.view.View)> 0
+14-I-MB-<android.app.Activity: void onPause()> 0
+15-I-MB-<dev.navids.lifecycle3.MainActivity: void onPause()> 1
+16-I-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> 0
+17-I-MB-<android.app.Activity: android.view.View findViewById(int)> 0
+18-I-MB-<android.app.Activity: void setContentView(int)> 0
+19-I-MB-<android.app.Activity: void onCreate(android.os.Bundle)> 0
+20-I-MB-<dev.navids.lifecycle3.MainActivity: void onCreate(android.os.Bundle)> 6
+21-I-MB-<dev.navids.lifecycle3.MainActivity$2: boolean onDrag(android.view.View,android.view.DragEvent)> 0
+22-I-MB-<android.app.Activity: void onResume()> 0
+23-I-MB-<dev.navids.lifecycle3.MainActivity: void onResume()> 2
+24-I-MB-<dummyMainClass: dev.navids.lifecycle3.MainActivity dummyMainMethod_dev_navids_lifecycle3_MainActivity(android.content.Intent)> 10
+25-I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])> 1
+Accessible Methods: 8, Reachable Methods: 25
+Unkown call from dummyMainClass to CE-I-MB-<dummyMainClass: dev.navids.lifecycle3.MainActivity dummyMainMethod_dev_navids_lifecycle3_MainActivity(android.content.Intent)> through CInvoke-trueI-MB-<dummyMainClass: dev.navids.lifecycle3.MainActivity dummyMainMethod_dev_navids_lifecycle3_MainActivity(android.content.Intent)> on unit staticinvoke <dummyMainClass: dev.navids.lifecycle3.MainActivity dummyMainMethod_dev_navids_lifecycle3_MainActivity(android.content.Intent)>(null)
+Unkown call from dummyMainClass to CE-I-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> through CInvoke-trueI-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> on unit staticinvoke <dummyMainClass: void NOP_ASYNC_METHOD()>()
+Unkown call from dummyMainClass to CE-I-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> through CInvoke-trueI-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> on unit staticinvoke <dummyMainClass: void NOP_ASYNC_METHOD()>()
+Cvents: 8 Threads: 3
+Event in Unkown Thread: CE-I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])>@UNKNOWN
+<7,1,0>
+Event Extraction took [34m0 seconds[0m
+----------------------------------
+1/1 Component: I-MB-<dummyMainClass: dev.navids.lifecycle3.MainActivity dummyMainMethod_dev_navids_lifecycle3_MainActivity(android.content.Intent)>
+Edges: 31
+Starting [33mReachability Filter[0m...
+Reachable MRs: 3 out of 3
+Reachability Filter took [34m0 seconds[0m
+Accessible Methods: 7, Reachable Methods: 24
+Cvents: 7 Threads: 3
+Event in Unkown Thread: CE-I-MB-<dummyMainClass: dev.navids.lifecycle3.MainActivity dummyMainMethod_dev_navids_lifecycle3_MainActivity(android.content.Intent)>@UNKNOWN
+<6,1,0>
+Starting [33mIfGuardNullAtEndFilter[0m...
+Using Super Fast Event Race Detection
+IGNAE ERs: 3 out of 3
+IfGuardNullAtEndFilter took [34m0 seconds[0m
+Starting [33mOn-Demand HB Analysis[0m...
+Starting [33mSHB Constructor[0m...
+Starting [33mSVCEvent Creation[0m...
+SVCEvent Creation took [34m0 seconds[0m
+Starting [33mSVC Init[0m...
+SVC Init took [34m0 seconds[0m
+SHB Constructor took [34m0 seconds[0m
+Using Fast SHB
+Ordered list has been built.
+SameThread Pass has been completed.
+Iter: 0 Sum: 54 Average: 2.571429
+Ordered list has been built.
+SameThread Pass has been completed.
+Ordered list has been built.
+HB is created
+On-Demand HB Analysis took [34m0 seconds[0m
+Starting [33mEventRaceDetector[0m...
+Precise MaxCMRs: 4 Fast MaxCMRS: 4
+Context of methods have been extracted, MaxCMRs: 4
+Using Precise Event Race Detection
+MR: W-> <dev.navids.lifecycle3.MainActivity$1: void onClick(android.view.View)>, R-> <dev.navids.lifecycle3.MainActivity: void onStop()>, M-> <dev.navids.lifecycle3.MainActivity: java.lang.Object onClick_onStop>
+MR: W-> <dev.navids.lifecycle3.MainActivity$2: boolean onDrag(android.view.View,android.view.DragEvent)>, R-> <dev.navids.lifecycle3.MainActivity: void onResume()>, M-> <dev.navids.lifecycle3.MainActivity: java.lang.Object onResume_onScrollChange>
+Context ERs: 2
+ERs: 2 out of 3
+EventRaceDetector took [34m0 seconds[0m
+Starting [33mIfGuardNullAtEndFilter[0m...
+Using Super Fast Event Race Detection
+IGNAE ERs: 3 out of 3
+IfGuardNullAtEndFilter took [34m0 seconds[0m
+Ordered list has been built.
+SameThread Pass has been completed.
+Ordered list has been built.
+HB is created
+Starting [33mEventRaceDetector[0m...
+Precise MaxCMRs: 4 Fast MaxCMRS: 4
+Context of methods have been extracted, MaxCMRs: 4
+Using Precise Event Race Detection
+MR: W-> <dev.navids.lifecycle3.MainActivity$1: void onClick(android.view.View)>, R-> <dev.navids.lifecycle3.MainActivity: void onStop()>, M-> <dev.navids.lifecycle3.MainActivity: java.lang.Object onClick_onStop>
+MR: W-> <dev.navids.lifecycle3.MainActivity$2: boolean onDrag(android.view.View,android.view.DragEvent)>, R-> <dev.navids.lifecycle3.MainActivity: void onResume()>, M-> <dev.navids.lifecycle3.MainActivity: java.lang.Object onResume_onScrollChange>
+Context ERs: 2
+ERs: 2 out of 3
+EventRaceDetector took [34m0 seconds[0m
+Starting [33mIfGuardNullAtEndFilter[0m...
+Using Super Fast Event Race Detection
+IGNAE ERs: 2 out of 2
+IfGuardNullAtEndFilter took [34m0 seconds[0m
+Ordered list has been built.
+SameThread Pass has been completed.
+Iter: 0 Sum: 66 Average: 3.142857
+Ordered list has been built.
+SameThread Pass has been completed.
+Ordered list has been built.
+HB is created
+Starting [33mEventRaceDetector[0m...
+Precise MaxCMRs: 3 Fast MaxCMRS: 3
+Context of methods have been extracted, MaxCMRs: 3
+Using Precise Event Race Detection
+MR: W-> <dev.navids.lifecycle3.MainActivity$1: void onClick(android.view.View)>, R-> <dev.navids.lifecycle3.MainActivity: void onStop()>, M-> <dev.navids.lifecycle3.MainActivity: java.lang.Object onClick_onStop>
+MR: W-> <dev.navids.lifecycle3.MainActivity$2: boolean onDrag(android.view.View,android.view.DragEvent)>, R-> <dev.navids.lifecycle3.MainActivity: void onResume()>, M-> <dev.navids.lifecycle3.MainActivity: java.lang.Object onResume_onScrollChange>
+Context ERs: 2
+ERs: 2 out of 2
+EventRaceDetector took [34m0 seconds[0m
+Filtered ERs: 2, With paths: 2
+Prioritized ERs: 2
+WholeProcess took [34m16 seconds[0m

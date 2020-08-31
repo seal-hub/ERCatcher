@@ -1,0 +1,11 @@
+Id,Priority,Race Description,IfGuard,NullAtEnd,InitiatedByInvoke,Write Threads,Read Threads,WriteMethod,ReadMethod,Field
+1,15,"Write Event: <dev.navids.thread1.MainActivity$2: void run()>
+Write Stmt: 32: $r1.<dev.navids.thread1.MainActivity: java.lang.Object secondMemoryObject> = null
+Read Event: <dev.navids.thread1.MainActivity$1: void run()>
+Read Stmt: 25: virtualinvoke $r2.<java.lang.Object: java.lang.String toString()>()
+Memory: <dev.navids.thread1.MainActivity: java.lang.Object secondMemoryObject>",false,true,false,"New Thread ML-INT-specialinvoke $r1.<java.lang.Thread: void <init>(java.lang.Runnable)>($r3) ","New Thread ML-INT-specialinvoke $r1.<java.lang.Thread: void <init>(java.lang.Runnable)>($r2) ",<dev.navids.thread1.MainActivity$2: void run()>,<dev.navids.thread1.MainActivity$1: void run()>,<dev.navids.thread1.MainActivity: java.lang.Object secondMemoryObject>
+2,15,"Write Event: <dev.navids.thread1.MainActivity: void freeMem()>
+Write Stmt: 41: $r0.<dev.navids.thread1.MainActivity: java.lang.Object memoryObject> = null
+Read Event: <dev.navids.thread1.MainActivity: void useMem()>
+Read Stmt: 50: virtualinvoke $r2.<java.lang.Object: java.lang.String toString()>()
+Memory: <dev.navids.thread1.MainActivity: java.lang.Object memoryObject>",false,true,false,"New Thread ML-INT-specialinvoke $r1.<java.lang.Thread: void <init>(java.lang.Runnable)>($r2) ","New Thread ML-INT-specialinvoke $r1.<java.lang.Thread: void <init>(java.lang.Runnable)>($r3) ",<dev.navids.thread1.MainActivity: void freeMem()>,<dev.navids.thread1.MainActivity: void useMem()>,<dev.navids.thread1.MainActivity: java.lang.Object memoryObject>

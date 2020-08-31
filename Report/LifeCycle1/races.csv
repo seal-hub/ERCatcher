@@ -1,0 +1,16 @@
+Id,Priority,Race Description,IfGuard,NullAtEnd,InitiatedByInvoke,Write Threads,Read Threads,WriteMethod,ReadMethod,Field
+1,15,"Write Event: <dev.navids.lifecycle1.MainActivity: void onPause()>
+Write Stmt: 37: $r0.<dev.navids.lifecycle1.MainActivity: java.lang.Object onResume_onPause> = null
+Read Event: <dev.navids.lifecycle1.MainActivity: void onResume()>
+Read Stmt: 31: virtualinvoke $r1.<java.lang.Object: java.lang.String toString()>()
+Memory: <dev.navids.lifecycle1.MainActivity: java.lang.Object onResume_onPause>",false,true,false,"UI ","UNKNOWN UI ",<dev.navids.lifecycle1.MainActivity: void onPause()>,<dev.navids.lifecycle1.MainActivity: void onResume()>,<dev.navids.lifecycle1.MainActivity: java.lang.Object onResume_onPause>
+2,15,"Write Event: <dev.navids.lifecycle1.MainActivity: void onStop()>
+Write Stmt: 43: $r0.<dev.navids.lifecycle1.MainActivity: java.lang.Object onStart_onStop> = null
+Read Event: <dev.navids.lifecycle1.MainActivity: void onStart()>
+Read Stmt: 25: virtualinvoke $r1.<java.lang.Object: java.lang.String toString()>()
+Memory: <dev.navids.lifecycle1.MainActivity: java.lang.Object onStart_onStop>",false,true,false,"UI ","UNKNOWN UI ",<dev.navids.lifecycle1.MainActivity: void onStop()>,<dev.navids.lifecycle1.MainActivity: void onStart()>,<dev.navids.lifecycle1.MainActivity: java.lang.Object onStart_onStop>
+3,15,"Write Event: <dev.navids.lifecycle1.MainActivity: void onCreate(android.os.Bundle)>
+Write Stmt: 19: $r0.<dev.navids.lifecycle1.MainActivity: java.lang.Object onDestroy_onCreate> = null
+Read Event: <dev.navids.lifecycle1.MainActivity: void onDestroy()>
+Read Stmt: 54: virtualinvoke $r1.<java.lang.Object: java.lang.String toString()>()
+Memory: <dev.navids.lifecycle1.MainActivity: java.lang.Object onDestroy_onCreate>",false,true,false,"UNKNOWN ","UI ",<dev.navids.lifecycle1.MainActivity: void onCreate(android.os.Bundle)>,<dev.navids.lifecycle1.MainActivity: void onDestroy()>,<dev.navids.lifecycle1.MainActivity: java.lang.Object onDestroy_onCreate>

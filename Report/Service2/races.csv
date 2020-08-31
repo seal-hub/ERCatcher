@@ -1,0 +1,11 @@
+Id,Priority,Race Description,IfGuard,NullAtEnd,InitiatedByInvoke,Write Threads,Read Threads,WriteMethod,ReadMethod,Field
+1,15,"Write Event: <dev.navids.service2.MainActivity$3: void onServiceConnected(android.content.ComponentName,android.os.IBinder)>
+Write Stmt: 42: $r5.<dev.navids.service2.MyService: java.lang.Object myMemoryObject> = null
+Read Event: <dev.navids.service2.MyService$1: void run()>
+Read Stmt: 23: virtualinvoke $r2.<java.lang.Object: java.lang.String toString()>()
+Memory: <dev.navids.service2.MyService: java.lang.Object myMemoryObject>",false,true,false,"UI ","UI ","<dev.navids.service2.MainActivity$3: void onServiceConnected(android.content.ComponentName,android.os.IBinder)>",<dev.navids.service2.MyService$1: void run()>,<dev.navids.service2.MyService: java.lang.Object myMemoryObject>
+2,15,"Write Event: <dev.navids.service2.MainActivity$3: void onServiceDisconnected(android.content.ComponentName)>
+Write Stmt: 48: $r4.<dev.navids.service2.MyService: java.lang.Object secondMemoryObject> = null
+Read Event: <dev.navids.service2.MainActivity$2: void run()>
+Read Stmt: 33: virtualinvoke $r4.<java.lang.Object: java.lang.String toString()>()
+Memory: <dev.navids.service2.MyService: java.lang.Object secondMemoryObject>",false,true,false,"UI ","UI ",<dev.navids.service2.MainActivity$3: void onServiceDisconnected(android.content.ComponentName)>,<dev.navids.service2.MainActivity$2: void run()>,<dev.navids.service2.MyService: java.lang.Object secondMemoryObject>

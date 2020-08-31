@@ -1,0 +1,11 @@
+Id,Priority,Race Description,IfGuard,NullAtEnd,InitiatedByInvoke,Write Threads,Read Threads,WriteMethod,ReadMethod,Field
+1,15,"Write Event: <dev.navids.lifecycle3.MainActivity$1: void onClick(android.view.View)>
+Write Stmt: 22: $r2.<dev.navids.lifecycle3.MainActivity: java.lang.Object onClick_onStop> = null
+Read Event: <dev.navids.lifecycle3.MainActivity: void onStop()>
+Read Stmt: 50: virtualinvoke $r1.<java.lang.Object: java.lang.String toString()>()
+Memory: <dev.navids.lifecycle3.MainActivity: java.lang.Object onClick_onStop>",false,true,false,"UI ","UI ",<dev.navids.lifecycle3.MainActivity$1: void onClick(android.view.View)>,<dev.navids.lifecycle3.MainActivity: void onStop()>,<dev.navids.lifecycle3.MainActivity: java.lang.Object onClick_onStop>
+2,15,"Write Event: <dev.navids.lifecycle3.MainActivity$2: boolean onDrag(android.view.View,android.view.DragEvent)>
+Write Stmt: 29: $r3.<dev.navids.lifecycle3.MainActivity: java.lang.Object onResume_onScrollChange> = null
+Read Event: <dev.navids.lifecycle3.MainActivity: void onResume()>
+Read Stmt: 39: virtualinvoke $r1.<java.lang.Object: java.lang.String toString()>()
+Memory: <dev.navids.lifecycle3.MainActivity: java.lang.Object onResume_onScrollChange>",false,true,false,"UI ","UI UNKNOWN ","<dev.navids.lifecycle3.MainActivity$2: boolean onDrag(android.view.View,android.view.DragEvent)>",<dev.navids.lifecycle3.MainActivity: void onResume()>,<dev.navids.lifecycle3.MainActivity: java.lang.Object onResume_onScrollChange>

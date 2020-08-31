@@ -1,0 +1,15 @@
+Reachable Methods: 36, APK Methods: 33, PossibleLib : 23
+FlowDroid Setup took [34m2 seconds[0m
+CaSF Generation took [34m6 seconds[0m
+ER: 1, UAF: 1, IfGuard: 0, NullAtEnd: 1, nAdroid: 1, Read Fields: 4 Write Fields 2
+New Method: <com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)>
+New: 6, HasActiveBody: 1, FD: 36, Us: 43
+CaCG Generation took [34m0 seconds[0m
+Reachable MRs: 1 out of 1
+Reachable Method With Races: 1 out of 43 (All method with races: 1)
+Cvents: 6 Threads: 3
+Event Extraction took [34m0 seconds[0m
+Cvents: 5 Threads: 3
+Filtered ERs: 1, With paths: 2
+Prioritized ERs: 1
+WholeProcess took [34m16 seconds[0m

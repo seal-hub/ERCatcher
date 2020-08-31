@@ -1,0 +1,11 @@
+Id,Priority,Race Description,IfGuard,NullAtEnd,InitiatedByInvoke,Write Threads,Read Threads,WriteMethod,ReadMethod,Field
+1,15,"Write Event: <dev.navids.multicomp1.MyReceiver: void onReceive(android.content.Context,android.content.Intent)>
+Write Stmt: 16: $r3.<dev.navids.multicomp1.MemoryObject: java.lang.Object object> = null
+Read Event: <dev.navids.multicomp1.Main2Activity$1: void onClick(android.view.View)>
+Read Stmt: 23: virtualinvoke $r4.<java.lang.Object: java.lang.String toString()>()
+Memory: <dev.navids.multicomp1.MemoryObject: java.lang.Object object>",false,true,false,"UI ","UI ","<dev.navids.multicomp1.MyReceiver: void onReceive(android.content.Context,android.content.Intent)>",<dev.navids.multicomp1.Main2Activity$1: void onClick(android.view.View)>,<dev.navids.multicomp1.MemoryObject: java.lang.Object object>
+2,15,"Write Event: <dev.navids.multicomp1.MainActivity: void onPause()>
+Write Stmt: 57: $r0.<dev.navids.multicomp1.MainActivity: java.lang.Object A> = null
+Read Event: <dev.navids.multicomp1.MainActivity: void onResume()>
+Read Stmt: 50: virtualinvoke $r2.<java.lang.Object: java.lang.String toString()>()
+Memory: <dev.navids.multicomp1.MainActivity: java.lang.Object A>",false,true,false,"UI ","UI UNKNOWN ",<dev.navids.multicomp1.MainActivity: void onPause()>,<dev.navids.multicomp1.MainActivity: void onResume()>,<dev.navids.multicomp1.MainActivity: java.lang.Object A>

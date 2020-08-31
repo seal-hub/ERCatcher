@@ -1,0 +1,14 @@
+Reachable Methods: 36, APK Methods: 42, PossibleLib : 18
+FlowDroid Setup took [34m2 seconds[0m
+CaSF Generation took [34m5 seconds[0m
+ER: 2, UAF: 2, IfGuard: 0, NullAtEnd: 2, nAdroid: 2, Read Fields: 2 Write Fields 2
+New: 0, HasActiveBody: 0, FD: 36, Us: 40
+CaCG Generation took [34m0 seconds[0m
+Reachable MRs: 2 out of 2
+Reachable Method With Races: 4 out of 40 (All method with races: 4)
+Cvents: 13 Threads: 3
+Event Extraction took [34m0 seconds[0m
+Cvents: 9 Threads: 3
+Filtered ERs: 2, With paths: 2
+Prioritized ERs: 2
+WholeProcess took [34m14 seconds[0m

@@ -1,0 +1,11 @@
+Id,Priority,Race Description,IfGuard,NullAtEnd,InitiatedByInvoke,Write Threads,Read Threads,WriteMethod,ReadMethod,Field
+1,15,"Write Event: <dev.navids.singleactivity5.MainActivity$2$1$1: void run()>
+Write Stmt: 52: $r3.<dev.navids.singleactivity5.MainActivity: java.lang.Object D> = null
+Read Event: <dev.navids.singleactivity5.MainActivity$1$1$1: void run()>
+Read Stmt: 33: virtualinvoke $r4.<java.lang.Object: java.lang.String toString()>()
+Memory: <dev.navids.singleactivity5.MainActivity: java.lang.Object D>",false,true,false,"UI ","New Alloc Thread AllocNode 6 new android.os.HandlerThread in method <dev.navids.singleactivity5.MainActivity: void <init>()> ",<dev.navids.singleactivity5.MainActivity$2$1$1: void run()>,<dev.navids.singleactivity5.MainActivity$1$1$1: void run()>,<dev.navids.singleactivity5.MainActivity: java.lang.Object D>
+2,15,"Write Event: <dev.navids.singleactivity5.MainActivity$1: void run()>
+Write Stmt: 24: $r2.<dev.navids.singleactivity5.MainActivity: java.lang.Object A> = null
+Read Event: <dev.navids.singleactivity5.MainActivity$2: void run()>
+Read Stmt: 43: virtualinvoke $r3.<java.lang.Object: java.lang.String toString()>()
+Memory: <dev.navids.singleactivity5.MainActivity: java.lang.Object A>",false,true,false,"New Alloc Thread AllocNode 6 new android.os.HandlerThread in method <dev.navids.singleactivity5.MainActivity: void <init>()> ","UI ",<dev.navids.singleactivity5.MainActivity$1: void run()>,<dev.navids.singleactivity5.MainActivity$2: void run()>,<dev.navids.singleactivity5.MainActivity: java.lang.Object A>

@@ -1,0 +1,11 @@
+Id,Priority,Race Description,IfGuard,NullAtEnd,InitiatedByInvoke,Write Threads,Read Threads,WriteMethod,ReadMethod,Field
+1,15,"Write Event: <dev.navids.service5.MainActivity$1: void onServiceDisconnected(android.content.ComponentName)>
+Write Stmt: 36: <dev.navids.service5.MainActivity: java.lang.Object A> = $r2
+Read Event: <dev.navids.service5.MainActivity$1: void onServiceDisconnected(android.content.ComponentName)>
+Read Stmt: 36: <dev.navids.service5.MainActivity: java.lang.Object A> = $r2
+Memory: <dev.navids.service5.MainActivity: java.lang.Object A>",false,false,false,"UI ","UI ",<dev.navids.service5.MainActivity$1: void onServiceDisconnected(android.content.ComponentName)>,<dev.navids.service5.MainActivity$1: void onServiceDisconnected(android.content.ComponentName)>,<dev.navids.service5.MainActivity: java.lang.Object A>
+2,1,"Write Event: <dev.navids.service5.MainActivity: void setIntent(android.content.Intent)>
+Write Stmt: : this.<dev.navids.service5.MainActivity: android.content.Intent ipcIntent> = parameter0
+Read Event: <dev.navids.service5.MainActivity: android.content.Intent getIntent()>
+Read Stmt: : return $r0
+Memory: <dev.navids.service5.MainActivity: android.content.Intent ipcIntent>",false,false,false,,"UI ",<dev.navids.service5.MainActivity: void setIntent(android.content.Intent)>,<dev.navids.service5.MainActivity: android.content.Intent getIntent()>,<dev.navids.service5.MainActivity: android.content.Intent ipcIntent>

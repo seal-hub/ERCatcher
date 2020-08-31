@@ -1,0 +1,191 @@
+Starting [33mWholeProcess[0m...
+Starting [33mFlowDroid Setup[0m...
+ICC config is set: false
+soot.jimple.spark.pag.PAG@1f48fa72
+Reachable Methods: 36, APK Methods: 33, PossibleLib : 23
+FlowDroid Setup took [34m2 seconds[0m
+Starting [33mMemory Analysis[0m...
+Memory Analysis took [34m0 seconds[0m
+Starting [33mCaSF Generation[0m...
+Starting [33mMethodBox Generation[0m...
+1000-2000-3000-4000-5000-6000-7000-8000-9000-10000-11000-12000-13000-14000-15000-16000-17000-18000-19000-20000-21000-22000-MethodBox Generation took [34m5 seconds[0m
+CaSF Generation took [34m6 seconds[0m
+Starting [33mInitalMethodRaceDetector[0m...
+MR: W-> <com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)>, R-> <com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)>, M-> <com.concurrencybench.looper1.MainActivity: java.lang.String coordinates>
+ER: 1, UAF: 1, IfGuard: 0, NullAtEnd: 1, nAdroid: 1, Read Fields: 4 Write Fields 2
+InitalMethodRaceDetector took [34m7 seconds[0m
+Starting [33mCaCG Generation[0m...
+Starting [33mCaSF[0m...
+Edges: 49
+CaSF took [34m0 seconds[0m
+Starting [33mCycle Elimination[0m...
+--------------- 22981
+Reachable Async IMB: 6
+SCC Size 46
+Cycles 1
+Asynch IMB in Cycles: 0
+Cycles with Asynch IMB: 0
+Real Heads: 5
+ Head: I-MB-<java.lang.Object: void finalize()>
+ Head: I-MB-<android.os.Handler: boolean post(java.lang.Runnable)>
+ Head: I-MB-<android.app.Service: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<android.support.v4.app.NotificationCompatSideChannelService: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])>
+Before Update
+After Update
+Edges: 46
+--------------- 22982
+Reachable Async IMB: 6
+SCC Size 50
+Cycles 0
+Asynch IMB in Cycles: 0
+Cycles with Asynch IMB: 0
+Real Heads: 5
+ Head: I-MB-<java.lang.Object: void finalize()>
+ Head: I-MB-<android.os.Handler: boolean post(java.lang.Runnable)>
+ Head: I-MB-<android.app.Service: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<android.support.v4.app.NotificationCompatSideChannelService: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])>
+Cycle Elimination took [34m0 seconds[0m
+New Method: <com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)>
+New: 6, HasActiveBody: 1, FD: 36, Us: 43
+CaCG Generation took [34m0 seconds[0m
+Starting [33mReachability Filter[0m...
+Reachable MRs: 1 out of 1
+Reachability Filter took [34m0 seconds[0m
+Reachable MRs: 1 out of 1
+Starting [33mEvent Extraction[0m...
+Reachable Method With Races: 1 out of 43 (All method with races: 1)
+1-I-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> 0
+2-I-MB-<android.app.Activity: void setContentView(int)> 0
+3-I-MB-<android.os.Handler: void <init>(android.os.Looper)> 0
+4-I-MB-<com.concurrencybench.looper1.MainActivity$3: void <init>(com.concurrencybench.looper1.MainActivity,android.os.Looper)> 1
+5-I-MB-<java.lang.StringBuilder: java.lang.String toString()> 0
+6-I-MB-<java.io.PrintStream: void println(java.lang.String)> 0
+7-I-MB-<java.lang.String: java.lang.String[] split(java.lang.String)> 0
+8-I-MB-<java.lang.Double: java.lang.Double valueOf(java.lang.String)> 0
+9-I-MB-<java.lang.Throwable: void <init>()> 0
+10-I-MB-<java.lang.RuntimeException: void <init>(java.lang.String)> 0
+11-I-MB-<java.lang.Object: void <init>()> 0
+12-I-MB-<java.lang.Exception: void <init>()> 0
+13-I-MB-SCC20612 4
+14-I-MB-<java.lang.Object: java.lang.String toString()> 1
+15-I-MB-<java.lang.Double: double doubleValue()> 0
+16-I-MB-<java.lang.String: java.lang.String valueOf(double)> 0
+17-I-MB-<com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)> 6
+18-I-MB-<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)> 0
+19-I-MB-<java.util.Random: void <init>()> 0
+20-I-MB-<java.text.DecimalFormat: void <init>(java.lang.String)> 0
+21-I-MB-<java.util.Random: double nextDouble()> 0
+22-I-MB-<java.text.DecimalFormat: java.lang.String format(double)> 0
+23-I-MB-<java.lang.StringBuilder: void <init>()> 0
+24-I-MB-<com.concurrencybench.looper1.MainActivity: java.lang.String getCurrentCoordinates()> 7
+25-I-MB-<android.os.Message: void <clinit>()> 0
+26-I-MB-<android.os.Message: void <init>()> 0
+27-I-MB-<com.concurrencybench.looper1.MainActivity: void onClick(android.view.View)> 4
+28-I-MB-<android.app.Activity: void <init>()> 0
+29-I-MB-<com.concurrencybench.looper1.MainActivity: void <init>()> 2
+30-I-MB-<android.app.Activity: void onCreate(android.os.Bundle)> 0
+31-I-MB-<android.os.Looper: android.os.Looper getMainLooper()> 0
+32-I-MB-<android.os.Handler: void <init>()> 0
+33-I-MB-<com.concurrencybench.looper1.MainActivity$2: void <init>(com.concurrencybench.looper1.MainActivity)> 1
+34-I-MB-<com.concurrencybench.looper1.MainActivity: void use(java.lang.Object)> 1
+35-I-MB-<com.concurrencybench.looper1.MainActivity: void access$000(com.concurrencybench.looper1.MainActivity,java.lang.Object)> 1
+36-I-MB-<com.concurrencybench.looper1.MainActivity$2: void run()> 1
+37-I-MB-<com.concurrencybench.looper1.MainActivity$1: void <init>(com.concurrencybench.looper1.MainActivity)> 1
+38-I-MB-<com.concurrencybench.looper1.MainActivity$1: void run()> 0
+39-I-MB-<com.concurrencybench.looper1.MainActivity: void onCreate(android.os.Bundle)> 10
+40-I-MB-<dummyMainClass: com.concurrencybench.looper1.MainActivity dummyMainMethod_com_concurrencybench_looper1_MainActivity(android.content.Intent)> 4
+41-I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])> 1
+Accessible Methods: 5, Reachable Methods: 41
+Unkown call from dummyMainClass to CE-I-MB-<dummyMainClass: com.concurrencybench.looper1.MainActivity dummyMainMethod_com_concurrencybench_looper1_MainActivity(android.content.Intent)> through CInvoke-trueI-MB-<dummyMainClass: com.concurrencybench.looper1.MainActivity dummyMainMethod_com_concurrencybench_looper1_MainActivity(android.content.Intent)> on unit staticinvoke <dummyMainClass: com.concurrencybench.looper1.MainActivity dummyMainMethod_com_concurrencybench_looper1_MainActivity(android.content.Intent)>(null)
+Unkown call from dummyMainClass to CE-I-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> through CInvoke-trueI-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> on unit staticinvoke <dummyMainClass: void NOP_ASYNC_METHOD()>()
+UNKOWN since I don't have any knowledge about this cvent com.ercatcher.ConcurrencyAnalysis.HandlerCaSFGenerator@59f0f273 to CE-I-MB-<com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)> through CInvoke-trueI-MB-<com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)> on unit virtualinvoke $r4.<android.os.Handler: boolean sendMessage(android.os.Message)>($r3) and handler ML-FLD-ML-THS@this: com.concurrencybench.looper1.MainActivity.<com.concurrencybench.looper1.MainActivity: android.os.Handler handler>
+UNKOWN since I don't have any knowledge about this cvent com.ercatcher.ConcurrencyAnalysis.HandlerCaSFGenerator@59f0f273 to CE-I-MB-<com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)> through CInvoke-trueI-MB-<com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)> on unit virtualinvoke $r4.<android.os.Handler: boolean sendMessage(android.os.Message)>($r3) and handler ML-FLD-ML-THS@this: com.concurrencybench.looper1.MainActivity.<com.concurrencybench.looper1.MainActivity: android.os.Handler handler>
+Cvents: 6 Threads: 3
+Event in Unkown Thread: CE-I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])>@UNKNOWN
+Event in Unkown Thread: CE-I-MB-<com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)>@UNKNOWN
+Event in Unkown Thread: CE-I-MB-<com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)>@UNKNOWN
+<3,3,0>
+Event Extraction took [34m0 seconds[0m
+----------------------------------
+1/1 Component: I-MB-<dummyMainClass: com.concurrencybench.looper1.MainActivity dummyMainMethod_com_concurrencybench_looper1_MainActivity(android.content.Intent)>
+Edges: 45
+Starting [33mReachability Filter[0m...
+Reachable MRs: 1 out of 1
+Reachability Filter took [34m0 seconds[0m
+Accessible Methods: 4, Reachable Methods: 40
+Cvents: 5 Threads: 3
+Event in Unkown Thread: CE-I-MB-<com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)>@UNKNOWN
+Event in Unkown Thread: CE-I-MB-<com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)>@UNKNOWN
+Event in Unkown Thread: CE-I-MB-<dummyMainClass: com.concurrencybench.looper1.MainActivity dummyMainMethod_com_concurrencybench_looper1_MainActivity(android.content.Intent)>@UNKNOWN
+<2,3,0>
+Starting [33mIfGuardNullAtEndFilter[0m...
+Using Super Fast Event Race Detection
+IGNAE ERs: 1 out of 1
+IfGuardNullAtEndFilter took [34m0 seconds[0m
+Starting [33mOn-Demand HB Analysis[0m...
+Starting [33mSHB Constructor[0m...
+Starting [33mSVCEvent Creation[0m...
+SVCEvent Creation took [34m0 seconds[0m
+Starting [33mSVC Init[0m...
+SVC Init took [34m0 seconds[0m
+SHB Constructor took [34m0 seconds[0m
+Using Fast SHB
+Ordered list has been built.
+SameThread Pass has been completed.
+Iter: 0 Sum: 21 Average: 1.400000
+Ordered list has been built.
+SameThread Pass has been completed.
+Ordered list has been built.
+HB is created
+On-Demand HB Analysis took [34m0 seconds[0m
+Starting [33mEventRaceDetector[0m...
+Precise MaxCMRs: 4 Fast MaxCMRS: 4
+Context of methods have been extracted, MaxCMRs: 4
+Using Precise Event Race Detection
+MR: W-> <com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)>, R-> <com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)>, M-> <com.concurrencybench.looper1.MainActivity: java.lang.String coordinates>
+Context ERs: 2
+ERs: 1 out of 1
+EventRaceDetector took [34m0 seconds[0m
+Starting [33mIfGuardNullAtEndFilter[0m...
+Using Super Fast Event Race Detection
+IGNAE ERs: 1 out of 1
+IfGuardNullAtEndFilter took [34m0 seconds[0m
+Ordered list has been built.
+SameThread Pass has been completed.
+Ordered list has been built.
+HB is created
+Starting [33mEventRaceDetector[0m...
+Precise MaxCMRs: 4 Fast MaxCMRS: 4
+Context of methods have been extracted, MaxCMRs: 4
+Using Precise Event Race Detection
+MR: W-> <com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)>, R-> <com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)>, M-> <com.concurrencybench.looper1.MainActivity: java.lang.String coordinates>
+Context ERs: 2
+ERs: 1 out of 1
+EventRaceDetector took [34m0 seconds[0m
+Starting [33mIfGuardNullAtEndFilter[0m...
+Using Super Fast Event Race Detection
+IGNAE ERs: 1 out of 1
+IfGuardNullAtEndFilter took [34m0 seconds[0m
+Ordered list has been built.
+SameThread Pass has been completed.
+Iter: 0 Sum: 33 Average: 2.200000
+Ordered list has been built.
+SameThread Pass has been completed.
+Iter: 1 Sum: 37 Average: 2.466667
+Ordered list has been built.
+SameThread Pass has been completed.
+Ordered list has been built.
+HB is created
+Starting [33mEventRaceDetector[0m...
+Precise MaxCMRs: 4 Fast MaxCMRS: 4
+Context of methods have been extracted, MaxCMRs: 4
+Using Precise Event Race Detection
+MR: W-> <com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)>, R-> <com.concurrencybench.looper1.MainActivity$3: void handleMessage(android.os.Message)>, M-> <com.concurrencybench.looper1.MainActivity: java.lang.String coordinates>
+Context ERs: 1
+ERs: 1 out of 1
+EventRaceDetector took [34m0 seconds[0m
+Filtered ERs: 1, With paths: 2
+Prioritized ERs: 1
+WholeProcess took [34m16 seconds[0m

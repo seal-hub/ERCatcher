@@ -1,0 +1,2 @@
+This entryPoint I-MB-<dummyMainClass: dev.navids.executor2.MainActivity dummyMainMethod_dev_navids_executor2_MainActivity(android.content.Intent)> doesn't have any Cvent
+Why this component I-MB-<dummyMainClass: dev.navids.executor2.MainActivity dummyMainMethod_dev_navids_executor2_MainActivity(android.content.Intent)> doesn't have a Cvent 

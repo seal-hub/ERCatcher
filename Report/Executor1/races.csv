@@ -1,0 +1,6 @@
+Id,Priority,Race Description,IfGuard,NullAtEnd,InitiatedByInvoke,Write Threads,Read Threads,WriteMethod,ReadMethod,Field
+1,3,"Write Event: <com.concurrencybench.executor1.MainActivity: void onClick(android.view.View)>
+Write Stmt: 48: <com.concurrencybench.executor1.MainActivity: java.lang.String coordinates> = null
+Read Event: <com.concurrencybench.executor1.MainActivity$1: void run()>
+Read Stmt: 31: $r1 = virtualinvoke $r2.<java.lang.String: java.lang.String[] split(java.lang.String)>("","")
+Memory: <com.concurrencybench.executor1.MainActivity: java.lang.String coordinates>",true,true,false,"UI ","UNDETERMINED ",<com.concurrencybench.executor1.MainActivity: void onClick(android.view.View)>,<com.concurrencybench.executor1.MainActivity$1: void run()>,<com.concurrencybench.executor1.MainActivity: java.lang.String coordinates>

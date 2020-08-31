@@ -1,0 +1,11 @@
+Id,Priority,Race Description,IfGuard,NullAtEnd,InitiatedByInvoke,Write Threads,Read Threads,WriteMethod,ReadMethod,Field
+1,15,"Write Event: <dev.navids.singleactivity1.MainActivity: void onClickFree(android.view.View)>
+Write Stmt: 40: $r0.<dev.navids.singleactivity1.MainActivity: java.lang.Object memoryObject> = null
+Read Event: <dev.navids.singleactivity1.MainActivity: void onClickUse(android.view.View)>
+Read Stmt: 31: virtualinvoke $r2.<java.lang.Object: java.lang.String toString()>()
+Memory: <dev.navids.singleactivity1.MainActivity: java.lang.Object memoryObject>",false,true,false,"UI ","UI ",<dev.navids.singleactivity1.MainActivity: void onClickFree(android.view.View)>,<dev.navids.singleactivity1.MainActivity: void onClickUse(android.view.View)>,<dev.navids.singleactivity1.MainActivity: java.lang.Object memoryObject>
+2,1,"Write Event: <dev.navids.singleactivity1.MainActivity: void wihtoutListener()>
+Write Stmt: 36: $r0.<dev.navids.singleactivity1.MainActivity: java.lang.Object secondMemoryObject> = null
+Read Event: <dev.navids.singleactivity1.MainActivity: void onClickUse(android.view.View)>
+Read Stmt: 32: virtualinvoke $r2.<java.lang.Object: java.lang.String toString()>()
+Memory: <dev.navids.singleactivity1.MainActivity: java.lang.Object secondMemoryObject>",false,true,false,,"UI ",<dev.navids.singleactivity1.MainActivity: void wihtoutListener()>,<dev.navids.singleactivity1.MainActivity: void onClickUse(android.view.View)>,<dev.navids.singleactivity1.MainActivity: java.lang.Object secondMemoryObject>

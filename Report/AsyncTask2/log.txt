@@ -1,0 +1,171 @@
+Starting [33mWholeProcess[0m...
+Starting [33mFlowDroid Setup[0m...
+ICC config is set: false
+soot.jimple.spark.pag.PAG@67f591c2
+Reachable Methods: 22, APK Methods: 33, PossibleLib : 14
+FlowDroid Setup took [34m2 seconds[0m
+Starting [33mMemory Analysis[0m...
+Memory Analysis took [34m0 seconds[0m
+Starting [33mCaSF Generation[0m...
+Starting [33mMethodBox Generation[0m...
+1000-2000-3000-4000-5000-6000-7000-8000-9000-10000-11000-12000-13000-14000-15000-16000-17000-18000-19000-20000-21000-22000-MethodBox Generation took [34m5 seconds[0m
+CaSF Generation took [34m5 seconds[0m
+Starting [33mInitalMethodRaceDetector[0m...
+MR: W-> <com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskWrite: java.lang.String doInBackground(java.lang.String[])>, R-> <com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskRead: java.lang.String doInBackground(java.lang.String[])>, M-> <com.concurrencybench.asynctask2.MainActivity: java.lang.String coordinates>
+ER: 1, UAF: 1, IfGuard: 0, NullAtEnd: 1, nAdroid: 1, Read Fields: 1 Write Fields 1
+InitalMethodRaceDetector took [34m5 seconds[0m
+Starting [33mCaCG Generation[0m...
+Starting [33mCaSF[0m...
+Edges: 37
+CaSF took [34m0 seconds[0m
+Starting [33mCycle Elimination[0m...
+--------------- 22764
+Reachable Async IMB: 6
+SCC Size 39
+Cycles 0
+Asynch IMB in Cycles: 0
+Cycles with Asynch IMB: 0
+Real Heads: 3
+ Head: I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])>
+ Head: I-MB-<android.app.Service: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<android.support.v4.app.NotificationCompatSideChannelService: void interimBindMethod(android.content.ServiceConnection)>
+Before Update
+After Update
+Edges: 36
+--------------- 22764
+Reachable Async IMB: 6
+SCC Size 39
+Cycles 0
+Asynch IMB in Cycles: 0
+Cycles with Asynch IMB: 0
+Real Heads: 3
+ Head: I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])>
+ Head: I-MB-<android.app.Service: void interimBindMethod(android.content.ServiceConnection)>
+ Head: I-MB-<android.support.v4.app.NotificationCompatSideChannelService: void interimBindMethod(android.content.ServiceConnection)>
+Cycle Elimination took [34m0 seconds[0m
+New Method: <com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskWrite: java.lang.String doInBackground(java.lang.String[])>
+New Method: <com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskRead: void onPostExecute(java.lang.String)>
+New Method: <com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskRead: java.lang.Object doInBackground(java.lang.Object[])>
+New Method: <com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskWrite: java.lang.Object doInBackground(java.lang.Object[])>
+New Method: <com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskRead: void onPostExecute(java.lang.Object)>
+New Method: <com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskRead: java.lang.String doInBackground(java.lang.String[])>
+New: 10, HasActiveBody: 6, FD: 22, Us: 33
+CaCG Generation took [34m0 seconds[0m
+Starting [33mReachability Filter[0m...
+Reachable MRs: 1 out of 1
+Reachability Filter took [34m0 seconds[0m
+Reachable MRs: 1 out of 1
+Starting [33mEvent Extraction[0m...
+Reachable Method With Races: 2 out of 33 (All method with races: 2)
+1-I-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> 0
+2-I-MB-<com.concurrencybench.asynctask2.MainActivity: void onClick(android.view.View)> 0
+3-I-MB-<android.os.AsyncTask: void <init>()> 0
+4-I-MB-<com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskRead: void <init>(com.concurrencybench.asynctask2.MainActivity)> 1
+5-I-MB-<com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskWrite: void <init>(com.concurrencybench.asynctask2.MainActivity)> 1
+6-I-MB-<java.lang.Double: java.lang.Double valueOf(java.lang.String)> 0
+7-I-MB-<java.lang.Double: double doubleValue()> 0
+8-I-MB-<java.lang.StringBuilder: java.lang.String toString()> 0
+9-I-MB-<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)> 0
+10-I-MB-<java.lang.StringBuilder: void <init>()> 0
+11-I-MB-<java.lang.String: java.lang.String[] split(java.lang.String)> 0
+12-I-MB-<java.lang.String: java.lang.String valueOf(double)> 0
+13-I-MB-<com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskRead: java.lang.String doInBackground(java.lang.String[])> 7
+14-I-MB-<com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskRead: void onPostExecute(java.lang.String)> 0
+15-I-MB-<com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskRead: void onPostExecute(java.lang.Object)> 1
+16-I-MB-<com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskRead: java.lang.Object doInBackground(java.lang.Object[])> 2
+17-I-MB-<android.app.Activity: void setContentView(int)> 0
+18-I-MB-<android.os.AsyncTask: void <clinit>()> 0
+19-I-MB-<android.app.Activity: void onCreate(android.os.Bundle)> 0
+20-I-MB-<java.util.Random: double nextDouble()> 0
+21-I-MB-<java.util.Random: void <init>()> 0
+22-I-MB-<java.text.DecimalFormat: java.lang.String format(double)> 0
+23-I-MB-<java.text.DecimalFormat: void <init>(java.lang.String)> 0
+24-I-MB-<com.concurrencybench.asynctask2.MainActivity: java.lang.String getCurrentCoordinates()> 7
+25-I-MB-<java.lang.String: void <clinit>()> 0
+26-I-MB-<com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskWrite: java.lang.String doInBackground(java.lang.String[])> 0
+27-I-MB-<com.concurrencybench.asynctask2.MainActivity$CoordinatesTaskWrite: java.lang.Object doInBackground(java.lang.Object[])> 1
+28-I-MB-<com.concurrencybench.asynctask2.MainActivity: void onCreate(android.os.Bundle)> 9
+29-I-MB-<android.app.Activity: void <init>()> 0
+30-I-MB-<com.concurrencybench.asynctask2.MainActivity: void <init>()> 1
+31-I-MB-<dummyMainClass: com.concurrencybench.asynctask2.MainActivity dummyMainMethod_com_concurrencybench_asynctask2_MainActivity(android.content.Intent)> 4
+32-I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])> 1
+Accessible Methods: 8, Reachable Methods: 32
+Unkown call from dummyMainClass to CE-I-MB-<dummyMainClass: com.concurrencybench.asynctask2.MainActivity dummyMainMethod_com_concurrencybench_asynctask2_MainActivity(android.content.Intent)> through CInvoke-trueI-MB-<dummyMainClass: com.concurrencybench.asynctask2.MainActivity dummyMainMethod_com_concurrencybench_asynctask2_MainActivity(android.content.Intent)> on unit staticinvoke <dummyMainClass: com.concurrencybench.asynctask2.MainActivity dummyMainMethod_com_concurrencybench_asynctask2_MainActivity(android.content.Intent)>(null)
+Unkown call from dummyMainClass to CE-I-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> through CInvoke-trueI-MB-<dummyMainClass: void NOP_ASYNC_METHOD()> on unit staticinvoke <dummyMainClass: void NOP_ASYNC_METHOD()>()
+Cvents: 5 Threads: 4
+Event in Unkown Thread: CE-I-MB-<dummyMainClass: void dummyMainMethod(java.lang.String[])>@UNKNOWN
+<2,1,0,2>
+Event Extraction took [34m0 seconds[0m
+----------------------------------
+1/1 Component: I-MB-<dummyMainClass: com.concurrencybench.asynctask2.MainActivity dummyMainMethod_com_concurrencybench_asynctask2_MainActivity(android.content.Intent)>
+Edges: 35
+Starting [33mReachability Filter[0m...
+Reachable MRs: 1 out of 1
+Reachability Filter took [34m0 seconds[0m
+Accessible Methods: 7, Reachable Methods: 31
+Cvents: 4 Threads: 4
+Event in Unkown Thread: CE-I-MB-<dummyMainClass: com.concurrencybench.asynctask2.MainActivity dummyMainMethod_com_concurrencybench_asynctask2_MainActivity(android.content.Intent)>@UNKNOWN
+<1,1,0,2>
+Starting [33mIfGuardNullAtEndFilter[0m...
+Using Super Fast Event Race Detection
+IGNAE ERs: 1 out of 1
+IfGuardNullAtEndFilter took [34m0 seconds[0m
+Starting [33mOn-Demand HB Analysis[0m...
+Starting [33mSHB Constructor[0m...
+Starting [33mSVCEvent Creation[0m...
+SVCEvent Creation took [34m0 seconds[0m
+Starting [33mSVC Init[0m...
+SVC Init took [34m0 seconds[0m
+SHB Constructor took [34m0 seconds[0m
+Using Fast SHB
+Ordered list has been built.
+SameThread Pass has been completed.
+Iter: 0 Sum: 17 Average: 1.416667
+Ordered list has been built.
+SameThread Pass has been completed.
+Ordered list has been built.
+HB is created
+On-Demand HB Analysis took [34m0 seconds[0m
+Starting [33mEventRaceDetector[0m...
+Precise MaxCMRs: 1 Fast MaxCMRS: 1
+Context of methods have been extracted, MaxCMRs: 1
+Using Precise Event Race Detection
+Context ERs: 0
+ERs: 0 out of 1
+EventRaceDetector took [34m0 seconds[0m
+Starting [33mIfGuardNullAtEndFilter[0m...
+Using Super Fast Event Race Detection
+IGNAE ERs: 1 out of 1
+IfGuardNullAtEndFilter took [34m0 seconds[0m
+Ordered list has been built.
+SameThread Pass has been completed.
+Ordered list has been built.
+HB is created
+Starting [33mEventRaceDetector[0m...
+Precise MaxCMRs: 1 Fast MaxCMRS: 1
+Context of methods have been extracted, MaxCMRs: 1
+Using Precise Event Race Detection
+Context ERs: 0
+ERs: 0 out of 1
+EventRaceDetector took [34m0 seconds[0m
+Starting [33mIfGuardNullAtEndFilter[0m...
+Using Super Fast Event Race Detection
+IGNAE ERs: 0 out of 0
+IfGuardNullAtEndFilter took [34m0 seconds[0m
+Ordered list has been built.
+SameThread Pass has been completed.
+Iter: 0 Sum: 19 Average: 1.583333
+Ordered list has been built.
+SameThread Pass has been completed.
+Ordered list has been built.
+HB is created
+Starting [33mEventRaceDetector[0m...
+Precise MaxCMRs: 0 Fast MaxCMRS: 0
+Context of methods have been extracted, MaxCMRs: 0
+Using Precise Event Race Detection
+Context ERs: 0
+ERs: 0 out of 0
+EventRaceDetector took [34m0 seconds[0m
+Filtered ERs: 0, With paths: 0
+Prioritized ERs: 0
+WholeProcess took [34m13 seconds[0m

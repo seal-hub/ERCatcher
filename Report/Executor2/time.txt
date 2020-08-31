@@ -1,0 +1,12 @@
+FlowDroid Setup took 2 seconds
+Memory Analysis took 0 seconds
+MethodBox Generation took 1 seconds
+CaSF Generation took 1 seconds
+InitalMethodRaceDetector took 1 seconds
+CaSF took 0 seconds
+Cycle Elimination took 0 seconds
+CaCG Generation took 0 seconds
+Reachability Filter took 0 seconds
+Event Extraction took 0 seconds
+Reachability Filter took 0 seconds
+WholeProcess took 5 seconds

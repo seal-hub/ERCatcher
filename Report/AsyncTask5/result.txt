@@ -1,0 +1,15 @@
+Reachable Methods: 1533, APK Methods: 30, PossibleLib : 1523
+FlowDroid Setup took [34m18 seconds[0m
+CaSF Generation took [34m3 seconds[0m
+ER: 4, UAF: 0, IfGuard: 0, NullAtEnd: 0, nAdroid: 0, Write Fields 3
+New Method: <dev.navids.AsyncTask5.MainActivity$MyAsyncTask: void onPostExecute(java.lang.Object)>
+New: 1, HasActiveBody: 1, FD: 1533, Us: 1536
+CaCG Generation took [34m2 seconds[0m
+Reachable MRs: 2 out of 4
+Reachable Method With Races: 1 out of 1536 (All method with races: 3)
+Cvents: 10 Threads: 5
+Event Extraction took [34m3 seconds[0m
+Cvents: 9 Threads: 5
+Filtered ERs: 2, With paths: 2
+Prioritized ERs: 1
+WholeProcess took [34m27 seconds[0m
