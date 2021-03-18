@@ -5,7 +5,7 @@ Android platform provisions a number of sophisticated concurrency mechanisms for
 
 ## Publication
 
-Navid Salehnamadi, Abdulaziz Alshayban, Iftekhar Ahmed, and Sam Malek, "ER Catcher: A Static Analysis Framework for Accurate and Scalable Event-Race Detection in Android" in 2020 35th IEEE/ACM International Conference on Automated Software Engineering (ASE), 2020
+Navid Salehnamadi, Abdulaziz Alshayban, Iftekhar Ahmed, and Sam Malek, "[ER Catcher: A Static Analysis Framework for Accurate and Scalable Event-Race Detection in Android](http://seal.ics.uci.edu/projects/ercatcher/2020_ASE_ERCatcher.pdf)" in 2020 35th IEEE/ACM International Conference on Automated Software Engineering (ASE), 2020
 
 ---
 
@@ -82,13 +82,13 @@ For each analyzed app (`app_name.apk`), a list of prioritized event-races is pro
 ## A short guideline for the source code
 ER Catcher consists of four packages:
 
-* [Memory](https://github.com/ercatcher/ercatcher/tree/master/src/main/java/com/ercatcher/memory) is responsible for analysis related to identifying memory locations statically, e.g., Alias-Analysis.
-* [ConcurrencyAnalysis](https://github.com/ercatcher/ercatcher/tree/master/src/main/java/com/ercatcher/ConcurrencyAnalysis) consists of several subpackages:
+* [Memory](src/main/java/com/ercatcher/memory) is responsible for analysis related to identifying memory locations statically, e.g., Alias-Analysis.
+* [ConcurrencyAnalysis](src/main/java/com/ercatcher/ConcurrencyAnalysis) consists of several subpackages:
 	* CSF generates the CSF for each method.
 	* C2G is responsible for augmenting methods with CSF and add new detected edges.
 	* C3G augments C2G with contextual information (caller site and their thread).
 
 	The rest of the classes in ConcurrencyAnalysis package are shared classes or LibraryCSFGenerator classes (corresponding to external CSF libraries).
 
-* 	[SVC](https://github.com/ercatcher/ercatcher/tree/master/src/main/java/com/ercatcher/svc) is the implementation of static vector clock for Android.
-*  [RaceDetector](https://github.com/ercatcher/ercatcher/tree/master/src/main/java/com/ercatcher/RaceDetector) is responsible for detecting, filtering, prioritizing, and reporting event-races.
+* 	[SVC](src/main/java/com/ercatcher/svc) is the implementation of static vector clock for Android.
+*  [RaceDetector](src/main/java/com/ercatcher/RaceDetector) is responsible for detecting, filtering, prioritizing, and reporting event-races.
